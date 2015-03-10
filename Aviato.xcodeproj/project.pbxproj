@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		F505E7ED1AAEADF900DAF80B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E7EC1AAEADF900DAF80B /* main.m */; };
 		F505E7F01AAEADF900DAF80B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E7EF1AAEADF900DAF80B /* AppDelegate.m */; };
-		F505E7F31AAEADF900DAF80B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E7F21AAEADF900DAF80B /* ViewController.m */; };
 		F505E7F61AAEADF900DAF80B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505E7F41AAEADF900DAF80B /* Main.storyboard */; };
 		F505E7F81AAEADF900DAF80B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F505E7F71AAEADF900DAF80B /* Images.xcassets */; };
 		F505E7FB1AAEADF900DAF80B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F505E7F91AAEADF900DAF80B /* LaunchScreen.xib */; };
 		F505E8071AAEADF900DAF80B /* AviatoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E8061AAEADF900DAF80B /* AviatoTests.m */; };
+		F505E8151AAEAE4300DAF80B /* Posts.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E8131AAEAE4300DAF80B /* Posts.m */; };
+		F505E81B1AAEB08B00DAF80B /* RepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E81A1AAEB08B00DAF80B /* RepoViewController.m */; };
+		F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E81D1AAF2CB200DAF80B /* Categories.m */; };
+		F505E8211AAF320700DAF80B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E8201AAF320700DAF80B /* MapViewController.m */; };
+		F505E8231AAF336E00DAF80B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F505E8221AAF336E00DAF80B /* MapKit.framework */; };
+		F505E8261AAF368D00DAF80B /* CategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E8251AAF368D00DAF80B /* CategoryController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +37,23 @@
 		F505E7EC1AAEADF900DAF80B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F505E7EE1AAEADF900DAF80B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F505E7EF1AAEADF900DAF80B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F505E7F11AAEADF900DAF80B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F505E7F21AAEADF900DAF80B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F505E7F51AAEADF900DAF80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F505E7F71AAEADF900DAF80B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F505E7FA1AAEADF900DAF80B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F505E8001AAEADF900DAF80B /* AviatoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AviatoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F505E8051AAEADF900DAF80B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F505E8061AAEADF900DAF80B /* AviatoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AviatoTests.m; sourceTree = "<group>"; };
+		F505E8121AAEAE4300DAF80B /* Posts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Posts.h; path = ../../TandemEnvoy/TandemEnvoy/Posts.h; sourceTree = "<group>"; };
+		F505E8131AAEAE4300DAF80B /* Posts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Posts.m; path = ../../TandemEnvoy/TandemEnvoy/Posts.m; sourceTree = "<group>"; };
+		F505E8191AAEB08B00DAF80B /* RepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RepoViewController.h; path = ../../../../.Trash/RepoViewController.h; sourceTree = "<group>"; };
+		F505E81A1AAEB08B00DAF80B /* RepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RepoViewController.m; path = ../../../../.Trash/RepoViewController.m; sourceTree = "<group>"; };
+		F505E81C1AAF2CB200DAF80B /* Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
+		F505E81D1AAF2CB200DAF80B /* Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categories.m; sourceTree = "<group>"; };
+		F505E81F1AAF320700DAF80B /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		F505E8201AAF320700DAF80B /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		F505E8221AAF336E00DAF80B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F505E8241AAF368D00DAF80B /* CategoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryController.h; sourceTree = "<group>"; };
+		F505E8251AAF368D00DAF80B /* CategoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F505E8231AAF336E00DAF80B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 		F505E7DE1AAEADF900DAF80B = {
 			isa = PBXGroup;
 			children = (
+				F505E8221AAF336E00DAF80B /* MapKit.framework */,
 				F505E7E91AAEADF900DAF80B /* Aviato */,
 				F505E8031AAEADF900DAF80B /* AviatoTests */,
 				F505E7E81AAEADF900DAF80B /* Products */,
@@ -81,10 +97,18 @@
 		F505E7E91AAEADF900DAF80B /* Aviato */ = {
 			isa = PBXGroup;
 			children = (
+				F505E8191AAEB08B00DAF80B /* RepoViewController.h */,
+				F505E81A1AAEB08B00DAF80B /* RepoViewController.m */,
+				F505E8241AAF368D00DAF80B /* CategoryController.h */,
+				F505E8251AAF368D00DAF80B /* CategoryController.m */,
+				F505E81F1AAF320700DAF80B /* MapViewController.h */,
+				F505E8201AAF320700DAF80B /* MapViewController.m */,
+				F505E81C1AAF2CB200DAF80B /* Categories.h */,
+				F505E81D1AAF2CB200DAF80B /* Categories.m */,
+				F505E8121AAEAE4300DAF80B /* Posts.h */,
+				F505E8131AAEAE4300DAF80B /* Posts.m */,
 				F505E7EE1AAEADF900DAF80B /* AppDelegate.h */,
 				F505E7EF1AAEADF900DAF80B /* AppDelegate.m */,
-				F505E7F11AAEADF900DAF80B /* ViewController.h */,
-				F505E7F21AAEADF900DAF80B /* ViewController.m */,
 				F505E7F41AAEADF900DAF80B /* Main.storyboard */,
 				F505E7F71AAEADF900DAF80B /* Images.xcassets */,
 				F505E7F91AAEADF900DAF80B /* LaunchScreen.xib */,
@@ -219,9 +243,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F505E7F31AAEADF900DAF80B /* ViewController.m in Sources */,
+				F505E81B1AAEB08B00DAF80B /* RepoViewController.m in Sources */,
 				F505E7F01AAEADF900DAF80B /* AppDelegate.m in Sources */,
 				F505E7ED1AAEADF900DAF80B /* main.m in Sources */,
+				F505E8211AAF320700DAF80B /* MapViewController.m in Sources */,
+				F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */,
+				F505E8261AAF368D00DAF80B /* CategoryController.m in Sources */,
+				F505E8151AAEAE4300DAF80B /* Posts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
