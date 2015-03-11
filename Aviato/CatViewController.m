@@ -1,53 +1,42 @@
 //
-//  CategoryController.m
+//  CatViewController.m
 //  Aviato
 //
-//  Created by Michael Vinci on 3/10/15.
+//  Created by Michael Vinci on 3/11/15.
 //  Copyright (c) 2015 TeamAviato. All rights reserved.
 //
 
-#import "CategoryController.h"
+#import "CatViewController.h"
 #import "Categories.h"
 
 #define getDataURL @"http://tandemenvoy.michaeldvinci.com/forum/categoriesJSON.php"
 
-@interface CategoryController ()
+@interface CatViewController ()
 
 @end
 
-@implementation CategoryController
+@implementation CatViewController
 
 @synthesize jsonArray2, categoryArray;
 
--(id)initWithStyle:(UITableViewStyle)style
+- (void)viewDidLoad
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        
-    }
-    return self;
-}
-
-- (void)viewDidLoad {
     [super viewDidLoad];
     
     self.title = @"Test replies";
     
     [self retrieveData];
+    
+    /**
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
+                                        init];
+    [refreshControl addTarget:self action:@selector(updateTable) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+     **/
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return categoryArray.count;
 }
 
@@ -67,6 +56,27 @@
     return catCell;
 }
 
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //[self performSegueWithIdentifier: sender:self];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+- (void)updateTable
+{
+    [self retrieveData];
+    [self->tableView reloadData];
+    /**
+    [self.refreshControl endRefreshing];
+     **/
+}
 
 #pragma mark -
 #pragma mark Class Methods
@@ -93,7 +103,27 @@
         [categoryArray addObject:[[Categories alloc]initWidthCategoryDesc:cDesc andcategoryName:cName andcategoryID:cID]];
     }
     
-    [self.tableView reloadData];
+    [self->tableView reloadData];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"goBack"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddPostViewController2 *addPostViewController2 = [navigationController viewControllers][0];
+        addPostViewController2.delegate = self;
+    }
+}
+
+#pragma mark - AddPostViewControllerDelegate
+
+- (void)addPostViewController2DidCancel:(AddPostViewController2 *) controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)addPostViewController2DidSave:(AddPostViewController2 *) controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
