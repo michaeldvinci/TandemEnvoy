@@ -17,22 +17,23 @@
 
 @implementation CatViewController
 
-@synthesize jsonArray2, categoryArray;
+@synthesize jsonArray2, categoryArray, tableView, refreshControl;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.title = @"Test replies";
+    self.navigationItem.hidesBackButton = YES;
     
     [self retrieveData];
     
-    /**
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
-                                        init];
-    [refreshControl addTarget:self action:@selector(updateTable) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refreshControl;
-     **/
+    UITableViewController *tvController = [[UITableViewController alloc] init];
+    tvController.tableView = self.tableView;
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(updateTable:) forControlEvents:UIControlEventValueChanged];
+    tvController.refreshControl = self.refreshControl;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -40,7 +41,7 @@
     return categoryArray.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)myTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"catCell";
     UITableViewCell *catCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -56,7 +57,7 @@
     return catCell;
 }
 
-- (void)tableView:(UITableView *)tableView
+- (void)tableView:(UITableView *)myTableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -69,13 +70,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super didReceiveMemoryWarning];
 }
 
-- (void)updateTable
+- (void)updateTable:(UIRefreshControl *)rControl
 {
     [self retrieveData];
-    [self->tableView reloadData];
-    /**
-    [self.refreshControl endRefreshing];
-     **/
+    [self.tableView reloadData];
+
+    [refreshControl endRefreshing];
 }
 
 #pragma mark -
