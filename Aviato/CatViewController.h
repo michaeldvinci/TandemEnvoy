@@ -16,8 +16,10 @@
 }
 
 @property (strong, nonatomic) CatViewController *catViewController;
-@property (nonatomic, strong) NSMutableArray * jsonArray2;
-@property (nonatomic, strong) NSMutableArray * categoryArray;
+@property (nonatomic, strong) NSMutableArray *jsonArray2;
+@property (nonatomic, strong) NSMutableArray *categoryArray;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 #pragma mark -
 #pragma mark Class Methods
