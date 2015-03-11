@@ -109,6 +109,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="tableView" destination="tHI-FP-cTc" id="k3q-3u-4Zb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LEh-jU-Lzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
