@@ -36,7 +36,6 @@
             
         } else {
             NSString *post =[[NSString alloc] initWithFormat:@"userName=%@&userPass=%@",[self.UIUsername text],[self.UIPassword text]];
-            NSLog(@"PostData: %@",post);
             
             NSURL *url=[NSURL URLWithString:@"http://tandemenvoy.michaeldvinci.com/forum/mobileSignin.php"];
             
@@ -58,13 +57,8 @@
             NSHTTPURLResponse *response = nil;
             NSData *urlData=[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
             
-            NSLog(@"Response code: %ld", (long)[response statusCode]);
-            
             if ([response statusCode] >= 200 && [response statusCode] < 300)
             {
-                NSString *responseData = [[NSString alloc]initWithData:urlData encoding:NSUTF8StringEncoding];
-                NSLog(@"Response ==> %@", responseData);
-                
                 NSError *error = nil;
                 NSDictionary *jsonData = [NSJSONSerialization
                                           JSONObjectWithData:urlData
@@ -72,7 +66,6 @@
                                           error:&error];
                 
                 success = [jsonData[@"success"] integerValue];
-                NSLog(@"Success: %ld",(long)success);
                 
                 if(success == 0)
                 {
