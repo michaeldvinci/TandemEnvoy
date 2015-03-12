@@ -10,7 +10,7 @@
 #import "CatViewController.h"
 #import "Posts.h"
 
-#define getDataURL @"http://tandemenvoy.michaeldvinci.com/forum/repliesJSON.php"
+#define getDataURL @"http://tandemenvoy.michaeldvinci.com/forum/repliesJSON.php?rID="
 
 @interface TopicViewController ()
 
@@ -18,17 +18,14 @@
 
 @implementation TopicViewController
 
-@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, passedData, topDict, topID, tDict;
+@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, topDict, passedCID, subURL;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //test to see what gets passed along
-    NSLog(@"passed: %@", theData);
-    
     self.title = @"Test replies";
-    
+        
     [self retrieveData];
     
     UITableViewController *tvController = [[UITableViewController alloc] init];
@@ -37,6 +34,9 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(updateTable:) forControlEvents:UIControlEventValueChanged];
     tvController.refreshControl = self.refreshControl;
+}
+
+- (void) viewDidAppear:(BOOL)animated {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -51,10 +51,13 @@
     
     // Configure the cell...
     Posts *topObject;
-    topObject = [topicArray objectAtIndex:indexPath.row] ;
+    topObject = [topicArray objectAtIndex:indexPath.row];
+    
+    NSString *topID2 = topObject.replyID;
+    
+    NSLog(@"replyID: %@", topID2);
     
     topCell.textLabel.text = topObject.replyContent;
-    
     topCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return topCell;
@@ -84,20 +87,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark -
 #pragma mark Class Methods
 - (void) retrieveData;
-{
-    NSURL * url = [NSURL URLWithString:getDataURL];
-    NSData * data = [NSData dataWithContentsOfURL:url];
+{    
+    NSURL *url = [NSURL URLWithString:subURL];
+    NSData *data = [NSData dataWithContentsOfURL:url];
     
     jsonArray3 = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
     
-    NSError *error;
-    tDict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    
-    for (topDict in tDict) {
-        topID = topDict[@"replyTopic"];
-        NSString *catDesc = topDict[@"categoryDesc"];
-        NSString *catName = topDict[@"categoryName"];
+    for (topDict in jsonArray3) {
+        NSString *topTopic = topDict[@"replyTopic"];
+        NSString *topID = topDict[@"replyID"];
+        NSString *topDate = topDict[@"replyDate"];
+        NSString *topContent = topDict[@"replyContent"];
+        NSString *topBy = topDict[@"replyBy"];
     }
+    
+    //NSLog(@":: %@", jsonArray3);
     
     topicArray = [[NSMutableArray alloc] init];
     
@@ -114,27 +118,5 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [self.tableView reloadData];
 }
-
-/**
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"goBack"]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        AddPostViewController2 *addPostViewController2 = [navigationController viewControllers][0];
-        addPostViewController2.delegate = self;
-    }
-}
-
-#pragma mark - AddPostViewControllerDelegate
-
-- (void)addPostViewController2DidCancel:(AddPostViewController2 *) controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-- (void)addPostViewController2DidSave:(AddPostViewController2 *) controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-**/
  
 @end
