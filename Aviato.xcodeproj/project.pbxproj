@@ -19,6 +19,7 @@
 		F505E8211AAF320700DAF80B /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E8201AAF320700DAF80B /* MapViewController.m */; };
 		F505E8231AAF336E00DAF80B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F505E8221AAF336E00DAF80B /* MapKit.framework */; };
 		F5A289581AB07EFE00D79A26 /* CatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A289571AB07EFE00D79A26 /* CatViewController.m */; };
+		F5A2895B1AB0A51200D79A26 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A2895A1AB0A51200D79A26 /* TopicViewController.m */; };
 		F5E198281AAF96010075788E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E198271AAF96010075788E /* LoginViewController.m */; };
 		F5E198421AAF98650075788E /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E198361AAF98650075788E /* NSObject+SBJson.m */; };
 		F5E198431AAF98650075788E /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E198371AAF98650075788E /* SBJsonParser.m */; };
@@ -68,6 +69,8 @@
 		F505E8221AAF336E00DAF80B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F5A289561AB07EFE00D79A26 /* CatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatViewController.h; sourceTree = "<group>"; };
 		F5A289571AB07EFE00D79A26 /* CatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatViewController.m; sourceTree = "<group>"; };
+		F5A289591AB0A51200D79A26 /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
+		F5A2895A1AB0A51200D79A26 /* TopicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicViewController.m; sourceTree = "<group>"; };
 		F5E198261AAF96010075788E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F5E198271AAF96010075788E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F5E198291AAF98650075788E /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+SBJson.h"; path = "../../../../Downloads/SBJson_3.1.1/Classes/NSObject+SBJson.h"; sourceTree = "<group>"; };
@@ -142,12 +145,14 @@
 			children = (
 				F5E198261AAF96010075788E /* LoginViewController.h */,
 				F5E198271AAF96010075788E /* LoginViewController.m */,
-				F5E1984E1AAFC7A30075788E /* AddPostViewController2.h */,
-				F5E1984F1AAFC7A30075788E /* AddPostViewController2.m */,
-				F5A289561AB07EFE00D79A26 /* CatViewController.h */,
-				F5A289571AB07EFE00D79A26 /* CatViewController.m */,
 				F505E81C1AAF2CB200DAF80B /* Categories.h */,
 				F505E81D1AAF2CB200DAF80B /* Categories.m */,
+				F5A289561AB07EFE00D79A26 /* CatViewController.h */,
+				F5A289571AB07EFE00D79A26 /* CatViewController.m */,
+				F5E1984E1AAFC7A30075788E /* AddPostViewController2.h */,
+				F5E1984F1AAFC7A30075788E /* AddPostViewController2.m */,
+				F5A289591AB0A51200D79A26 /* TopicViewController.h */,
+				F5A2895A1AB0A51200D79A26 /* TopicViewController.m */,
 				F505E8121AAEAE4300DAF80B /* Posts.h */,
 				F505E8131AAEAE4300DAF80B /* Posts.m */,
 				F505E7EE1AAEADF900DAF80B /* AppDelegate.h */,
@@ -335,6 +340,7 @@
 				F505E7ED1AAEADF900DAF80B /* main.m in Sources */,
 				F5E198481AAF98650075788E /* SBJsonStreamWriter.m in Sources */,
 				F5E1984A1AAF98650075788E /* SBJsonStreamWriterState.m in Sources */,
+				F5A2895B1AB0A51200D79A26 /* TopicViewController.m in Sources */,
 				F5E198431AAF98650075788E /* SBJsonParser.m in Sources */,
 				F5A289581AB07EFE00D79A26 /* CatViewController.m in Sources */,
 				F5E1984B1AAF98650075788E /* SBJsonTokeniser.m in Sources */,
