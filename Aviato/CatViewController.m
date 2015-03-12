@@ -18,7 +18,7 @@
 
 @implementation CatViewController
 
-@synthesize jsonArray2, responseData, categoryArray, tableView, refreshControl, catDict, dictArray, catID;
+@synthesize jsonArray2, categoryArray, tableView, refreshControl, catDict, dictArray, catID;
 
 - (void)viewDidLoad
 {
@@ -82,11 +82,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void) retrieveData;
 {
     NSURL *url = [NSURL URLWithString:getDataURL];
-    responseData = [NSMutableData dataWithContentsOfURL:url];
+    NSMutableData *responseData = [NSMutableData dataWithContentsOfURL:url];
     
     NSError *error;
     jsonArray2 = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
-    catDict = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
     
     categoryArray = [[NSMutableArray alloc] init];
     
@@ -99,8 +98,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         [categoryArray addObject:[[Categories alloc]initWidthCategoryDesc:cDesc andcategoryName:cName andcategoryID:cID]];
     }
     
-    NSLog(@"%@", jsonArray2);
-    
     [self.tableView reloadData];
 }
 
@@ -111,6 +108,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         tVC.theData = [jsonArray2 objectAtIndex:indexPath.row];
+        tVC.subURL = [@"http://tandemenvoy.michaeldvinci.com/forum/repliesJSON.php?rID=" stringByAppendingString:[tVC.theData objectForKey:@"categoryID"]];
+        
+        NSLog(@"output: %@", tVC.subURL);
     }
 }
 
