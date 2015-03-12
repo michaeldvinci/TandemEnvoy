@@ -16,7 +16,7 @@
     NSMutableData *responseData;
 }
 
-@property (strong, nonatomic) CatViewController *catViewController;
+@property (nonatomic, strong) CatViewController *catViewController;
 @property (nonatomic, strong) NSMutableArray *jsonArray2;
 @property (nonatomic, strong) NSArray *dictArray;
 @property (nonatomic, strong) NSString *catID;
@@ -24,7 +24,6 @@
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSDictionary *catDict;
-@property (nonatomic, retain) NSMutableData *responseData;
 
 #pragma mark -
 #pragma mark Class Methods
