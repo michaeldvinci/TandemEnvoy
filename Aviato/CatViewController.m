@@ -8,6 +8,7 @@
 
 #import "CatViewController.h"
 #import "Categories.h"
+#import "TopicViewController.h"
 
 #define getDataURL @"http://tandemenvoy.michaeldvinci.com/forum/categoriesJSON.php"
 
@@ -17,13 +18,13 @@
 
 @implementation CatViewController
 
-@synthesize jsonArray2, categoryArray, tableView, refreshControl;
+@synthesize jsonArray2, responseData, categoryArray, tableView, refreshControl, catDict, dictArray, catID;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = @"Test replies";
+    self.title = @"Recent Posts";
     self.navigationItem.hidesBackButton = YES;
     
     [self retrieveData];
@@ -61,8 +62,6 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    //[self performSegueWithIdentifier: sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,36 +81,36 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark Class Methods
 - (void) retrieveData;
 {
-    NSURL * url = [NSURL URLWithString:getDataURL];
-    NSData * data = [NSData dataWithContentsOfURL:url];
+    NSURL *url = [NSURL URLWithString:getDataURL];
+    responseData = [NSMutableData dataWithContentsOfURL:url];
     
-    NSLog(@"%@", url);
-    NSLog(@"%@", data);
-    
-    jsonArray2 = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    //setting up replies array
+    NSError *error;
+    jsonArray2 = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
+    catDict = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
     
     categoryArray = [[NSMutableArray alloc] init];
     
     for(int i = 0; i < jsonArray2.count; i++)
     {
-        NSString * cID = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryID"];
-        NSString * cDesc = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryDesc"];
-        NSString * cName = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryName"];
+        NSString *cID = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryID"];
+        NSString *cDesc = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryDesc"];
+        NSString *cName = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryName"];
         
         [categoryArray addObject:[[Categories alloc]initWidthCategoryDesc:cDesc andcategoryName:cName andcategoryID:cID]];
     }
     
-    [self->tableView reloadData];
+    NSLog(@"%@", jsonArray2);
+    
+    [self.tableView reloadData];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"goBack"]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        AddPostViewController2 *addPostViewController2 = [navigationController viewControllers][0];
-        addPostViewController2.delegate = self;
+    if ([segue.identifier isEqualToString:@"catToTopic"]) {
+        TopicViewController *tVC = (TopicViewController *)[segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        tVC.theData = [jsonArray2 objectAtIndex:indexPath.row];
     }
 }
 
