@@ -14,16 +14,15 @@
     NSMutableArray *topicArray;
 }
 
-@property (strong, nonatomic) TopicViewController *topViewController;
+@property (nonatomic, strong) TopicViewController *topViewController;
 @property (nonatomic, strong) NSMutableArray *jsonArray3;
 @property (nonatomic, strong) NSMutableArray *topicArray;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (nonatomic, strong) NSString *passedData;
 @property (nonatomic, strong) IBOutlet NSDictionary *topDict;
-@property (nonatomic, strong) NSString *topID;
-@property (nonatomic, strong) NSArray *tDict;
+@property (nonatomic, strong) NSString *passedCID;
 @property (nonatomic, retain) NSDictionary *theData;
+@property (nonatomic, retain) NSString *subURL;
 
 #pragma mark -
 #pragma mark Class Methods
