@@ -17,11 +17,11 @@
     self = [super init];
     if (self)
     {
-        topicSubject = reSubject;
+        topicID = reID;
+        topicCat = reCat;
         topicDate = reDate;
         topicBy = reBy;
-        topicCat = reCat;
-        topicID = reID;
+        topicSubject = reSubject;
     }
     
     return self;
