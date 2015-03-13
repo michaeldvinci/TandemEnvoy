@@ -23,6 +23,8 @@
 @property (nonatomic, strong) NSString *passedCID;
 @property (nonatomic, retain) NSDictionary *theData;
 @property (nonatomic, retain) NSString *subURL;
+@property (nonatomic, strong) IBOutlet UITextView *textView;
+@property (nonatomic, retain) NSString *descText;
 
 #pragma mark -
 #pragma mark Class Methods

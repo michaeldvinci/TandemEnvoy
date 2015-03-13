@@ -35,6 +35,7 @@
             [self alertStatus:@"Please enter Email and Password" :@"Sign in Failed!" :0];
             
         } else {
+            
             NSString *post =[[NSString alloc] initWithFormat:@"userName=%@&userPass=%@",[self.UIUsername text],[self.UIPassword text]];
             
             NSURL *url=[NSURL URLWithString:@"http://tandemenvoy.michaeldvinci.com/forum/mobileSignin.php"];
@@ -45,7 +46,7 @@
             
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
             [request setURL:url];
-            [request setHTTPMethod:@"POST"];
+            [request setHTTPMethod:@"GET"];
             [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
             [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
             [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
@@ -67,18 +68,18 @@
                 
                 success = [jsonData[@"success"] integerValue];
                 
-                if(success == 0)
+                if(success == 1)
                 {
                     NSLog(@"Login SUCCESS");
                 } else {
                     
                     NSString *error_msg = (NSString *) jsonData[@"error_message"];
-                    [self alertStatus:error_msg :@"Sign in Failed!" :1];
+                    [self alertStatus:error_msg :@"Sign in Failed!" :0];
                 }
                 
             } else {
                 if (error) NSLog(@"Error: %@", error);
-                [self alertStatus:@"Connection Failed" :@"Sign in Failed!" :1];
+                [self alertStatus:@"Connection Failed" :@"Sign in Failed!" :0];
             }
         }
     }

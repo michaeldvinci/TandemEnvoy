@@ -18,13 +18,14 @@
 
 @implementation TopicViewController
 
-@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, topDict, passedCID, subURL;
+@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, topDict, passedCID, subURL, textView, descText;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = @"Test replies";
+    self.title = @"Replies to job";
+    textView.text = descText;
         
     [self retrieveData];
     

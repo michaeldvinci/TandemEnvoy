@@ -9,6 +9,7 @@
 #import "CatViewController.h"
 #import "Categories.h"
 #import "TopicViewController.h"
+#import "RepoViewController.h"
 
 #define getDataURL @"http://tandemenvoy.michaeldvinci.com/forum/categoriesJSON.php"
 
@@ -103,15 +104,30 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    /**
     if ([segue.identifier isEqualToString:@"catToTopic"]) {
         TopicViewController *tVC = (TopicViewController *)[segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         tVC.theData = [jsonArray2 objectAtIndex:indexPath.row];
         tVC.subURL = [@"http://tandemenvoy.michaeldvinci.com/forum/repliesJSON.php?rID=" stringByAppendingString:[tVC.theData objectForKey:@"categoryID"]];
+        tVC.descText = [NSString stringWithFormat:@"%@", [tVC.theData objectForKey:@"categoryDesc"]];
         
         NSLog(@"output: %@", tVC.subURL);
     }
+    **/
+    
+    if ([segue.identifier isEqualToString:@"catToRepo"]) {
+        RepoViewController *rVC = (RepoViewController *)[segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        rVC.theData2 = [jsonArray2 objectAtIndex:indexPath.row];
+        rVC.subURL2 = [@"http://tandemenvoy.michaeldvinci.com/forum/topicsJSON.php?tID=" stringByAppendingString:[rVC.theData2 objectForKey:@"categoryID"]];
+        rVC.descText2 = [NSString stringWithFormat:@"%@", [rVC.theData2 objectForKey:@"categoryDesc"]];
+        
+        NSLog(@"output: %@", rVC.subURL2);
+    }
+    
     
     if ([segue.identifier isEqualToString:@"goBack"]) {
             
