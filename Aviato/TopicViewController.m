@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 TeamAviato. All rights reserved.
 //
 
+#import "Posts.h"
 #import "TopicViewController.h"
 #import "CatViewController.h"
-#import "Posts.h"
 
 #define getDataURL @"http://tandemenvoy.michaeldvinci.com/forum/repliesJSON.php?rID="
 
@@ -18,7 +18,7 @@
 
 @implementation TopicViewController
 
-@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, topDict, passedCID, subURL, textView, descText;
+@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, topDict, subURL, textView, descText;
 
 - (void)viewDidLoad
 {
@@ -37,9 +37,6 @@
     tvController.refreshControl = self.refreshControl;
 }
 
-- (void) viewDidAppear:(BOOL)animated {
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return topicArray.count;
@@ -54,9 +51,9 @@
     Posts *topObject;
     topObject = [topicArray objectAtIndex:indexPath.row];
     
-    NSString *topID2 = topObject.replyID;
+    NSString *topID3 = topObject.replyID;
     
-    NSLog(@"replyID: %@", topID2);
+    NSLog(@"replyID: %@", topID3);
     
     topCell.textLabel.text = topObject.replyContent;
     topCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -64,12 +61,9 @@
     return topCell;
 }
 
-- (void)tableView:(UITableView *)myTableView
-didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)myTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    //[self performSegueWithIdentifier: sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,15 +102,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     for(int i = 0; i < jsonArray3.count; i++)
     {
-        NSString *rID = [[jsonArray3 objectAtIndex:i] objectForKey:@"replyID"];
         NSString *rTopic = [[jsonArray3 objectAtIndex:i] objectForKey:@"replyTopic"];
+        NSString *rID = [[jsonArray3 objectAtIndex:i] objectForKey:@"replyID"];
         NSString *rDate = [[jsonArray3 objectAtIndex:i] objectForKey:@"replyDate"];
         NSString *rContent = [[jsonArray3 objectAtIndex:i] objectForKey:@"replyContent"];
         NSString *rBy = [[jsonArray3 objectAtIndex:i] objectForKey:@"replyBy"];
         
         [topicArray addObject:[[Posts alloc]initWidthReplyBy: rBy andreplyDate: rDate andreplyTopic: rTopic andreplyContent: rContent andreplyID: rID]];
     }
-    
     [self.tableView reloadData];
 }
  
