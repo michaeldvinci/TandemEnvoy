@@ -112,15 +112,23 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         
         NSLog(@"output: %@", tVC.subURL);
     }
+    
+    if ([segue.identifier isEqualToString:@"goBack"]) {
+            
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddPostViewController2 *playerDetailsViewController = [navigationController viewControllers][0];
+        playerDetailsViewController.delegate = self;
+    }
 }
 
-#pragma mark - AddPostViewControllerDelegate
+#pragma mark - addPostViewController2Delegate
 
-- (void)addPostViewController2DidCancel:(AddPostViewController2 *) controller
+- (void)addPostViewController2DidCancel:(AddPostViewController2 *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-- (void)addPostViewController2DidSave:(AddPostViewController2 *) controller
+
+- (void)addPostViewController2DidSave:(AddPostViewController2 *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
