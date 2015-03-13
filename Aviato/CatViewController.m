@@ -13,10 +13,9 @@
 
 #define getDataURL @"http://tandemenvoy.michaeldvinci.com/forum/categoriesJSON.php"
 
-@interface CatViewController ()
+@interface CatViewController()
 
 @end
-
 @implementation CatViewController
 
 @synthesize jsonArray2, categoryArray, tableView, refreshControl, catDict, dictArray, catID;
@@ -104,19 +103,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    /**
-    if ([segue.identifier isEqualToString:@"catToTopic"]) {
-        TopicViewController *tVC = (TopicViewController *)[segue destinationViewController];
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        tVC.theData = [jsonArray2 objectAtIndex:indexPath.row];
-        tVC.subURL = [@"http://tandemenvoy.michaeldvinci.com/forum/repliesJSON.php?rID=" stringByAppendingString:[tVC.theData objectForKey:@"categoryID"]];
-        tVC.descText = [NSString stringWithFormat:@"%@", [tVC.theData objectForKey:@"categoryDesc"]];
-        
-        NSLog(@"output: %@", tVC.subURL);
-    }
-    **/
-    
     if ([segue.identifier isEqualToString:@"catToRepo"]) {
         RepoViewController *rVC = (RepoViewController *)[segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
