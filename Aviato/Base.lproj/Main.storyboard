@@ -141,12 +141,12 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sgr-b0-H4z">
                                 <rect key="frame" x="-16" y="148" width="600" height="492"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="michaeldvinci2" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45I-np-k9M">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="miro123" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45I-np-k9M">
                                         <rect key="frame" x="96" y="107" width="209" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="qwerty123" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYp-FZ-DUV">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="mikeyv123" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYp-FZ-DUV">
                                         <rect key="frame" x="96" y="159" width="209" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -158,7 +158,7 @@
                                         </state>
                                         <connections>
                                             <action selector="loginClicked:" destination="12K-oY-9iD" eventType="touchUpInside" id="t8A-Au-uU4"/>
-                                            <segue destination="2tN-4c-sbh" kind="show" id="cch-8J-Pxv"/>
+                                            <segue destination="2tN-4c-sbh" kind="show" identifier="login_success" id="cch-8J-Pxv"/>
                                         </connections>
                                     </button>
                                 </subviews>
