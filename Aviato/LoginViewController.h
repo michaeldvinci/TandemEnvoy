@@ -7,18 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 
-@interface LoginViewController : UIViewController <CLLocationManagerDelegate>
+@interface LoginViewController : UIViewController
 
+@property (nonatomic, strong) User *user;
 @property (weak, nonatomic) IBOutlet UITextField *UIUsername;
 @property (weak, nonatomic) IBOutlet UITextField *UIPassword;
 @property (nonatomic, strong) NSString *locatServ;
 @property (nonatomic, strong) IBOutlet UIButton *loginButton;
-@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) NSMutableArray *jLoginArray;
 @property (nonatomic, strong) NSMutableArray *loginArray;
 @property (nonatomic, strong) NSDictionary *loginDict;
+@property (nonatomic, strong) NSMutableArray *jUserArray;
+@property (nonatomic, strong) NSMutableArray *userArray;
+@property (nonatomic, strong) NSDictionary *userDict;
 
 
 - (IBAction)loginClicked:(id)sender;
