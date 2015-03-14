@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 TeamAviato. All rights reserved.
 //
 
+#import "User.h"
 #import "Posts.h"
 #import "TopicViewController.h"
 #import "CatViewController.h"
@@ -18,11 +19,13 @@
 
 @implementation TopicViewController
 
-@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, topDict, subURL, textView, descText;
+@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, topDict, subURL, textView, descText, user;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    user = [User getInstance];
     
     self.title = @"Replies to job";
     textView.text = descText;

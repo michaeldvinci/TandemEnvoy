@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 TeamAviato. All rights reserved.
 //
 
+#import "User.h"
 #import "AddPostViewController2.h"
 #import <CoreLocation/CoreLocation.h>
 
@@ -24,8 +25,15 @@
     CLPlacemark *placemark;
 }
 
+@synthesize user;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    User *user = [User getInstance];
+    
+    NSLog(@"postUN: %@",user.userName);
+    NSLog(@"postUID: %@",user.userID);
     
     manager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];

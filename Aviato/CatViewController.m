@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 TeamAviato. All rights reserved.
 //
 
+#import "User.h"
 #import "Categories.h"
 #import "CatViewController.h"
 #import "TopicViewController.h"
@@ -19,7 +20,7 @@
 
 @implementation CatViewController
 
-@synthesize jsonArray2, categoryArray, tableView, refreshControl, catDict, dictArray, catID;
+@synthesize jsonArray2, categoryArray, tableView, refreshControl, catDict, dictArray, catID, user;
 
 - (void)viewDidLoad
 {
@@ -27,6 +28,8 @@
     
     self.title = @"Recent Posts";
     self.navigationItem.hidesBackButton = YES;
+    
+    user = [User getInstance];
     
     [self retrieveData];
     
