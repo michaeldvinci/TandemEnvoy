@@ -7,40 +7,82 @@
 //
 
 #import "AddPostViewController2.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface AddPostViewController2 () <AddPostViewController2Delegate>
+@interface AddPostViewController2 () <AddPostViewController2Delegate, CLLocationManagerDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UILabel *latitude;
+@property (strong, nonatomic) IBOutlet UILabel *longitude;
+@property (strong, nonatomic) IBOutlet UILabel *address;
+- (IBAction)getLocat:(id)sender;
 
 @end
 
-@implementation AddPostViewController2
+@implementation AddPostViewController2 {
+    CLLocationManager *manager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    manager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)cancel:(id)sender
-{
+- (IBAction)cancel:(id)sender {
     [self.delegate addPostViewController2DidCancel:self];
 }
-- (IBAction)done:(id)sender
-{
+
+- (IBAction)done:(id)sender {
     [self.delegate addPostViewController2DidSave:self];
 }
 
-- (void)touchesBegan: (NSSet *) touches withEvent:(UIEvent *)event {
-    UITouch *touch = [[event allTouches] anyObject];
-    if ([_textField isFirstResponder] && [touch view] != _textField) {
-        [_textField resignFirstResponder];
+- (IBAction)getLocat:(id)sender {
+    manager.delegate = self;
+    
+    manager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    if ([manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [manager requestWhenInUseAuthorization];
     }
-         [super touchesBegan: touches withEvent:event];
+    [manager startUpdatingLocation];
+}
+
+#pragma mark CLLocationManagerDelegate Methods
+
+- (void)LocationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"Error: %@", error);
+    NSLog(@"Failed to get Location! :(");
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    NSLog(@"Location: %@", [locations lastObject]);
+    CLLocation *curLocat = [locations lastObject];
+    
+    if (curLocat != nil) {
+        self.latitude.text = [NSString stringWithFormat:@"%.8f", curLocat.coordinate.latitude];
+        self.longitude.text = [NSString stringWithFormat:@"%.8f", curLocat.coordinate.longitude];
+    }
+    
+    [geocoder reverseGeocodeLocation:curLocat completionHandler: ^(NSArray *placemarks, NSError *error) {
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            
+            self.address.text = [NSString stringWithFormat:@"%@ %@\n%@, %@. %@\n%@",
+                                 placemark.subThoroughfare, placemark.thoroughfare,
+                                 placemark.locality, placemark.administrativeArea, placemark.postalCode,
+                                 placemark.country];
+        }
+        else {
+            NSLog(@"%@", error.debugDescription);
+        }
+    }];
 }
 
 @end
