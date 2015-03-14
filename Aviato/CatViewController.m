@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 TeamAviato. All rights reserved.
 //
 
-#import "CatViewController.h"
 #import "Categories.h"
+#import "CatViewController.h"
 #import "TopicViewController.h"
 #import "RepoViewController.h"
 
@@ -16,6 +16,7 @@
 @interface CatViewController()
 
 @end
+
 @implementation CatViewController
 
 @synthesize jsonArray2, categoryArray, tableView, refreshControl, catDict, dictArray, catID;
@@ -82,10 +83,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void) retrieveData;
 {
     NSURL *url = [NSURL URLWithString:getDataURL];
-    NSMutableData *responseData = [NSMutableData dataWithContentsOfURL:url];
+    NSMutableData *responseData1 = [NSMutableData dataWithContentsOfURL:url];
     
     NSError *error;
-    jsonArray2 = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
+    jsonArray2 = [NSJSONSerialization JSONObjectWithData:responseData1 options:kNilOptions error:nil];
     
     categoryArray = [[NSMutableArray alloc] init];
     
@@ -99,6 +100,18 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     }
     
     [self.tableView reloadData];
+}
+
+#pragma mark - addPostViewController2Delegate
+
+- (void)addPostViewController2DidCancel:(AddPostViewController2 *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addPostViewController2DidSave:(AddPostViewController2 *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -116,23 +129,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
     if ([segue.identifier isEqualToString:@"goBack"]) {
-            
+        
         UINavigationController *navigationController = segue.destinationViewController;
-        AddPostViewController2 *playerDetailsViewController = [navigationController viewControllers][0];
-        playerDetailsViewController.delegate = self;
+        AddPostViewController2 *addPostViewController = [navigationController viewControllers][0];
+        addPostViewController.delegate = self;
     }
 }
 
-#pragma mark - addPostViewController2Delegate
-
-- (void)addPostViewController2DidCancel:(AddPostViewController2 *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)addPostViewController2DidSave:(AddPostViewController2 *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 @end
