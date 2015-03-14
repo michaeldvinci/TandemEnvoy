@@ -43,5 +43,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Location Services currently being used, please try again.</string>
+    
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Ready to find yourself?</string>
 </dict>
 </plist>
