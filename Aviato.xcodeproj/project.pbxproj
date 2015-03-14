@@ -18,6 +18,7 @@
 		F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E81D1AAF2CB200DAF80B /* Categories.m */; };
 		F505E8231AAF336E00DAF80B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F505E8221AAF336E00DAF80B /* MapKit.framework */; };
 		F50FB4E81AB35CDF00C98297 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = F50FB4E71AB35CDF00C98297 /* Login.m */; };
+		F57FB95E1AB4C3CE0055A170 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F57FB95D1AB4C3CE0055A170 /* User.m */; };
 		F5A289581AB07EFE00D79A26 /* CatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A289571AB07EFE00D79A26 /* CatViewController.m */; };
 		F5A2895B1AB0A51200D79A26 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A2895A1AB0A51200D79A26 /* TopicViewController.m */; };
 		F5A42EAC1AB27309008E71AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A42EAB1AB27309008E71AF /* CoreLocation.framework */; };
@@ -69,6 +70,8 @@
 		F505E8221AAF336E00DAF80B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F50FB4E61AB35CA100C98297 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		F50FB4E71AB35CDF00C98297 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		F57FB95C1AB4C2660055A170 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F57FB95D1AB4C3CE0055A170 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F5A289561AB07EFE00D79A26 /* CatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatViewController.h; sourceTree = "<group>"; };
 		F5A289571AB07EFE00D79A26 /* CatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatViewController.m; sourceTree = "<group>"; };
 		F5A289591AB0A51200D79A26 /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
@@ -150,6 +153,8 @@
 		F505E7E91AAEADF900DAF80B /* Aviato */ = {
 			isa = PBXGroup;
 			children = (
+				F57FB95C1AB4C2660055A170 /* User.h */,
+				F57FB95D1AB4C3CE0055A170 /* User.m */,
 				F5E198261AAF96010075788E /* LoginViewController.h */,
 				F5E198271AAF96010075788E /* LoginViewController.m */,
 				F50FB4E61AB35CA100C98297 /* Login.h */,
@@ -345,6 +350,7 @@
 				F50FB4E81AB35CDF00C98297 /* Login.m in Sources */,
 				F5E198471AAF98650075788E /* SBJsonStreamParserState.m in Sources */,
 				F5A42EAE1AB27814008E71AF /* Topic.m in Sources */,
+				F57FB95E1AB4C3CE0055A170 /* User.m in Sources */,
 				F505E7F01AAEADF900DAF80B /* AppDelegate.m in Sources */,
 				F5E1984D1AAF98650075788E /* SBJsonWriter.m in Sources */,
 				F5E198441AAF98650075788E /* SBJsonStreamParser.m in Sources */,

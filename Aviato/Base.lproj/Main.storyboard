@@ -188,7 +188,6 @@
                                     <constraint firstAttribute="centerY" secondItem="gRU-Xr-W6P" secondAttribute="centerY" constant="11" id="3u7-xE-gkV"/>
                                     <constraint firstAttribute="centerX" secondItem="lYp-FZ-DUV" secondAttribute="centerX" constant="-0.5" id="8L5-Be-rqx"/>
                                     <constraint firstAttribute="centerY" secondItem="45I-np-k9M" secondAttribute="centerY" constant="124" id="Hey-Bi-Fdm"/>
-                                    <constraint firstAttribute="centerX" secondItem="gRU-Xr-W6P" secondAttribute="centerX" constant="100" id="M1z-F1-YQf"/>
                                     <constraint firstAttribute="centerY" secondItem="lYp-FZ-DUV" secondAttribute="centerY" constant="79" id="nBX-CF-XV7"/>
                                 </constraints>
                             </view>
@@ -255,16 +254,31 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1h-i5-QMo" id="Ess-iB-zNS">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OLC-2l-ZPv">
+                                                    <rect key="frame" x="8" y="8" width="584" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
+                                                </textField>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Post Description" id="zY3-WU-bXD">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7Pp-yK-E4Q">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="132" id="7Pp-yK-E4Q">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Pp-yK-E4Q" id="g1m-UI-znH">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sho-ip-yVa">
+                                                    <rect key="frame" x="8" y="9" width="584" height="116"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -275,6 +289,13 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lq5-YS-MDC" id="WfN-td-aRC">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="E6J-5K-HBx">
+                                                    <rect key="frame" x="8" y="9" width="584" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                </textField>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -287,7 +308,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKc-a8-z0d">
-                                                    <rect key="frame" x="27" y="0.0" width="565" height="75"/>
+                                                    <rect key="frame" x="8" y="8" width="584" height="72"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -317,11 +338,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="address" destination="KKc-a8-z0d" id="igv-5x-bPl"/>
+                        <outlet property="categoryDesc" destination="Sho-ip-yVa" id="zqw-wH-IMQ"/>
+                        <outlet property="categoryName" destination="OLC-2l-ZPv" id="HFi-AG-1lV"/>
+                        <outlet property="categorySubmitter" destination="E6J-5K-HBx" id="7Sz-rG-fg0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdM-3x-lKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1614" y="726"/>
+            <point key="canvasLocation" x="1614" y="713"/>
         </scene>
         <!--Topic View Controller-->
         <scene sceneID="t4L-Of-vJi">
