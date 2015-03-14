@@ -14,6 +14,7 @@
     NSMutableArray *topicArray;
 }
 
+@property (nonatomic, strong) User *user;
 @property (nonatomic, strong) TopicViewController *topViewController;
 @property (nonatomic, strong) NSMutableArray *jsonArray3;
 @property (nonatomic, strong) NSMutableArray *topicArray;

@@ -16,6 +16,7 @@
     NSMutableData *responseData;
 }
 
+@property (nonatomic, strong) User *user;
 @property (nonatomic, strong) CatViewController *catViewController;
 @property (nonatomic, strong) NSMutableArray *jsonArray2;
 @property (nonatomic, strong) NSArray *dictArray;
