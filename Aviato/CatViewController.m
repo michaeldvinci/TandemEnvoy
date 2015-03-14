@@ -20,7 +20,7 @@
 
 @implementation CatViewController
 
-@synthesize jsonArray2, categoryArray, tableView, refreshControl, catDict, dictArray, catID, user;
+@synthesize jsonArray2, categoryArray, tableView, refreshControl, user;
 
 - (void)viewDidLoad
 {

@@ -25,15 +25,12 @@
     CLPlacemark *placemark;
 }
 
-@synthesize user;
+@synthesize user, categoryDesc, categoryName, categorySubmitter;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     User *user = [User getInstance];
-    
-    NSLog(@"postUN: %@",user.userName);
-    NSLog(@"postUID: %@",user.userID);
     
     manager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
@@ -72,11 +69,6 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     NSLog(@"Location: %@", [locations lastObject]);
     CLLocation *curLocat = [locations lastObject];
-    
-    if (curLocat != nil) {
-        self.latitude.text = [NSString stringWithFormat:@"%.8f", curLocat.coordinate.latitude];
-        self.longitude.text = [NSString stringWithFormat:@"%.8f", curLocat.coordinate.longitude];
-    }
     
     [geocoder reverseGeocodeLocation:curLocat completionHandler: ^(NSArray *placemarks, NSError *error) {
         if (error == nil && [placemarks count] > 0) {

@@ -19,12 +19,9 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) CatViewController *catViewController;
 @property (nonatomic, strong) NSMutableArray *jsonArray2;
-@property (nonatomic, strong) NSArray *dictArray;
-@property (nonatomic, strong) NSString *catID;
 @property (nonatomic, strong) NSMutableArray *categoryArray;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (nonatomic, strong) NSDictionary *catDict;
 
 #pragma mark -
 #pragma mark Class Methods

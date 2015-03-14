@@ -9,6 +9,8 @@
 #import "User.h"
 #import "Login.h"
 #import "LoginViewController.h"
+#import "Security/Security.h"
+#import "UICKeyChainStore.h"
 
 @interface LoginViewController ()
 
@@ -16,7 +18,7 @@
 
 @implementation LoginViewController
 
-@synthesize UIPassword, UIUsername, locatServ, loginButton, loginArray, jLoginArray, loginDict, jUserArray, userArray, userDict, user;
+@synthesize UIPassword, UIUsername, locatServ, loginButton, jLoginArray, user, loginURL;
 
 - (void)viewDidLoad {
     
@@ -33,7 +35,6 @@
 
 - (IBAction)loginClicked:(id)sender {
     
-    [self createUser];
     [self login];
     
     }
@@ -51,60 +52,48 @@
     [alert show];
 }
 
-- (void)createUser {
-    
-    NSString *loginURL = [@"http://tandemenvoy.michaeldvinci.com/forum/userJSON.php?" stringByAppendingString:[[NSString alloc] initWithFormat:@"userName=%@&userPass=%@",[self.UIUsername text],[self.UIPassword text]]];
-    
-    NSURL *dataURL = [NSURL URLWithString:loginURL];
-    NSData *loginData = [NSData dataWithContentsOfURL:dataURL];
-    
-    jUserArray = [NSJSONSerialization JSONObjectWithData:loginData options:kNilOptions error:nil];
-    
-    for (userDict in jUserArray) {
-        NSString *userID = userDict[@"userID"];
-    }
-    
-    user.name = [self.UIUsername text];
-    user.ID = [[jUserArray objectAtIndex:0]objectForKey:@"userID"];
-
-}
-
 - (void)login {
+    
+    UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:@"com.tandemenvoy"];
+    keychain[[self.UIUsername text]] = [self.UIPassword text];
     
     NSString *success = @"0";
     NSString *login = @"1";
     
-    NSString *loginURL = [@"http://tandemenvoy.michaeldvinci.com/forum/mobileSignin.php?" stringByAppendingString:[[NSString alloc] initWithFormat:@"userName=%@&userPass=%@",[self.UIUsername text],[self.UIPassword text]]];
+    loginURL = [@"http://tandemenvoy.michaeldvinci.com/forum/mobileSignin.php?" stringByAppendingString:[[NSString alloc] initWithFormat:@"userName=%@&userPass=%@",[self.UIUsername text],[self.UIPassword text]]];
     
     NSURL *dataURL = [NSURL URLWithString:loginURL];
     NSData *loginData = [NSData dataWithContentsOfURL:dataURL];
     
     jLoginArray = [NSJSONSerialization JSONObjectWithData:loginData options:kNilOptions error:nil];
     
-    for (loginDict in jLoginArray) {
-        NSString *success = loginDict[@"success"];
-    }
-    
-    loginArray = [[NSMutableArray alloc] init];
-    
-    for(int i = 0; i < jLoginArray.count; i++)
-    {
-        NSString *loginSuccess = [[jLoginArray objectAtIndex:i] objectForKey:@"success"];
-        
-        [loginArray addObject:[[Login alloc]initWidthSuccess: loginSuccess]];
-    }
+    user.ID = [[jLoginArray objectAtIndex:0]objectForKey:@"userID"];
+    user.level = [[jLoginArray objectAtIndex:0]objectForKey:@"userLevel"];
+    user.name = [self.UIUsername text];
     
     success = [[jLoginArray objectAtIndex:0]objectForKey:@"success"];
     
-    NSLog(@"URL: %@", loginURL);
-    NSLog(@"Success: %@", success);
-    
     if([success isEqualToString:(login)]) {
         [self performSegueWithIdentifier:@"login_success" sender:self];
+        NSURLCredential *credential;
+    
+        [self test];
     }
     else {
         [self showAlert];
     }
+}
+
+- (void) test {
+    NSLog(@" ");
+    NSLog(@"----------------------");
+    NSLog(@"URL: %@", loginURL);
+    NSLog(@" ");
+    NSLog(@"User Name: %@", user.userName);
+    NSLog(@"User ID: %@",user.userID);
+    NSLog(@"User Level: %@",user.userLevel);
+    NSLog(@"----------------------");
+    NSLog(@" ");
 }
 
 @end

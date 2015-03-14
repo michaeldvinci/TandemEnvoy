@@ -19,7 +19,7 @@
 
 @implementation TopicViewController
 
-@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, topDict, subURL, textView, descText, user;
+@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, subURL, textView, descText, user;
 
 - (void)viewDidLoad
 {
@@ -90,16 +90,6 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     
     jsonArray3 = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    
-    for (topDict in jsonArray3) {
-        NSString *topTopic = topDict[@"replyTopic"];
-        NSString *topID = topDict[@"replyID"];
-        NSString *topDate = topDict[@"replyDate"];
-        NSString *topContent = topDict[@"replyContent"];
-        NSString *topBy = topDict[@"replyBy"];
-    }
-    
-    //NSLog(@":: %@", jsonArray3);
     
     topicArray = [[NSMutableArray alloc] init];
     
