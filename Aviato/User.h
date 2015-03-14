@@ -9,19 +9,24 @@
 #import <foundation/Foundation.h>
 
 @interface User : NSObject {
-    NSString *_userName;
     NSString *_userID;
+    NSString *_userLevel;
+    NSString *_userName;
 }
 
-@property (nonatomic, strong)NSString *userName;
 @property (nonatomic, strong) NSString *userID;
+@property (nonatomic, strong) NSString *userLevel;
+@property (nonatomic, strong) NSString *userName;
 
 +(id)getInstance;
 
-- (void)setName:(NSString *)userName;
-- (NSString *)userName;
-
 - (void)setID:(NSString *)userID;
 - (NSString *)userID;
+
+- (void)setLevel:(NSString *)userLevel;
+- (NSString *)userLevel;
+
+- (void)setName:(NSString *)userName;
+- (NSString *)userName;
 
 @end
