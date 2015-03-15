@@ -13,13 +13,13 @@
 		F505E7F81AAEADF900DAF80B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F505E7F71AAEADF900DAF80B /* Images.xcassets */; };
 		F505E7FB1AAEADF900DAF80B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F505E7F91AAEADF900DAF80B /* LaunchScreen.xib */; };
 		F505E8071AAEADF900DAF80B /* AviatoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E8061AAEADF900DAF80B /* AviatoTests.m */; };
-		F505E8151AAEAE4300DAF80B /* Posts.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E8131AAEAE4300DAF80B /* Posts.m */; };
 		F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E81D1AAF2CB200DAF80B /* Categories.m */; };
 		F505E8231AAF336E00DAF80B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F505E8221AAF336E00DAF80B /* MapKit.framework */; };
 		F50FB4E81AB35CDF00C98297 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = F50FB4E71AB35CDF00C98297 /* Login.m */; };
 		F57FB95E1AB4C3CE0055A170 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F57FB95D1AB4C3CE0055A170 /* User.m */; };
 		F57FB9601AB4DA240055A170 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57FB95F1AB4DA230055A170 /* Security.framework */; };
 		F57FB98C1AB4FF560055A170 /* RepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57FB98B1AB4FF560055A170 /* RepoViewController.m */; };
+		F57FB98F1AB50CBE0055A170 /* Posts.m in Sources */ = {isa = PBXBuildFile; fileRef = F57FB98E1AB50CBE0055A170 /* Posts.m */; };
 		F5A289581AB07EFE00D79A26 /* CatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A289571AB07EFE00D79A26 /* CatViewController.m */; };
 		F5A2895B1AB0A51200D79A26 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A2895A1AB0A51200D79A26 /* TopicViewController.m */; };
 		F5A42EAC1AB27309008E71AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A42EAB1AB27309008E71AF /* CoreLocation.framework */; };
@@ -50,8 +50,6 @@
 		F505E8001AAEADF900DAF80B /* AviatoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AviatoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F505E8051AAEADF900DAF80B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F505E8061AAEADF900DAF80B /* AviatoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AviatoTests.m; sourceTree = "<group>"; };
-		F505E8121AAEAE4300DAF80B /* Posts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Posts.h; path = ../../TandemEnvoy/TandemEnvoy/Posts.h; sourceTree = "<group>"; };
-		F505E8131AAEAE4300DAF80B /* Posts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Posts.m; path = ../../TandemEnvoy/TandemEnvoy/Posts.m; sourceTree = "<group>"; };
 		F505E81C1AAF2CB200DAF80B /* Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Categories.h; sourceTree = "<group>"; };
 		F505E81D1AAF2CB200DAF80B /* Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Categories.m; sourceTree = "<group>"; };
 		F505E8221AAF336E00DAF80B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -62,6 +60,8 @@
 		F57FB95F1AB4DA230055A170 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F57FB98A1AB4FF560055A170 /* RepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoViewController.h; sourceTree = "<group>"; };
 		F57FB98B1AB4FF560055A170 /* RepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoViewController.m; sourceTree = "<group>"; };
+		F57FB98D1AB50CBE0055A170 /* Posts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Posts.h; sourceTree = "<group>"; };
+		F57FB98E1AB50CBE0055A170 /* Posts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Posts.m; sourceTree = "<group>"; };
 		F5A289561AB07EFE00D79A26 /* CatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CatViewController.h; sourceTree = "<group>"; };
 		F5A289571AB07EFE00D79A26 /* CatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CatViewController.m; sourceTree = "<group>"; };
 		F5A289591AB0A51200D79A26 /* TopicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicViewController.h; sourceTree = "<group>"; };
@@ -121,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				F57FB95C1AB4C2660055A170 /* User.h */,
+				F57FB98D1AB50CBE0055A170 /* Posts.h */,
+				F57FB98E1AB50CBE0055A170 /* Posts.m */,
 				F57FB95D1AB4C3CE0055A170 /* User.m */,
 				F5E198261AAF96010075788E /* LoginViewController.h */,
 				F5E198271AAF96010075788E /* LoginViewController.m */,
@@ -138,8 +140,6 @@
 				F5A42EAD1AB27814008E71AF /* Topic.m */,
 				F5A289591AB0A51200D79A26 /* TopicViewController.h */,
 				F5A2895A1AB0A51200D79A26 /* TopicViewController.m */,
-				F505E8121AAEAE4300DAF80B /* Posts.h */,
-				F505E8131AAEAE4300DAF80B /* Posts.m */,
 				F505E7EE1AAEADF900DAF80B /* AppDelegate.h */,
 				F505E7EF1AAEADF900DAF80B /* AppDelegate.m */,
 				F505E7F41AAEADF900DAF80B /* Main.storyboard */,
@@ -279,6 +279,7 @@
 				F5E198501AAFC7A30075788E /* AddPostViewController2.m in Sources */,
 				F50FB4E81AB35CDF00C98297 /* Login.m in Sources */,
 				F5A42EAE1AB27814008E71AF /* Topic.m in Sources */,
+				F57FB98F1AB50CBE0055A170 /* Posts.m in Sources */,
 				F57FB95E1AB4C3CE0055A170 /* User.m in Sources */,
 				F505E7F01AAEADF900DAF80B /* AppDelegate.m in Sources */,
 				F505E7ED1AAEADF900DAF80B /* main.m in Sources */,
@@ -286,7 +287,6 @@
 				F5A289581AB07EFE00D79A26 /* CatViewController.m in Sources */,
 				F5E198281AAF96010075788E /* LoginViewController.m in Sources */,
 				F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */,
-				F505E8151AAEAE4300DAF80B /* Posts.m in Sources */,
 				F57FB98C1AB4FF560055A170 /* RepoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
