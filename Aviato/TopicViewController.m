@@ -54,10 +54,6 @@
     Posts *topObject;
     topObject = [topicArray objectAtIndex:indexPath.row];
     
-    NSString *topID3 = topObject.replyID;
-    
-    NSLog(@"replyID: %@", topID3);
-    
     topCell.textLabel.text = topObject.replyContent;
     topCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     

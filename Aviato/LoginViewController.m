@@ -9,8 +9,6 @@
 #import "User.h"
 #import "Login.h"
 #import "LoginViewController.h"
-#import "Security/Security.h"
-#import "UICKeyChainStore.h"
 
 @interface LoginViewController ()
 
@@ -53,9 +51,6 @@
 }
 
 - (void)login {
-    
-    UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:@"com.tandemenvoy"];
-    keychain[[self.UIUsername text]] = [self.UIPassword text];
     
     NSString *success = @"0";
     NSString *login = @"1";

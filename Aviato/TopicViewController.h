@@ -16,14 +16,14 @@
 
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) TopicViewController *topViewController;
-@property (nonatomic, strong) NSMutableArray *jsonArray3;
-@property (nonatomic, strong) NSMutableArray *topicArray;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITextView *textView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, retain) NSDictionary *theData;
 @property (nonatomic, retain) NSString *subURL;
-@property (nonatomic, strong) IBOutlet UITextView *textView;
 @property (nonatomic, retain) NSString *descText;
+@property (nonatomic, strong) NSMutableArray *jsonArray3;
+@property (nonatomic, strong) NSMutableArray *topicArray;
 
 #pragma mark -
 #pragma mark Class Methods

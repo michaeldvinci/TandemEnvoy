@@ -116,7 +116,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="HkA-5B-ATx"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -133,8 +133,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="hzg-uH-lRs" id="FAe-f6-5nV"/>
-                        <outlet property="textView2" destination="6LQ-e7-rJc" id="JE6-vW-viz"/>
+                        <outlet property="repoTF" destination="6LQ-e7-rJc" id="RZh-Gx-y9F"/>
+                        <outlet property="tableView" destination="hzg-uH-lRs" id="nhQ-L9-NdK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4V-hq-zoi" userLabel="First Responder" sceneMemberID="firstResponder"/>
