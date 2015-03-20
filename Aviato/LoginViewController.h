@@ -17,6 +17,8 @@
 @property (nonatomic, strong) IBOutlet UIButton *loginButton;
 @property (nonatomic, strong) NSMutableArray *jLoginArray;
 @property (nonatomic, strong) NSString *loginURL;
+@property (nonatomic, strong) NSURLCredential *credential;
+@property (nonatomic) NSURLCredentialPersistence *permanent;
 
 - (IBAction)loginClicked:(id)sender;
 

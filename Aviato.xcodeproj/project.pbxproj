@@ -121,9 +121,9 @@
 			isa = PBXGroup;
 			children = (
 				F57FB95C1AB4C2660055A170 /* User.h */,
+				F57FB95D1AB4C3CE0055A170 /* User.m */,
 				F57FB98D1AB50CBE0055A170 /* Posts.h */,
 				F57FB98E1AB50CBE0055A170 /* Posts.m */,
-				F57FB95D1AB4C3CE0055A170 /* User.m */,
 				F5E198261AAF96010075788E /* LoginViewController.h */,
 				F5E198271AAF96010075788E /* LoginViewController.m */,
 				F50FB4E61AB35CA100C98297 /* Login.h */,
