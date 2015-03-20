@@ -16,7 +16,7 @@
 
 @implementation LoginViewController
 
-@synthesize UIPassword, UIUsername, locatServ, loginButton, jLoginArray, user, loginURL;
+@synthesize UIPassword, UIUsername, locatServ, loginButton, jLoginArray, user, loginURL, credential, permanent;
 
 - (void)viewDidLoad {
     
@@ -52,38 +52,50 @@
 
 - (void)login {
     
-    NSString *success = @"0";
-    NSString *login = @"1";
+    NSURL *feedsURL = [NSURL URLWithString:@"http://tandemenvoy.michaeldvinci.com/forum/signin2.php"];
     
-    loginURL = [@"http://tandemenvoy.michaeldvinci.com/forum/mobileSignin.php?" stringByAppendingString:[[NSString alloc] initWithFormat:@"userName=%@&userPass=%@",[self.UIUsername text],[self.UIPassword text]]];
+    NSString *userName = self.UIUsername.text;
+    NSString *userPass = self.UIPassword.text;
+    
+    credential = [NSURLCredential credentialWithUser: userName
+                                            password: userPass
+                                         persistence: nil];
+    
+    NSURLProtectionSpace *protectionSpace = [[NSURLProtectionSpace alloc]
+                                             initWithHost:@"http://tandemenvoy.michaeldvinci.com/forum/signin2.php"
+                                             port:0
+                                             protocol:@"http"
+                                             realm:nil
+                                             authenticationMethod:nil];
+    
+    [[NSURLCredentialStorage sharedCredentialStorage] setDefaultCredential:credential
+                                                        forProtectionSpace:protectionSpace];
+    
+    loginURL = [@"http://tandemenvoy.michaeldvinci.com/forum/mobileSignin.php?" stringByAppendingString:[[NSString alloc] initWithFormat:@"userName=%@&userPass=%@", userName, userPass]];
     
     NSURL *dataURL = [NSURL URLWithString:loginURL];
     NSData *loginData = [NSData dataWithContentsOfURL:dataURL];
     
     jLoginArray = [NSJSONSerialization JSONObjectWithData:loginData options:kNilOptions error:nil];
     
+    user.userName = userName;
     user.ID = [[jLoginArray objectAtIndex:0]objectForKey:@"userID"];
     user.level = [[jLoginArray objectAtIndex:0]objectForKey:@"userLevel"];
-    user.name = [self.UIUsername text];
     
-    success = [[jLoginArray objectAtIndex:0]objectForKey:@"success"];
-    
-    if([success isEqualToString:(login)]) {
+    if(credential) {
         [self performSegueWithIdentifier:@"login_success" sender:self];
-        NSURLCredential *credential;
-    
+        
         [self test];
     }
     else {
         [self showAlert];
     }
+    
 }
 
 - (void) test {
     NSLog(@" ");
     NSLog(@"----------------------");
-    NSLog(@"URL: %@", loginURL);
-    NSLog(@" ");
     NSLog(@"User Name: %@", user.userName);
     NSLog(@"User ID: %@",user.userID);
     NSLog(@"User Level: %@",user.userLevel);
