@@ -53,7 +53,7 @@
     
     // Configure the cell...
     Categories * catObject;
-    catObject = [categoryArray objectAtIndex:indexPath.row] ;
+    catObject = [categoryArray objectAtIndex:[indexPath row]] ;
     
     catCell.textLabel.text = catObject.categoryName;
     
@@ -123,7 +123,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         RepoViewController *rVC = (RepoViewController *)[segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        rVC.theData2 = [jsonArray2 objectAtIndex:indexPath.row];
+        rVC.theData2 = [jsonArray2 objectAtIndex:[indexPath row]];
         rVC.subURL2 = [@"http://tandemenvoy.michaeldvinci.com/forum/topicsJSON.php?tID=" stringByAppendingString:[rVC.theData2 objectForKey:@"categoryID"]];
         rVC.descText2 = [NSString stringWithFormat:@"%@", [rVC.theData2 objectForKey:@"categoryDesc"]];
         

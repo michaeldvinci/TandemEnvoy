@@ -50,7 +50,7 @@
     
     // Configure the cell...
     Topic *repoObject;
-    repoObject = [repoArray objectAtIndex:indexPath.row];
+    repoObject = [repoArray objectAtIndex:[indexPath row]];
     
     repoCell.textLabel.text = repoObject.topicSubject;
     repoCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -106,7 +106,7 @@
         TopicViewController *tVC = (TopicViewController *)[segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        tVC.theData = [repoJsonArray objectAtIndex:indexPath.row];
+        tVC.theData = [repoJsonArray objectAtIndex:[indexPath row]];
         tVC.subURL = [@"http://tandemenvoy.michaeldvinci.com/forum/repliesJSON.php?rTopic=" stringByAppendingString:[tVC.theData objectForKey:@"topicID"]];
         tVC.descText = [NSString stringWithFormat:@"%@", [tVC.theData objectForKey:@"categoryDesc"]];
         
