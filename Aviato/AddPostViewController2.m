@@ -25,7 +25,7 @@
     CLPlacemark *placemark;
 }
 
-@synthesize user, categoryDesc, categoryName, categorySubmitter;
+@synthesize user, categoryDesc, categoryName, categorySubmitter, postString;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
