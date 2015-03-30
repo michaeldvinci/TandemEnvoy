@@ -17,7 +17,7 @@
 
 @implementation RepoViewController
 
-@synthesize repoJsonArray, user, repoArray, tableView, repoViewController, refreshControl, repoTF, descText2, subURL2, theData2;
+@synthesize repoJsonArray, user, repoArray, tableView, repoViewController, refreshControl, repoTF, descText2, subURL2, theData2, AddPostController;
 
 - (void)viewDidLoad
 {
@@ -76,6 +76,18 @@
     [refreshControl endRefreshing];
 }
 
+#pragma mark - addPostViewController2Delegate
+
+- (void)addPostViewController2DidCancel:(AddPostViewController2 *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addPostViewController2DidSave:(AddPostViewController2 *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark -
 #pragma mark Class Methods
 - (void) retrieveData;
@@ -111,6 +123,14 @@
         tVC.descText = [NSString stringWithFormat:@"%@", [tVC.theData objectForKey:@"categoryDesc"]];
         
         NSLog(@"output: %@", tVC.subURL);
+    }
+    
+    if ([segue.identifier isEqualToString:@"goRepo"]) {
+        
+        UINavigationController *navigationController = segue.destinationViewController;
+        AddPostController = [navigationController viewControllers][0];
+        AddPostController.delegate = self;
+        AddPostController.postString = @"http://tandemenvoy.michaeldvinci.com/forum/topicPost.php";
     }
 }
 
