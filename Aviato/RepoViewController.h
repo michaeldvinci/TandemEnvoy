@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddPostViewController2.h"
 
-@interface RepoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+@interface RepoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddPostViewController2Delegate> {
     
     IBOutlet UITableView *tableView;
     NSMutableArray *repoArray;
@@ -16,6 +17,7 @@
 
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) RepoViewController *repoViewController;
+@property (nonatomic, strong) AddPostViewController2 *AddPostController;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UITextView *repoTF;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
