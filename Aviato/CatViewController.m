@@ -95,7 +95,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     for(int i = 0; i < jsonArray2.count; i++)
     {
-        NSString *cID = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryID"];
+        NSString *cID   = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryID"];
         NSString *cDesc = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryDesc"];
         NSString *cName = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryName"];
         
@@ -123,8 +123,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         RepoViewController *rVC = (RepoViewController *)[segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
-        rVC.theData2 = [jsonArray2 objectAtIndex:[indexPath row]];
-        rVC.subURL2 = [@"http://tandemenvoy.michaeldvinci.com/forum/topicsJSON.php?tID=" stringByAppendingString:[rVC.theData2 objectForKey:@"categoryID"]];
+        rVC.theData2  = [jsonArray2 objectAtIndex:[indexPath row]];
+        rVC.subURL2   = [@"http://tandemenvoy.michaeldvinci.com/forum/topicsJSON.php?tID=" stringByAppendingString:[rVC.theData2 objectForKey:@"categoryID"]];
         rVC.descText2 = [NSString stringWithFormat:@"%@", [rVC.theData2 objectForKey:@"categoryDesc"]];
         
         NSLog(@"output: %@", rVC.subURL2);
@@ -133,9 +133,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if ([segue.identifier isEqualToString:@"goBack"]) {
         
-        UINavigationController *navigationController = segue.destinationViewController;
+        UINavigationController *navigationController  = segue.destinationViewController;
         AddPostViewController2 *addPostViewController = [navigationController viewControllers][0];
-        addPostViewController.delegate = self;
+        addPostViewController.delegate                = self;
+        addPostViewController.postString              = @"http://http://tandemenvoy.michaeldvinci.com/forum/addAPost.php?categoryName=%@&categoryDesc=%@";
     }
 }
 

@@ -23,6 +23,8 @@
     user = [User getInstance];
     
     [super viewDidLoad];
+    
+    self.navigationItem.hidesBackButton = YES;
 }
 
 - (void)didReceiveMemoryWarning {
