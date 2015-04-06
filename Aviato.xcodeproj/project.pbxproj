@@ -30,6 +30,25 @@
 		F5E198501AAFC7A30075788E /* AddPostViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1984F1AAFC7A30075788E /* AddPostViewController2.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		F52D6C021AD3152D00FFD0F9 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+		F52D6C031AD3153000FFD0F9 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXContainerItemProxy section */
 		F505E8011AAEADF900DAF80B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -196,6 +215,8 @@
 				F505E7E51AAEADF900DAF80B /* Resources */,
 			);
 			buildRules = (
+				F52D6C031AD3153000FFD0F9 /* PBXBuildRule */,
+				F52D6C021AD3152D00FFD0F9 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);

@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSString *userLevel;
 @property (nonatomic, strong) NSString *userName;
 
++ (User *)sharedUser;
+
 +(id)getInstance;
 
 - (void)setID:(NSString *)userID;
