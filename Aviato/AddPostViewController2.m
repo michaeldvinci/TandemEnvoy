@@ -50,7 +50,7 @@
 }
 
 - (IBAction)getLocat:(id)sender {
-    manager.delegate = self;
+    manager.delegate = self; 
     
     manager.desiredAccuracy = kCLLocationAccuracyBest;
     

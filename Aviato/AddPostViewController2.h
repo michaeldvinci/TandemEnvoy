@@ -15,7 +15,7 @@
 - (void)addPostViewController2DidSave:(AddPostViewController2 *)controller;
 - (void)addPostViewController2DidCancel:(AddPostViewController2 *)controller;
 
-@end
+@end 
 
 @interface AddPostViewController2 : UITableViewController
 
