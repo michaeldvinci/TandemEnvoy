@@ -14,10 +14,10 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *latitude;
 @property (strong, nonatomic) IBOutlet UILabel *longitude;
-@property (strong, nonatomic) IBOutlet UILabel *address;
+@property (strong, nonatomic) IBOutlet UILabel *address2;
 - (IBAction)getLocat:(id)sender;
 
-@end
+@end 
 
 @implementation AddReplyViewController {
     CLLocationManager *manager;
@@ -25,10 +25,12 @@
     CLPlacemark *placemark;
 }
 
-@synthesize user, categoryDesc, categoryName, categorySubmitter, postString;
+@synthesize user, topicSubject, topicBy, topicCat, postString;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"%@",user.userID);
     
     User *user = [User getInstance];
     
@@ -60,10 +62,12 @@
 }
 
 - (void) submitData:(id)sender {
-    NSString *myRequestString = [NSString stringWithFormat:@"categoryDesc=%@&categoryName=%@",categoryDesc.text,categoryName.text];
+    //topicCat = [[User sharedUser] user.userID];
+    
+    NSString *myRequestString = [NSString stringWithFormat:@"topicSubject=%@&topicCat=%@&topicBy=%@", topicSubject.text, topicCat, user.userID];
     
     NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://tandemenvoy.michaeldvinci.com/forum/create_cat2.php"]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://tandemenvoy.michaeldvinci.com/forum/create_topic2.php"]];
     [request setHTTPMethod: @"POST"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
     [request setHTTPBody: myRequestData];
@@ -89,7 +93,7 @@
         if (error == nil && [placemarks count] > 0) {
             placemark = [placemarks lastObject];
             
-            self.address.text = [NSString stringWithFormat:@"%@ %@\n%@, %@. %@\n%@",
+            self.address2.text = [NSString stringWithFormat:@"%@ %@\n%@, %@. %@\n%@",
                                  placemark.subThoroughfare, placemark.thoroughfare,
                                  placemark.locality, placemark.administrativeArea, placemark.postalCode,
                                  placemark.country];

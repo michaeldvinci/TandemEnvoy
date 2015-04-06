@@ -10,6 +10,7 @@
 #import "RepoViewController.h"
 #import "TopicViewController.h"
 #import "CatViewController.h"
+#import "AddReplyViewController.h"
 
 @interface RepoViewController ()
 
@@ -17,7 +18,7 @@
 
 @implementation RepoViewController
 
-@synthesize repoJsonArray, user, repoArray, tableView, repoViewController, refreshControl, repoTF, descText2, subURL2, theData2, AddPostController;
+@synthesize repoJsonArray, user, repoArray, tableView, repoViewController, refreshControl, repoTF, descText2, subURL2, theData2, AddPostController, tID;
 
 - (void)viewDidLoad
 {
@@ -131,6 +132,13 @@
         AddPostController = [navigationController viewControllers][0];
         AddPostController.delegate = self;
         AddPostController.postString = @"http://tandemenvoy.michaeldvinci.com/forum/topicPost.php";
+    }
+    
+    if ([segue.identifier isEqualToString:@"makeOffer"]) {
+        
+        UINavigationController *navigationController  = segue.destinationViewController;
+        AddReplyViewController *rVC                   = [navigationController viewControllers][0];
+        rVC.topicCat                                  = tID;
     }
 }
 

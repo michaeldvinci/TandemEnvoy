@@ -52,8 +52,8 @@
     UITableViewCell *catCell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    Categories * catObject;
-    catObject = [categoryArray objectAtIndex:[indexPath row]] ;
+    Categories *catObject;
+    catObject = [categoryArray objectAtIndex:[indexPath row]];
     
     catCell.textLabel.text = catObject.categoryName;
     
@@ -126,6 +126,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
         rVC.theData2  = [jsonArray2 objectAtIndex:[indexPath row]];
         rVC.subURL2   = [@"http://tandemenvoy.michaeldvinci.com/forum/topicsJSON.php?tID=" stringByAppendingString:[rVC.theData2 objectForKey:@"categoryID"]];
         rVC.descText2 = [NSString stringWithFormat:@"%@", [rVC.theData2 objectForKey:@"categoryDesc"]];
+        rVC.tID = [rVC.theData2 objectForKey:@"categoryID"];
         
         NSLog(@"output: %@", rVC.subURL2);
     }
