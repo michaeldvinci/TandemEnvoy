@@ -16,6 +16,7 @@
 		F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E81D1AAF2CB200DAF80B /* Categories.m */; };
 		F505E8231AAF336E00DAF80B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F505E8221AAF336E00DAF80B /* MapKit.framework */; };
 		F50FB4E81AB35CDF00C98297 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = F50FB4E71AB35CDF00C98297 /* Login.m */; };
+		F5513B401AD2D7DC0019E463 /* AddReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5513B3F1AD2D7DC0019E463 /* AddReplyViewController.m */; };
 		F57FB95E1AB4C3CE0055A170 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F57FB95D1AB4C3CE0055A170 /* User.m */; };
 		F57FB9601AB4DA240055A170 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57FB95F1AB4DA230055A170 /* Security.framework */; };
 		F57FB98C1AB4FF560055A170 /* RepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57FB98B1AB4FF560055A170 /* RepoViewController.m */; };
@@ -56,6 +57,8 @@
 		F505E8221AAF336E00DAF80B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F50FB4E61AB35CA100C98297 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		F50FB4E71AB35CDF00C98297 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		F5513B3E1AD2D74A0019E463 /* AddReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReplyViewController.h; sourceTree = "<group>"; };
+		F5513B3F1AD2D7DC0019E463 /* AddReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReplyViewController.m; sourceTree = "<group>"; };
 		F57FB95C1AB4C2660055A170 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		F57FB95D1AB4C3CE0055A170 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F57FB95F1AB4DA230055A170 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -137,6 +140,8 @@
 				F505E81D1AAF2CB200DAF80B /* Categories.m */,
 				F5E1984E1AAFC7A30075788E /* AddPostViewController2.h */,
 				F5E1984F1AAFC7A30075788E /* AddPostViewController2.m */,
+				F5513B3E1AD2D74A0019E463 /* AddReplyViewController.h */,
+				F5513B3F1AD2D7DC0019E463 /* AddReplyViewController.m */,
 				F57FB98A1AB4FF560055A170 /* RepoViewController.h */,
 				F57FB98B1AB4FF560055A170 /* RepoViewController.m */,
 				F5A42EB01AB2786D008E71AF /* Topic.h */,
@@ -291,6 +296,7 @@
 				F5A2895B1AB0A51200D79A26 /* TopicViewController.m in Sources */,
 				F5A289581AB07EFE00D79A26 /* CatViewController.m in Sources */,
 				F5E198281AAF96010075788E /* LoginViewController.m in Sources */,
+				F5513B401AD2D7DC0019E463 /* AddReplyViewController.m in Sources */,
 				F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */,
 				F57FB98C1AB4FF560055A170 /* RepoViewController.m in Sources */,
 			);
