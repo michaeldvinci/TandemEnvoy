@@ -10,6 +10,7 @@
 
 @class AddPostViewController2;
 
+
 @protocol AddPostViewController2Delegate <NSObject>
 - (void)addPostViewController2DidSave:(AddPostViewController2 *)controller;
 - (void)addPostViewController2DidCancel:(AddPostViewController2 *)controller;
@@ -24,9 +25,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *categorySubmitter;
 @property (strong, nonatomic) NSString *postString;
 
+
 @property(nonatomic, weak) id <AddPostViewController2Delegate> delegate;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;
+- (IBAction)submitData:(id)sender;
 
 @end

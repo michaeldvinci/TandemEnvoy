@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import "AddPostViewController2.h"
+#import "CatViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface AddPostViewController2 () <AddPostViewController2Delegate, CLLocationManagerDelegate>
@@ -59,26 +60,20 @@
     [manager startUpdatingLocation];
 }
 
-/**
- - (void) submitData {
- NSString *myRequestString = [NSString stringWithFormat:@"title=%@&description=%@&city=%@",eventTitle.text,eventDescription.text,eventCity.text];
+- (void) submitData:(id)sender {
+    NSString *myRequestString = [NSString stringWithFormat:@"categoryDesc=%@&categoryName=%@",categoryDesc.text,categoryName.text];
  
- // Create Data from request
- NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
- NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://www.youardomain.com/phpfilename.php"]];
- // set Request Type
- [request setHTTPMethod: @"POST"];
- // Set content-type
- [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
- // Set Request Body
- [request setHTTPBody: myRequestData];
- // Now send a request and get Response
- NSData *returnData = [NSURLConnection sendSynchronousRequest: request returningResponse: nil error: nil];
- // Log Response
- NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:NSUTF8StringEncoding];
- NSLog(@"%@",response);
- }
-**/
+    NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://tandemenvoy.michaeldvinci.com/forum/create_cat2.php"]];
+    [request setHTTPMethod: @"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    [request setHTTPBody: myRequestData];
+    NSData *returnData = [NSURLConnection sendSynchronousRequest: request returningResponse: nil error: nil];
+    NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
+    NSLog(@"%@",response);
+    
+    [self.delegate addPostViewController2DidSave:self];
+}
 
 #pragma mark CLLocationManagerDelegate Methods
 
