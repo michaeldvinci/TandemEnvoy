@@ -11,7 +11,6 @@
 @implementation User
 
 @synthesize userID = _userID;
-@synthesize userLevel = _userLevel;
 @synthesize userName = _userName;
 
 static User *getInstance = nil;
@@ -27,18 +26,9 @@ static User *getInstance = nil;
 -(id)init {
     if(self = [super init]) {
         _userID = @"";
-        _userLevel = @"";
     }
     
     return self;
-}
-
-- (void)setLevel:(NSString *)level {
-    _userLevel = level;
-}
-
-- (NSString *)level {
-    return _userLevel;
 }
 
 - (void)setID:(NSString *)ID {

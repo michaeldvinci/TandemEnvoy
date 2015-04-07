@@ -10,23 +10,16 @@
 
 @interface User : NSObject {
     NSString *_userID;
-    NSString *_userLevel;
     NSString *_userName;
 }
 
 @property (nonatomic, strong) NSString *userID;
-@property (nonatomic, strong) NSString *userLevel;
 @property (nonatomic, strong) NSString *userName;
 
-+ (User *)sharedUser;
-
-+(id)getInstance;
++ (User *)getInstance;
 
 - (void)setID:(NSString *)userID;
 - (NSString *)userID;
-
-- (void)setLevel:(NSString *)userLevel;
-- (NSString *)userLevel;
 
 - (void)setName:(NSString *)userName;
 - (NSString *)userName;
