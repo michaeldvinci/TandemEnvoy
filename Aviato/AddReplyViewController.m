@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import "AddReplyViewController.h"
+#import "RepoViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface AddReplyViewController () <AddReplyViewControllerDelegate, CLLocationManagerDelegate>
@@ -30,9 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"%@",user.userID);
-    
-    User *user = [User getInstance];
+    User *user1 = [User getInstance];
+    NSLog(@"%@",user1.userID);
     
     manager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
@@ -64,7 +64,10 @@
 - (void) submitData:(id)sender {
     //topicCat = [[User sharedUser] user.userID];
     
-    NSString *myRequestString = [NSString stringWithFormat:@"topicSubject=%@&topicCat=%@&topicBy=%@", topicSubject.text, topicCat, user.userID];
+    User *user1 = [User getInstance];
+    topicBy = user1.userID;
+    
+    NSString *myRequestString = [NSString stringWithFormat:@"topicSubject=%@&topicCat=%@&topicBy=%@", topicSubject.text, topicCat, topicBy];
     
     NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://tandemenvoy.michaeldvinci.com/forum/create_topic2.php"]];
@@ -75,7 +78,7 @@
     NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
     NSLog(@"%@",response);
     
-    [self.delegate addReplyViewControllerDidCancel:self];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark CLLocationManagerDelegate Methods

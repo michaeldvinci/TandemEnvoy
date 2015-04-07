@@ -21,8 +21,9 @@
 @property (nonatomic, strong) User *user;
 @property (weak, nonatomic) IBOutlet UITextField *topicSubject;
 @property (weak, nonatomic) NSString *topicCat;
-@property (weak, nonatomic) IBOutlet UITextField *topicBy;
+@property (weak, nonatomic) NSString *topicBy;
 @property (strong, nonatomic) NSString *postString;
+
 
 @property(nonatomic, weak) id <AddReplyViewControllerDelegate> delegate;
 
