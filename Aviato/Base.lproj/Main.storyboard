@@ -162,10 +162,13 @@
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sgr-b0-H4z">
                                 <rect key="frame" x="0.0" y="64" width="414" height="620"/>
                                 <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" image="redBG.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="F3Z-mn-wWW">
+                                        <rect key="frame" x="-168" y="-357" width="750" height="1334"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tandem|Envoy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIa-OB-ig9">
                                         <rect key="frame" x="78" y="57" width="258" height="67"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="miro123" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45I-np-k9M">
@@ -181,6 +184,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRU-Xr-W6P">
                                         <rect key="frame" x="184" y="400" width="46" height="30"/>
                                         <state key="normal" title="Login">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -190,14 +194,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="45I-np-k9M" secondAttribute="centerX" constant="-0.5" id="DDu-Tj-1pa"/>
-                                    <constraint firstAttribute="centerX" secondItem="HIa-OB-ig9" secondAttribute="centerX" id="NSp-V8-oBU"/>
-                                    <constraint firstAttribute="centerY" secondItem="45I-np-k9M" secondAttribute="centerY" constant="-8" id="bGg-gn-7YA"/>
-                                    <constraint firstAttribute="centerY" secondItem="HIa-OB-ig9" secondAttribute="centerY" constant="219.5" id="giW-rq-X1g"/>
-                                    <constraint firstAttribute="centerX" secondItem="lYp-FZ-DUV" secondAttribute="centerX" constant="-0.5" id="lpH-6R-0WZ"/>
-                                    <constraint firstAttribute="centerY" secondItem="gRU-Xr-W6P" secondAttribute="centerY" constant="-105" id="rgw-a4-RMi"/>
-                                    <constraint firstAttribute="centerY" secondItem="lYp-FZ-DUV" secondAttribute="centerY" constant="-51" id="tOE-FU-Vhi"/>
-                                    <constraint firstAttribute="centerX" secondItem="gRU-Xr-W6P" secondAttribute="centerX" id="tVK-j9-2ea"/>
+                                    <constraint firstAttribute="centerY" secondItem="45I-np-k9M" secondAttribute="centerY" constant="-8" id="09n-6D-teW"/>
+                                    <constraint firstAttribute="centerY" secondItem="gRU-Xr-W6P" secondAttribute="centerY" constant="-105" id="6SM-uq-MQb"/>
+                                    <constraint firstAttribute="centerY" secondItem="HIa-OB-ig9" secondAttribute="centerY" constant="219.5" id="Eb4-62-F0P"/>
+                                    <constraint firstAttribute="centerX" secondItem="F3Z-mn-wWW" secondAttribute="centerX" id="Nq0-Kv-yzf"/>
+                                    <constraint firstAttribute="centerY" secondItem="F3Z-mn-wWW" secondAttribute="centerY" id="YSX-TZ-agp"/>
+                                    <constraint firstAttribute="centerX" secondItem="gRU-Xr-W6P" secondAttribute="centerX" id="h6z-2Z-j1k"/>
+                                    <constraint firstAttribute="centerX" secondItem="HIa-OB-ig9" secondAttribute="centerX" id="hrJ-P0-sAC"/>
+                                    <constraint firstAttribute="centerX" secondItem="lYp-FZ-DUV" secondAttribute="centerX" constant="-0.5" id="lKc-4l-lUk"/>
+                                    <constraint firstAttribute="centerX" secondItem="45I-np-k9M" secondAttribute="centerX" constant="-0.5" id="xBU-xG-n79"/>
+                                    <constraint firstAttribute="centerY" secondItem="lYp-FZ-DUV" secondAttribute="centerY" constant="-51" id="yyB-Nh-jp1"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -466,14 +472,14 @@
             </objects>
             <point key="canvasLocation" x="2880" y="-701"/>
         </scene>
-        <!--Add A Reply-->
+        <!--Make an Offer-->
         <scene sceneID="TfQ-9U-ZqC">
             <objects>
                 <tableViewController id="Nnt-UX-7Bn" customClass="AddReplyViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="QTE-6a-UeS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="1Yz-E2-999">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -529,7 +535,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRK-4O-kad">
                                                     <rect key="frame" x="8" y="9" width="398" height="71"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -543,9 +549,7 @@
                             <outlet property="delegate" destination="Nnt-UX-7Bn" id="ZhJ-Fp-o8k"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Add A Reply" id="Dcs-uO-jIr"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="736"/>
+                    <navigationItem key="navigationItem" title="Make an Offer" id="kkb-7a-vge"/>
                     <connections>
                         <outlet property="address2" destination="PRK-4O-kad" id="AP2-ZU-PmE"/>
                         <outlet property="topicSubject" destination="Igj-n4-z24" id="2iW-HP-qWt"/>
@@ -559,6 +563,9 @@
         <scene sceneID="kUa-A3-BoD">
             <objects>
                 <navigationController id="Gbv-4h-FQS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Rd9-0g-jtm">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="wxh-Ze-EjM"/>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="736"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VrZ-tW-ECx">
@@ -570,6 +577,13 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hn-AA-Lrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationBar contentMode="scaleToFill" id="9wT-uN-njJ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="Title" id="jAf-93-7Y7"/>
+                    </items>
+                </navigationBar>
             </objects>
             <point key="canvasLocation" x="2309" y="149"/>
         </scene>
@@ -592,4 +606,7 @@
             <point key="canvasLocation" x="1606" y="149"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="redBG.jpg" width="750" height="1334"/>
+    </resources>
 </document>
