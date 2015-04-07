@@ -10,7 +10,6 @@
 
 @class AddPostViewController2;
 
-
 @protocol AddPostViewController2Delegate <NSObject>
 - (void)addPostViewController2DidSave:(AddPostViewController2 *)controller;
 - (void)addPostViewController2DidCancel:(AddPostViewController2 *)controller;

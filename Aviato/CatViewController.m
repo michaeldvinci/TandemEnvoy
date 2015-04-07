@@ -28,6 +28,7 @@
     
     self.title = @"Recent Posts";
     self.navigationItem.hidesBackButton = YES;
+    self.navigationController.navigationBar.hidden = NO;
     
     user = [User getInstance];
     

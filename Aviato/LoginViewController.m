@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     
+    self.navigationController.navigationBar.hidden = YES;
+    
     user = [User getInstance];
     
     [super viewDidLoad];
@@ -61,7 +63,7 @@
     
     credential = [NSURLCredential credentialWithUser: userName
                                             password: userPass
-                                         persistence: nil];
+                                         persistence: 1];
     
     NSURLProtectionSpace *protectionSpace = [[NSURLProtectionSpace alloc]
                                              initWithHost:@"http://tandemenvoy.michaeldvinci.com/forum/signin2.php"
@@ -81,8 +83,7 @@
     jLoginArray = [NSJSONSerialization JSONObjectWithData:loginData options:kNilOptions error:nil];
     
     user.userName = userName;
-    user.ID = [[jLoginArray objectAtIndex:0]objectForKey:@"userID"];
-    user.level = [[jLoginArray objectAtIndex:0]objectForKey:@"userLevel"];
+    user.userID = [[jLoginArray objectAtIndex:0]objectForKey:@"userID"];
     
     if(credential) {
         [self performSegueWithIdentifier:@"login_success" sender:self];
@@ -99,8 +100,7 @@
     NSLog(@" ");
     NSLog(@"----------------------");
     NSLog(@"User Name: %@", user.userName);
-    NSLog(@"User ID: %@",user.userID);
-    NSLog(@"User Level: %@",user.userLevel);
+    NSLog(@"User ID: %@", user.userID);
     NSLog(@"----------------------");
     NSLog(@" ");
 }
