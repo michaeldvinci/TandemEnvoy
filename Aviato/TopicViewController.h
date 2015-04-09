@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddCommentViewController.h"
 
-@interface TopicViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface TopicViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddCommentViewControllerDelegate> {
     
     IBOutlet UITableView *tableView;
     NSMutableArray *topicArray;

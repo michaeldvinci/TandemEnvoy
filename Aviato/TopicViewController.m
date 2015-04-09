@@ -10,6 +10,7 @@
 #import "Posts.h"
 #import "TopicViewController.h"
 #import "CatViewController.h"
+#import "AddCommentViewController.h"
 
 #define getDataURL @"http://tandemenvoy.michaeldvinci.com/forum/repliesJSON.php?rID="
 
@@ -78,6 +79,16 @@
     [refreshControl endRefreshing];
 }
 
+- (void)addCommentViewControllerDidCancel:(AddCommentViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addCommentViewControllerDidSave:(AddCommentViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark -
 #pragma mark Class Methods
 - (void) retrieveData;
@@ -101,5 +112,16 @@
     }
     [self.tableView reloadData];
 }
- 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"makeOffer"]) {
+        UINavigationController *navigationController  = segue.destinationViewController;
+        AddCommentViewController *aCVC                = [navigationController viewControllers][0];
+        aCVC.delegate                                 = self;
+        aCVC.tID                                      = [theData objectForKey:@"topicID"];
+        NSLog(@"tID: %@", aCVC.tID);
+    }
+}
+
 @end

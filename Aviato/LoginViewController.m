@@ -41,6 +41,12 @@
     
     }
 
+- (IBAction)registerClicked:(id)sender {
+    
+    [self registerNew];
+
+}
+
 - (void)showAlert {
     
     UIAlertView *alert = [[UIAlertView alloc]
@@ -52,6 +58,12 @@
                           otherButtonTitles:nil];
     
     [alert show];
+}
+
+- (void) registerNew {
+    
+    [self performSegueWithIdentifier:@"registerNew" sender:self];
+    
 }
 
 - (void)login {

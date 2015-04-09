@@ -5,12 +5,12 @@
 //  Created by Michael Vinci on 3/14/15.
 //  Copyright (c) 2015 TeamAviato. All rights reserved.
 //
+
 #import "User.h"
 #import "Topic.h"
 #import "RepoViewController.h"
 #import "TopicViewController.h"
 #import "CatViewController.h"
-#import "AddReplyViewController.h"
 
 @interface RepoViewController ()
 
@@ -18,7 +18,7 @@
 
 @implementation RepoViewController
 
-@synthesize repoJsonArray, user, repoArray, tableView, repoViewController, refreshControl, repoTF, descText2, subURL2, theData2, AddPostController, tID;
+@synthesize repoJsonArray, user, repoArray, tableView, repoViewController, refreshControl, repoTF, descText2, subURL2, theData2, tID;
 
 - (void)viewDidLoad
 {
@@ -79,12 +79,12 @@
 
 #pragma mark - addPostViewController2Delegate
 
-- (void)addPostViewController2DidCancel:(AddPostViewController2 *)controller
+- (void)addReplyViewControllerDidCancel:(AddReplyViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)addPostViewController2DidSave:(AddPostViewController2 *)controller
+- (void)addReplyViewControllerDidSave:(AddReplyViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -126,18 +126,11 @@
         NSLog(@"output: %@", tVC.subURL);
     }
     
-    if ([segue.identifier isEqualToString:@"goRepo"]) {
-        
-        UINavigationController *navigationController = segue.destinationViewController;
-        AddPostController = [navigationController viewControllers][0];
-        AddPostController.delegate = self;
-        AddPostController.postString = @"http://tandemenvoy.michaeldvinci.com/forum/topicPost.php";
-    }
-    
     if ([segue.identifier isEqualToString:@"makeOffer"]) {
         
         UINavigationController *navigationController  = segue.destinationViewController;
         AddReplyViewController *rVC                   = [navigationController viewControllers][0];
+        rVC.delegate                                  = self;
         rVC.topicCat                                  = tID;
     }
 }

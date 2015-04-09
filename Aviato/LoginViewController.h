@@ -21,5 +21,6 @@
 @property (nonatomic) NSURLCredentialPersistence *permanent;
 
 - (IBAction)loginClicked:(id)sender;
+- (IBAction)registerClicked:(id)sender;
 
 @end
