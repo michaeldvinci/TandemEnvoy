@@ -53,7 +53,7 @@
     
     // Configure the cell...
     Posts *topObject;
-    topObject = [topicArray objectAtIndex:indexPath.row];
+    topObject = [topicArray objectAtIndex:[indexPath row]];
 
     topCell.textLabel.text = topObject.replyContent;
     topCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

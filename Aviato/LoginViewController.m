@@ -97,7 +97,9 @@
     user.userName = userName;
     user.userID = [[jLoginArray objectAtIndex:0]objectForKey:@"userID"];
     
-    if(credential) {
+    NSString *success = [[jLoginArray objectAtIndex:0] objectForKey:@"success"];
+    
+    if([success isEqualToString:@"1"]) {
         [self performSegueWithIdentifier:@"login_success" sender:self];
         
         [self test];

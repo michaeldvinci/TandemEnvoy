@@ -17,7 +17,7 @@
 @implementation RegisterViewController {
 }
 
-@synthesize userName, userPass, userEmail;
+@synthesize userName, userPass, userEmail, userPassCheck;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,24 +38,25 @@
 - (void) submitData:(id)sender {
     //topicCat = [[User sharedUser] user.userID];
     
-    User *user1 = [User getInstance];
+    if ([self.userPass.text isEqualToString:self.userPassCheck.text]) {
     
-    NSString *myRequestString = [NSString stringWithFormat:@"userName=%@&userPass=%@&userEmail%@", userName.text, userPass.text, userEmail.text];
+        User *user1 = [User getInstance];
     
-    NSLog(@"Link: %@", myRequestString);
+        NSString *myRequestString = [NSString stringWithFormat:@"userName=%@&userPass=%@&userEmail%@", userName.text, userPass.text, userEmail.text];
     
-    NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://tandemenvoy.michaeldvinci.com/forum/create_reply2.php"]];
-    [request setHTTPMethod: @"POST"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
-    [request setHTTPBody: myRequestData];
-    NSData *returnData = [NSURLConnection sendSynchronousRequest: request returningResponse: nil error: nil];
-    NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
-    NSLog(@"%@",response);
+        NSLog(@"Link: %@", myRequestString);
     
-    [self.navigationController popViewControllerAnimated:YES];
+        NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://    tandemenvoy.michaeldvinci.com/forum/iosSignup.php"]];
+        [request setHTTPMethod: @"POST"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+        [request setHTTPBody: myRequestData];
+        NSData *returnData = [NSURLConnection sendSynchronousRequest: request returningResponse: nil error: nil];
+        NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
+        NSLog(@"%@",response);
+    
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end
-
-

@@ -16,11 +16,13 @@
 
 @end
 
-@interface RegisterViewController : UITableViewController;
+@interface RegisterViewController : UIViewController;
 
-@property (nonatomic, strong) UILabel *userName;
-@property (nonatomic, strong) UILabel *userPass;
-@property (nonatomic, strong) UILabel *userEmail;
+@property (strong, nonatomic) IBOutlet UITextField *userPass;
+@property (strong, nonatomic) IBOutlet UITextField *userName;
+@property (strong, nonatomic) IBOutlet UITextField *userPassCheck;
+@property (strong, nonatomic) IBOutlet UITextField *userEmail;
+
 
 @property(nonatomic, weak) id <RegisterViewControllerDelegate> delegate;
 
