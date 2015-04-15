@@ -162,8 +162,6 @@
 			children = (
 				F57FB95C1AB4C2660055A170 /* User.h */,
 				F57FB95D1AB4C3CE0055A170 /* User.m */,
-				F57FB98D1AB50CBE0055A170 /* Posts.h */,
-				F57FB98E1AB50CBE0055A170 /* Posts.m */,
 				F5E198261AAF96010075788E /* LoginViewController.h */,
 				F5E198271AAF96010075788E /* LoginViewController.m */,
 				F50FB4E61AB35CA100C98297 /* Login.h */,
@@ -184,6 +182,8 @@
 				F5A42EAD1AB27814008E71AF /* Topic.m */,
 				F5A289591AB0A51200D79A26 /* TopicViewController.h */,
 				F5A2895A1AB0A51200D79A26 /* TopicViewController.m */,
+				F57FB98D1AB50CBE0055A170 /* Posts.h */,
+				F57FB98E1AB50CBE0055A170 /* Posts.m */,
 				F58C8EB41AD456EF00270D06 /* AddCommentViewController.h */,
 				F58C8EB61AD458C300270D06 /* AddCommentViewController.m */,
 				F505E7EE1AAEADF900DAF80B /* AppDelegate.h */,
