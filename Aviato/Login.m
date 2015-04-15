@@ -10,8 +10,18 @@
 
 @implementation Login
 
+/*!
+ *	makes getter/setter for variables
+ */
 @synthesize success;
 
+/*!
+ *	If proper login credentials, allows user to pass on to next view
+ *
+ *	@param loginSuccess test variable
+ *
+ *	@return JSON informatiom
+ */
 - (id)initWidthSuccess: (NSString *)loginSuccess;
 {
     self = [super init];
