@@ -310,20 +310,20 @@
                         <viewControllerLayoutGuide type="bottom" id="ZpU-JK-mGo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qor-On-soX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="test.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hG5-Dh-JJ1">
                                 <rect key="frame" x="-63" y="-326" width="750" height="1334"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DISCLAIMER:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-i6-PGG">
-                                <rect key="frame" x="176" y="54" width="258" height="59"/>
+                                <rect key="frame" x="99" y="60" width="258" height="59"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <color key="textColor" red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coW-BX-5vN">
-                                <rect key="frame" x="176" y="363" width="105" height="30"/>
+                                <rect key="frame" x="79" y="363" width="105" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="I Disagree">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -331,7 +331,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ud3-90-Bho">
-                                <rect key="frame" x="361" y="363" width="73" height="30"/>
+                                <rect key="frame" x="256" y="363" width="73" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="I Agree">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -354,10 +354,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="fbQ-Xs-X6P"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faW-5e-Wz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925" y="-701"/>
+            <point key="canvasLocation" x="925" y="-715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U8T-Fy-Z4D">
@@ -786,6 +787,6 @@
         <image name="test.jpg" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q39-2i-OJq"/>
+        <segue reference="YPN-Kt-kcJ"/>
     </inferredMetricsTieBreakers>
 </document>
