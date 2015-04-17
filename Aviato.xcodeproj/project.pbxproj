@@ -31,6 +31,7 @@
 		F5A2895B1AB0A51200D79A26 /* TopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A2895A1AB0A51200D79A26 /* TopicViewController.m */; };
 		F5A42EAC1AB27309008E71AF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A42EAB1AB27309008E71AF /* CoreLocation.framework */; };
 		F5A42EAE1AB27814008E71AF /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A42EAD1AB27814008E71AF /* Topic.m */; };
+		F5D6DE441AE1A63E00F538CA /* PaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D6DE431AE1A63E00F538CA /* PaymentViewController.m */; };
 		F5E198281AAF96010075788E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E198271AAF96010075788E /* LoginViewController.m */; };
 		F5E198501AAFC7A30075788E /* AddPostViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E1984F1AAFC7A30075788E /* AddPostViewController2.m */; };
 /* End PBXBuildFile section */
@@ -105,6 +106,8 @@
 		F5A42EAB1AB27309008E71AF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F5A42EAD1AB27814008E71AF /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
 		F5A42EB01AB2786D008E71AF /* Topic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
+		F5D6DE431AE1A63E00F538CA /* PaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentViewController.m; sourceTree = "<group>"; };
+		F5D6DE451AE1A65500F538CA /* PaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentViewController.h; sourceTree = "<group>"; };
 		F5E198261AAF96010075788E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F5E198271AAF96010075788E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F5E1984E1AAFC7A30075788E /* AddPostViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPostViewController2.h; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				F57FB98E1AB50CBE0055A170 /* Posts.m */,
 				F58C8EB41AD456EF00270D06 /* AddCommentViewController.h */,
 				F58C8EB61AD458C300270D06 /* AddCommentViewController.m */,
+				F5D6DE451AE1A65500F538CA /* PaymentViewController.h */,
+				F5D6DE431AE1A63E00F538CA /* PaymentViewController.m */,
 				F505E7EE1AAEADF900DAF80B /* AppDelegate.h */,
 				F505E7EF1AAEADF900DAF80B /* AppDelegate.m */,
 				F505E7F41AAEADF900DAF80B /* Main.storyboard */,
@@ -344,6 +349,7 @@
 				F5513B401AD2D7DC0019E463 /* AddReplyViewController.m in Sources */,
 				F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */,
 				F57FB98C1AB4FF560055A170 /* RepoViewController.m in Sources */,
+				F5D6DE441AE1A63E00F538CA /* PaymentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
