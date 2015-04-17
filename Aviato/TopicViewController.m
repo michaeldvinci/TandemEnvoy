@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 TeamAviato. All rights reserved.
 //
 
+
 #import "User.h"
 #import "Posts.h"
 #import "TopicViewController.h"
@@ -28,7 +29,7 @@
     
     user = [User getInstance];
     
-    self.title = @"Replies to job";
+    self.title = @"Commentary";
     textView.text = descText;
         
     [self retrieveData];

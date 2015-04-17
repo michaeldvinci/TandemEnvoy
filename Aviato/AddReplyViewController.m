@@ -80,7 +80,7 @@
     NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
     NSLog(@"%@",response);
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.delegate addReplyViewControllerDidCancel:self];
 }
 
 #pragma mark CLLocationManagerDelegate Methods
