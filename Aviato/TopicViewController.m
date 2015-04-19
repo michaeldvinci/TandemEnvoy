@@ -59,6 +59,7 @@
     topObject = [topicArray objectAtIndex:[indexPath row]];
 
     topCell.textLabel.text = topObject.replyContent;
+    topCell.detailTextLabel.text = topObject.replyUser;+
     topCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return topCell;
@@ -110,8 +111,9 @@
         NSString *rDate = [[jsonArray3 objectAtIndex:i] objectForKey:@"replyDate"];
         NSString *rContent = [[jsonArray3 objectAtIndex:i] objectForKey:@"replyContent"];
         NSString *rBy = [[jsonArray3 objectAtIndex:i] objectForKey:@"replyBy"];
+        NSString *rUser = [[jsonArray3 objectAtIndex:i] objectForKey:@"replyUser"];
         
-        [topicArray addObject:[[Posts alloc]initWidthReplyBy: rBy andreplyDate: rDate andreplyTopic: rTopic andreplyContent: rContent andreplyID: rID]];
+        [topicArray addObject:[[Posts alloc]initWidthReplyBy: rBy andreplyDate: rDate andreplyTopic: rTopic andreplyContent: rContent andreplyID: rID andreplyUser: rUser]];
     }
     [self.tableView reloadData];
 }

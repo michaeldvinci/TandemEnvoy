@@ -59,6 +59,7 @@
     repoObject = [repoArray objectAtIndex:[indexPath row]];
     
     repoCell.textLabel.text = repoObject.topicSubject;
+    repoCell.detailTextLabel.text = repoObject.topicUser;
     repoCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return repoCell;
@@ -112,8 +113,9 @@
         NSString *reDate = [[repoJsonArray objectAtIndex:i] objectForKey:@"topicDate"];
         NSString *reBy = [[repoJsonArray objectAtIndex:i] objectForKey:@"topicBy"];
         NSString *reSubject = [[repoJsonArray objectAtIndex:i] objectForKey:@"topicSubject"];
+        NSString *reUser = [[repoJsonArray objectAtIndex:i] objectForKey:@"topicUser"];
         
-        [repoArray addObject:[[Topic alloc]initWidthTopicID: reID andtopicCat: reCat andtopicDate: reDate andtopicBy: reBy andtopicSubject: reSubject]];
+        [repoArray addObject:[[Topic alloc]initWidthTopicID: reID andtopicCat: reCat andtopicDate: reDate andtopicBy: reBy andtopicSubject: reSubject andtopicUser: reUser]];
     }
     [self.tableView reloadData];
 }

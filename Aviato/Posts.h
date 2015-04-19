@@ -42,7 +42,7 @@
  *	<#Description#>
  */
 @property (strong, nonatomic) NSString *replyTopic;
-
+@property (strong, nonatomic) NSString *replyUser;
 #pragma mark -
 #pragma mark Class Methods
 
@@ -57,6 +57,6 @@
  *
  *	@return <#return value description#>
  */
-- (id)initWidthReplyBy: (NSString *)rBy andreplyDate: (NSString *)rDate andreplyTopic: (NSString *)rTopic andreplyContent: (NSString *)rContent andreplyID: (NSString *)rID;
+- (id)initWidthReplyBy: (NSString *)rBy andreplyDate: (NSString *)rDate andreplyTopic: (NSString *)rTopic andreplyContent: (NSString *)rContent andreplyID: (NSString *)rID andreplyUser: (NSString *) rUser;
 
 @end

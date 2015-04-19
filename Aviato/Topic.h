@@ -15,10 +15,11 @@
 @property (strong, nonatomic) NSString *topicDate;
 @property (strong, nonatomic) NSString *topicID;
 @property (strong, nonatomic) NSString *topicSubject;
+@property (strong, nonatomic) NSString *topicUser;
 
 #pragma mark -
 #pragma mark Class Methods
 
-- (id)initWidthTopicID: (NSString *)reID andtopicCat: (NSString *)reCat andtopicDate: (NSString *)reDate andtopicBy: (NSString *)reBy andtopicSubject: (NSString *)reSubject;
+- (id)initWidthTopicID: (NSString *)reID andtopicCat: (NSString *)reCat andtopicDate: (NSString *)reDate andtopicBy: (NSString *)reBy andtopicSubject: (NSString *)reSubject andtopicUser: (NSString *)reUser;
 
 @end

@@ -10,18 +10,19 @@
 
 @implementation Posts
 
-@synthesize replyBy, replyContent, replyDate, replyID, replyTopic;
+@synthesize replyBy, replyContent, replyDate, replyID, replyTopic, replyUser;
 
-- (id)initWidthReplyBy: (NSString *)rBy andreplyDate: (NSString *)rDate andreplyTopic: (NSString *)rTopic andreplyContent: (NSString *)rContent andreplyID: (NSString *)rID;
+- (id)initWidthReplyBy: (NSString *)rBy andreplyDate: (NSString *)rDate andreplyTopic: (NSString *)rTopic andreplyContent: (NSString *)rContent andreplyID: (NSString *)rID andreplyUser: (NSString *) rUser;
 {
     self = [super init];
     if (self)
     {
-        replyBy = rBy;
-        replyDate = rDate;
-        replyTopic = rTopic;
+             replyBy = rBy;
+           replyDate = rDate;
+          replyTopic = rTopic;
         replyContent = rContent;
-        replyID = rID;
+             replyID = rID;
+           replyUser = rUser;
     }
     
     return self;

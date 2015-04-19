@@ -67,7 +67,7 @@
     User *user1 = [User getInstance];
     topicBy = user1.userID;
     
-    NSString *myRequestString = [NSString stringWithFormat:@"topicSubject=%@&topicCat=%@&topicBy=%@", topicSubject.text, topicCat, topicBy];
+    NSString *myRequestString = [NSString stringWithFormat:@"topicSubject=%@&topicCat=%@&topicBy=%@&topicUser=%@", topicSubject.text, topicCat, topicBy, [[User getInstance] userName]];
     
     NSLog(@"Link: %@", myRequestString);
     

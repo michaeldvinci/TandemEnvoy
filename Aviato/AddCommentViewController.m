@@ -65,7 +65,7 @@
     
     User *user1 = [User getInstance];
     
-    NSString *myRequestString = [NSString stringWithFormat:@"replyContent=%@&replyBy=%@&replyTopic=%@", commentView.text, user1.userID, topicID];
+    NSString *myRequestString = [NSString stringWithFormat:@"replyContent=%@&replyBy=%@&replyTopic=%@&replyUser=%@", commentView.text, user1.userID, topicID, [[User getInstance] userName]];
     
     NSLog(@"Link: %@", myRequestString);
     

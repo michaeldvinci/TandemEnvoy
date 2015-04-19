@@ -57,6 +57,7 @@
     catObject = [categoryArray objectAtIndex:[indexPath row]];
     
     catCell.textLabel.text = catObject.categoryName;
+    catCell.detailTextLabel.text = catObject.categoryUser;
     
     catCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
@@ -100,8 +101,9 @@
         NSString *cID   = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryID"];
         NSString *cDesc = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryDesc"];
         NSString *cName = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryName"];
-        
-        [categoryArray addObject:[[Categories alloc]initWidthCategoryDesc:cDesc andcategoryName:cName andcategoryID:cID]];
+        NSString *cUser = [[jsonArray2 objectAtIndex:i] objectForKey:@"categoryUser"];
+
+        [categoryArray addObject:[[Categories alloc]initWidthCategoryDesc:cDesc andcategoryName:cName andcategoryID:cID andcategoryUser: (NSString *)cUser]];
     }
     
     [self.tableView reloadData];

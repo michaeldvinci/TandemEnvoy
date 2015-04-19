@@ -61,7 +61,7 @@
 }
 
 - (void) submitData:(id)sender {
-    NSString *myRequestString = [NSString stringWithFormat:@"categoryDesc=%@&categoryName=%@",categoryDesc.text,categoryName.text];
+    NSString *myRequestString = [NSString stringWithFormat:@"categoryDesc=%@&categoryName=%@&categoryUser=%@",categoryDesc.text,categoryName.text, [[User getInstance] userName]];
  
     NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://tandemenvoy.michaeldvinci.com/forum/create_cat2.php"]];
