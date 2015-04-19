@@ -19,13 +19,13 @@
 @interface AddReplyViewController : UITableViewController
 
 @property (nonatomic, strong) User *user;
-@property (weak, nonatomic) IBOutlet UITextField *topicSubject;
-@property (weak, nonatomic) NSString *topicCat;
-@property (weak, nonatomic) NSString *topicBy;
+@property (strong, nonatomic) IBOutlet UITextField *topicSubject;
+@property (strong, nonatomic) NSString *topicCat;
+@property (strong, nonatomic) NSString *topicBy;
 @property (strong, nonatomic) NSString *postString;
 
 
-@property(nonatomic, weak) id <AddReplyViewControllerDelegate> delegate;
+@property(nonatomic, strong) id <AddReplyViewControllerDelegate> delegate;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;

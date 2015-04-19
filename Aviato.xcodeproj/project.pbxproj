@@ -16,6 +16,7 @@
 		F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = F505E81D1AAF2CB200DAF80B /* Categories.m */; };
 		F505E8231AAF336E00DAF80B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F505E8221AAF336E00DAF80B /* MapKit.framework */; };
 		F50FB4E81AB35CDF00C98297 /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = F50FB4E71AB35CDF00C98297 /* Login.m */; };
+		F518E9881AE1C8F300E34CA7 /* PandaFinderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F518E9871AE1C8F300E34CA7 /* PandaFinderViewController.m */; };
 		F51BEE601AD3790300DCAD40 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F51BEE5F1AD3790300DCAD40 /* test.jpg */; };
 		F51BEE621AD379D800DCAD40 /* 123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F51BEE611AD379D800DCAD40 /* 123.jpg */; };
 		F51BEE641AD37BC900DCAD40 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = F51BEE631AD37BC900DCAD40 /* red.png */; };
@@ -82,6 +83,8 @@
 		F505E8221AAF336E00DAF80B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F50FB4E61AB35CA100C98297 /* Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Login.h; sourceTree = "<group>"; };
 		F50FB4E71AB35CDF00C98297 /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Login.m; sourceTree = "<group>"; };
+		F518E9861AE1C85300E34CA7 /* PandaFinderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PandaFinderViewController.h; sourceTree = "<group>"; };
+		F518E9871AE1C8F300E34CA7 /* PandaFinderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PandaFinderViewController.m; sourceTree = "<group>"; };
 		F51BEE5F1AD3790300DCAD40 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		F51BEE611AD379D800DCAD40 /* 123.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 123.jpg; sourceTree = "<group>"; };
 		F51BEE631AD37BC900DCAD40 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 				F505E7F41AAEADF900DAF80B /* Main.storyboard */,
 				F505E7F71AAEADF900DAF80B /* Images.xcassets */,
 				F505E7F91AAEADF900DAF80B /* LaunchScreen.xib */,
+				F518E9861AE1C85300E34CA7 /* PandaFinderViewController.h */,
+				F518E9871AE1C8F300E34CA7 /* PandaFinderViewController.m */,
 				F505E7EA1AAEADF900DAF80B /* Supporting Files */,
 			);
 			path = Aviato;
@@ -349,6 +354,7 @@
 				F5513B401AD2D7DC0019E463 /* AddReplyViewController.m in Sources */,
 				F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */,
 				F57FB98C1AB4FF560055A170 /* RepoViewController.m in Sources */,
+				F518E9881AE1C8F300E34CA7 /* PandaFinderViewController.m in Sources */,
 				F5D6DE441AE1A63E00F538CA /* PaymentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_WARN_UNUSED_VARIABLE = NO;
@@ -488,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_WARN_UNUSED_VARIABLE = NO;

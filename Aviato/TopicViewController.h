@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, retain) NSDictionary *theData;
 @property (nonatomic, retain) NSString *subURL;
+@property (nonatomic, retain) NSString *topID;
 @property (nonatomic, retain) NSString *descText;
 @property (nonatomic, strong) NSMutableArray *jsonArray3;
 @property (nonatomic, strong) NSMutableArray *topicArray;

@@ -26,13 +26,15 @@
     CLPlacemark *placemark;
 }
 
-@synthesize user, commentView, postString, tID;
+@synthesize user, commentView, postString, topicID;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     manager = [[CLLocationManager alloc] init];
     geocoder = [[CLGeocoder alloc] init];
+    
+    NSLog(@"Add Comment tID: %@", topicID);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,7 +65,7 @@
     
     User *user1 = [User getInstance];
     
-    NSString *myRequestString = [NSString stringWithFormat:@"replyContent=%@&replyBy=%@&replyTopic%@", commentView.text, user1.userID, tID];
+    NSString *myRequestString = [NSString stringWithFormat:@"replyContent=%@&replyBy=%@&replyTopic=%@", commentView.text, user1.userID, topicID];
     
     NSLog(@"Link: %@", myRequestString);
     
@@ -76,7 +78,7 @@
     NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
     NSLog(@"%@",response);
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.delegate addCommentViewControllerDidCancel:self];
 }
 
 #pragma mark CLLocationManagerDelegate Methods

@@ -11,6 +11,7 @@
 #import "RepoViewController.h"
 #import "TopicViewController.h"
 #import "CatViewController.h"
+#import "AddCommentViewController.h"
 
 @interface RepoViewController ()
 
@@ -37,6 +38,10 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(updateTable:) forControlEvents:UIControlEventValueChanged];
     tvController.refreshControl = self.refreshControl;
+    
+    AddCommentViewController *aCVC;
+    
+    aCVC.topicID = tID;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -124,6 +129,8 @@
         tVC.descText = [NSString stringWithFormat:@"%@", [tVC.theData objectForKey:@"categoryDesc"]];
         
         NSLog(@"output: %@", tVC.subURL);
+        
+        tVC.topID = [tVC.theData objectForKey:@"topicID"];
     }
     
     if ([segue.identifier isEqualToString:@"makeOffer"]) {

@@ -19,11 +19,11 @@
 @interface AddCommentViewController : UITableViewController
 
 @property (nonatomic, strong) User *user;
-@property (weak, nonatomic) IBOutlet UITextView *commentView;
+@property (strong, nonatomic) IBOutlet UITextView *commentView;
 @property (strong, nonatomic) NSString *postString;
-@property (strong, nonatomic) NSString *tID;
+@property (strong, nonatomic) NSString *topicID;
 
-@property(nonatomic, weak) id <AddCommentViewControllerDelegate> delegate;
+@property(nonatomic, strong) id <AddCommentViewControllerDelegate> delegate;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;

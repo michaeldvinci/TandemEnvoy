@@ -21,7 +21,7 @@
 
 @implementation TopicViewController
 
-@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, subURL, textView, descText, user;
+@synthesize jsonArray3, topicArray, tableView, theData, refreshControl, subURL, textView, descText, user, topID;
 
 - (void)viewDidLoad
 {
@@ -40,6 +40,8 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(updateTable:) forControlEvents:UIControlEventValueChanged];
     tvController.refreshControl = self.refreshControl;
+    
+    NSLog(@"topID: %@", topID);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -116,12 +118,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"makeOffer"]) {
+    if ([segue.identifier isEqualToString:@"startConvo"]) {
         UINavigationController *navigationController  = segue.destinationViewController;
         AddCommentViewController *aCVC                = [navigationController viewControllers][0];
         aCVC.delegate                                 = self;
-        aCVC.tID                                      = [theData objectForKey:@"topicID"];
-        NSLog(@"tID: %@", aCVC.tID);
+        aCVC.topicID                                  = topID;
+        NSLog(@"topID: %@", topID);
     }
 }
 

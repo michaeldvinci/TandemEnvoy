@@ -45,6 +45,19 @@
                                             <segue destination="b75-5f-NI9" kind="presentation" identifier="goBack" id="8x6-7X-t5c"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="aTd-PI-JfO"/>
+                                    <barButtonItem style="plain" id="HIS-8l-M2k">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tp1-1J-4cI">
+                                            <rect key="frame" x="368" y="7" width="87" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="                    ">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="U5K-a7-Mam" kind="show" id="x7a-tA-GkI"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -316,17 +329,11 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="test.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hG5-Dh-JJ1">
                                 <rect key="frame" x="-63" y="-326" width="750" height="1334"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DISCLAIMER:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-i6-PGG">
-                                <rect key="frame" x="99" y="60" width="258" height="59"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <color key="textColor" red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coW-BX-5vN">
                                 <rect key="frame" x="79" y="363" width="105" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="I Disagree">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.13623970740714994" green="0.64242029671717171" blue="0.14454765467948472" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -334,21 +341,59 @@
                                 <rect key="frame" x="256" y="363" width="73" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="I Agree">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.78632023358585856" green="0.0" blue="0.047361125951115551" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="12K-oY-9iD" kind="show" id="YPN-Kt-kcJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By clicking 'I Agree' you are" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRk-Th-j0U">
+                                <rect key="frame" x="101" y="164" width="213" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="saying that Team|Aviato is not " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFp-6j-Gsx">
+                                <rect key="frame" x="91" y="193" width="233" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="responsible for any of your" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SEk-dq-1Gx">
+                                <rect key="frame" x="105" y="222" width="204" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="screw-ups. Have fun!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLS-1O-J1q">
+                                <rect key="frame" x="126" y="251" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DISCLAIMER:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8R-i6-PGG">
+                                <rect key="frame" x="78" y="63" width="258" height="59"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="textColor" red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="EFp-6j-Gsx" secondAttribute="centerX" constant="-0.5" id="2gx-z7-H0x"/>
+                            <constraint firstAttribute="centerX" secondItem="ZRk-Th-j0U" secondAttribute="centerX" constant="-0.5" id="3eg-H7-Rnb"/>
                             <constraint firstAttribute="centerX" secondItem="Ud3-90-Bho" secondAttribute="centerX" constant="-66.5" id="Chd-yC-6jU"/>
                             <constraint firstAttribute="centerY" secondItem="Ud3-90-Bho" secondAttribute="centerY" constant="-83" id="IwU-Hz-5MY"/>
+                            <constraint firstAttribute="centerX" secondItem="SEk-dq-1Gx" secondAttribute="centerX" id="K7Q-Bw-WQd"/>
                             <constraint firstAttribute="centerX" secondItem="b8R-i6-PGG" secondAttribute="centerX" constant="-5" id="Lse-au-w5S"/>
                             <constraint firstAttribute="centerY" secondItem="b8R-i6-PGG" secondAttribute="centerY" constant="216.5" id="SIH-6m-nXp"/>
+                            <constraint firstAttribute="centerY" secondItem="SEk-dq-1Gx" secondAttribute="centerY" constant="135.5" id="dRP-Tb-TSi"/>
                             <constraint firstAttribute="centerY" secondItem="coW-BX-5vN" secondAttribute="centerY" constant="-83" id="i0F-OX-ViE"/>
+                            <constraint firstAttribute="centerX" secondItem="qLS-1O-J1q" secondAttribute="centerX" constant="-0.5" id="iPq-Ol-Uk7"/>
+                            <constraint firstAttribute="centerY" secondItem="ZRk-Th-j0U" secondAttribute="centerY" constant="193.5" id="pCY-Un-vRb"/>
+                            <constraint firstAttribute="centerY" secondItem="qLS-1O-J1q" secondAttribute="centerY" constant="106.5" id="qcz-yu-yKo"/>
+                            <constraint firstAttribute="centerY" secondItem="EFp-6j-Gsx" secondAttribute="centerY" constant="164.5" id="s61-Vs-T0R"/>
                             <constraint firstAttribute="centerX" secondItem="coW-BX-5vN" secondAttribute="centerX" constant="55.5" id="sNo-8K-PnV"/>
                         </constraints>
                     </view>
@@ -359,6 +404,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faW-5e-Wz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="925" y="-715"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ypD-Xj-Vnr">
+            <objects>
+                <navigationController id="U5K-a7-Mam" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Ka-qX-ufS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fbd-9n-TDC" kind="relationship" relationship="rootViewController" id="YLA-g0-1aY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="atJ-Re-kCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550" y="-715"/>
+        </scene>
+        <!--Panda Finder-->
+        <scene sceneID="khw-YK-CMT">
+            <objects>
+                <viewController id="fbd-9n-TDC" customClass="PandaFinderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nbE-cK-89n"/>
+                        <viewControllerLayoutGuide type="bottom" id="60b-m0-EgH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T7I-db-ESr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="test.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ccZ-hd-wbL">
+                                <rect key="frame" x="-190" y="-336" width="750" height="1334"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="hybrid" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qd7-Xo-VLn">
+                                <rect key="frame" x="0.0" y="86" width="414" height="469"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Panda Finder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdC-8l-qUZ">
+                                <rect key="frame" x="109" y="20" width="196" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="0.35548247261565646" green="0.35548847853535348" blue="0.33738158323450074" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Panda Finder" id="a0a-5U-l2t"/>
+                    <connections>
+                        <outlet property="mapMap" destination="Qd7-Xo-VLn" id="qa0-Eu-kKv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1b-F8-ntG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2197" y="-715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="U8T-Fy-Z4D">
@@ -374,7 +471,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gl2-Bu-eC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="194" y="-701"/>
+            <point key="canvasLocation" x="260" y="-715"/>
         </scene>
         <!--Add A Post-->
         <scene sceneID="cUe-3V-Ola">
@@ -914,6 +1011,6 @@
         <image name="test.jpg" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q39-2i-OJq"/>
+        <segue reference="YPN-Kt-kcJ"/>
     </inferredMetricsTieBreakers>
 </document>

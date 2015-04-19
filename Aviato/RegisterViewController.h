@@ -24,7 +24,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *userEmail;
 
 
-@property(nonatomic, weak) id <RegisterViewControllerDelegate> delegate;
+@property(nonatomic, strong) id <RegisterViewControllerDelegate> delegate;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;

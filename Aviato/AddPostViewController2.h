@@ -19,13 +19,13 @@
 @interface AddPostViewController2 : UITableViewController
 
 @property (nonatomic, strong) User *user;
-@property (weak, nonatomic) IBOutlet UITextField *categoryName;
-@property (weak, nonatomic) IBOutlet UITextView *categoryDesc;
-@property (weak, nonatomic) IBOutlet UITextField *categorySubmitter;
+@property (strong, nonatomic) IBOutlet UITextField *categoryName;
+@property (strong, nonatomic) IBOutlet UITextView *categoryDesc;
+@property (strong, nonatomic) IBOutlet UITextField *categorySubmitter;
 @property (strong, nonatomic) NSString *postString;
 
 
-@property(nonatomic, weak) id <AddPostViewController2Delegate> delegate;
+@property(nonatomic, strong) id <AddPostViewController2Delegate> delegate;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)done:(id)sender;

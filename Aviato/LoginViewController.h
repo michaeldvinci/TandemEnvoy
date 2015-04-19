@@ -21,12 +21,12 @@
 /*!
  *	Text Field from which login userName is pulled
  */
-@property (weak, nonatomic) IBOutlet UITextField *UIUsername;
+@property (strong, nonatomic) IBOutlet UITextField *UIUsername;
 
 /*!
  *	Text Field from which login userPass is pulled
  */
-@property (weak, nonatomic) IBOutlet UITextField *UIPassword;
+@property (strong, nonatomic) IBOutlet UITextField *UIPassword;
 
 /*!
  *	variable for location service to be called upon
