@@ -10,16 +10,17 @@
 
 @implementation Categories
 
-@synthesize categoryDesc, categoryID, categoryName;
+@synthesize categoryDesc, categoryID, categoryName, categoryUser;
 
-- (id)initWidthCategoryDesc: (NSString *)cDesc andcategoryName: (NSString *)cName andcategoryID: (NSString *)cID;
+- (id)initWidthCategoryDesc: (NSString *)cDesc andcategoryName: (NSString *)cName andcategoryID: (NSString *)cID andcategoryUser: (NSString *)cUser;
 {
     self = [super init];
     if (self)
     {
         categoryDesc = cDesc;
         categoryName = cName;
-        categoryID = cID;
+          categoryID = cID;
+        categoryUser = cUser;
     }
     
     return self;
