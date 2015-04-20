@@ -44,11 +44,27 @@
     NSLog(@"topID: %@", topID);
 }
 
+/*!
+ *	returns the number of rows to populate the UITableView
+ *
+ *	@param tableView UITableView to populate
+ *	@param section   response from .php sub querey
+ *
+ *	@return returns integer for number of rows
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return topicArray.count;
 }
 
+/*!
+ *	populates individual rows with the specific object from the parsed JSON data
+ *
+ *	@param myTableView specific tableview being populated
+ *	@param indexPath   specific row being populated
+ *
+ *	@return cell information being returned to uitableviewrow
+ */
 - (UITableViewCell *)tableView:(UITableView *)myTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"topCell";
@@ -59,12 +75,18 @@
     topObject = [topicArray objectAtIndex:[indexPath row]];
 
     topCell.textLabel.text = topObject.replyContent;
-    topCell.detailTextLabel.text = topObject.replyUser;+
+    topCell.detailTextLabel.text = topObject.replyUser;
     topCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return topCell;
 }
 
+/*!
+ *	allows for the specific row to be selected for the proper segue
+ *
+ *	@param myTableView specific tableview being populated
+ *	@param indexPath   specific row being populated
+ */
 - (void)tableView:(UITableView *)myTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -75,6 +97,11 @@
     [super didReceiveMemoryWarning];
 }
 
+/*!
+ *	allows for pull-to-refresh to be implemented
+ *
+ *	@param rControl refreshcontrol variable
+ */
 - (void)updateTable:(UIRefreshControl *)rControl
 {
     [self retrieveData];
@@ -83,11 +110,21 @@
     [refreshControl endRefreshing];
 }
 
+/*!
+ *	allows the user to cancel back to the previous view
+ *
+ *	@param controller controller object
+ */
 - (void)addCommentViewControllerDidCancel:(AddCommentViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/*!
+ *	allows the user to cancel back to the previous view
+ *
+ *	@param controller controller object
+ */
 - (void)addCommentViewControllerDidSave:(AddCommentViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -95,6 +132,9 @@
 
 #pragma mark -
 #pragma mark Class Methods
+/*!
+ *	when called, it sub queries the proper .php file and popultes the JSON data into useful data
+ */
 - (void) retrieveData;
 {    
     NSURL *url = [NSURL URLWithString:subURL];
@@ -118,6 +158,12 @@
     [self.tableView reloadData];
 }
 
+/*!
+ *	sets variables based on which segue is being called
+ *
+ *	@param segue  depends on which segue is being called
+ *	@param sender Sender is User
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"startConvo"]) {

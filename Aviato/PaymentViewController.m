@@ -22,6 +22,11 @@
     [super viewDidLoad];
 }
 
+/*!
+ *	dismisses keyboard upon use of [return] key
+ *
+ *	@param sender Sender is USer
+ */
 -(IBAction)textFieldReturn:(id)sender
 {
     [sender resignFirstResponder];
@@ -38,6 +43,11 @@
     return encodedStr;
 }
 
+/*!
+ *	takes data from invoice form and submits it as JSON data to the PayPal Here app for processing
+ *
+ *	@param sender Sender is User
+ */
 - (void) openPayPal:(id)sender {
     NSMutableDictionary *itemListDictionary = [NSMutableDictionary dictionary];
     NSMutableArray *itemListArray = [NSMutableArray arrayWithCapacity:1];

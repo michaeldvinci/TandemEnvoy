@@ -10,6 +10,10 @@
 
 @class AddReplyViewController;
 
+/*!
+ *	Sets up the didSave and didCancel methods, allowing for return to previous View Controller
+ *  when finished with the current one.
+ */
 @protocol AddReplyViewControllerDelegate <NSObject>
 - (void)addReplyViewControllerDidSave:(AddReplyViewController *)controller;
 - (void)addReplyViewControllerDidCancel:(AddReplyViewController *)controller;
@@ -27,8 +31,26 @@
 
 @property(nonatomic, strong) id <AddReplyViewControllerDelegate> delegate;
 
+/*!
+ *	Returns user to previous view
+ *
+ *	@param sender Sender is user
+ */
 - (IBAction)cancel:(id)sender;
+
+/*!
+ *	Returns user to previous view
+ *
+ *	@param sender Sender is user
+ */
 - (IBAction)done:(id)sender;
+
+/*!
+ *	pulls data and sends it to the DB using the correct .php file
+ *
+ *	@param sender Sender is user
+ */
 - (IBAction)submitData:(id)sender;
+
 
 @end

@@ -42,11 +42,27 @@
     tvController.refreshControl = self.refreshControl;
 }
 
+/*!
+ *	returns the number of rows to populate the UITableView
+ *
+ *	@param tableView UITableView to populate
+ *	@param section   response from .php sub querey
+ *
+ *	@return returns integer for number of rows
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return categoryArray.count; 
 }
 
+/*!
+ *	populates individual rows with the specific object from the parsed JSON data
+ *
+ *	@param myTableView specific tableview being populated
+ *	@param indexPath   specific row being populated
+ *
+ *	@return cell information being returned to uitableviewrow
+ */
 - (UITableViewCell *)tableView:(UITableView *)myTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"catCell";
@@ -66,6 +82,12 @@
     return catCell;
 }
 
+/*!
+ *	allows for the specific row to be selected for the proper segue
+ *
+ *	@param myTableView specific tableview being populated
+ *	@param indexPath   specific row being populated
+ */
 - (void)tableView:(UITableView *)myTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -76,6 +98,11 @@
     [super didReceiveMemoryWarning];
 }
 
+/*!
+ *	allows for pull-to-refresh to be implemented
+ *
+ *	@param rControl refreshcontrol variable
+ */
 - (void)updateTable:(UIRefreshControl *)rControl
 {
     [self retrieveData];
@@ -86,6 +113,10 @@
 
 #pragma mark -
 #pragma mark Class Methods
+
+/*!
+ *	when called, it sub queries the proper .php file and popultes the JSON data into useful data
+ */
 - (void) retrieveData;
 {
     NSURL *url = [NSURL URLWithString:getDataURL];
@@ -111,16 +142,37 @@
 
 #pragma mark - addPostViewController2Delegate
 
+/*!
+ *	allows the user to cancel back to the previous view
+ *
+ *	@param controller controller object
+ */
 - (void)addPostViewController2DidCancel:(AddPostViewController2 *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/*!
+ *	allows the user to cancel back to the previous view
+ *
+ *	@param controller controller objecet
+ */
 - (void)addPostViewController2DidSave:(AddPostViewController2 *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/*!
+ *
+ *	sets variables based on which segue is being called, catToRepo -or- goBack
+ *
+ *  catToRepo will pull the correct data and then populate the next view based on that data
+ *  goBack will allow the transition to the 'add a post' view
+ *
+ *
+ *	@param segue  depends on which segue is being called
+ *	@param sender sender is user
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"catToRepo"]) {

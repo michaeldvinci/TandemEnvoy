@@ -20,6 +20,7 @@
 		F51BEE601AD3790300DCAD40 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F51BEE5F1AD3790300DCAD40 /* test.jpg */; };
 		F51BEE621AD379D800DCAD40 /* 123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F51BEE611AD379D800DCAD40 /* 123.jpg */; };
 		F51BEE641AD37BC900DCAD40 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = F51BEE631AD37BC900DCAD40 /* red.png */; };
+		F5265EF11AE4120F0059E856 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265EF01AE4120F0059E856 /* WebViewController.m */; };
 		F5513B401AD2D7DC0019E463 /* AddReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5513B3F1AD2D7DC0019E463 /* AddReplyViewController.m */; };
 		F56621491AD573DB00AE2D4C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56621481AD573DB00AE2D4C /* RegisterViewController.m */; };
 		F57FB95E1AB4C3CE0055A170 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F57FB95D1AB4C3CE0055A170 /* User.m */; };
@@ -88,6 +89,8 @@
 		F51BEE5F1AD3790300DCAD40 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		F51BEE611AD379D800DCAD40 /* 123.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 123.jpg; sourceTree = "<group>"; };
 		F51BEE631AD37BC900DCAD40 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		F5265EEF1AE411F70059E856 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		F5265EF01AE4120F0059E856 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		F5513B3E1AD2D74A0019E463 /* AddReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReplyViewController.h; sourceTree = "<group>"; };
 		F5513B3F1AD2D7DC0019E463 /* AddReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReplyViewController.m; sourceTree = "<group>"; };
 		F56621481AD573DB00AE2D4C /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 				F505E7F91AAEADF900DAF80B /* LaunchScreen.xib */,
 				F518E9861AE1C85300E34CA7 /* PandaFinderViewController.h */,
 				F518E9871AE1C8F300E34CA7 /* PandaFinderViewController.m */,
+				F5265EEF1AE411F70059E856 /* WebViewController.h */,
+				F5265EF01AE4120F0059E856 /* WebViewController.m */,
 				F505E7EA1AAEADF900DAF80B /* Supporting Files */,
 			);
 			path = Aviato;
@@ -352,6 +357,7 @@
 				F56621491AD573DB00AE2D4C /* RegisterViewController.m in Sources */,
 				F5E198281AAF96010075788E /* LoginViewController.m in Sources */,
 				F5513B401AD2D7DC0019E463 /* AddReplyViewController.m in Sources */,
+				F5265EF11AE4120F0059E856 /* WebViewController.m in Sources */,
 				F505E81E1AAF2CB200DAF80B /* Categories.m in Sources */,
 				F57FB98C1AB4FF560055A170 /* RepoViewController.m in Sources */,
 				F518E9881AE1C8F300E34CA7 /* PandaFinderViewController.m in Sources */,

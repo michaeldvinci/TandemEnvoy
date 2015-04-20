@@ -20,6 +20,9 @@
 
 @end
 
+/*!
+ *	Implements the Geolocation static variables
+ */
 @implementation AddCommentViewController {
     CLLocationManager *manager;
     CLGeocoder *geocoder;
@@ -41,14 +44,29 @@
     [super didReceiveMemoryWarning];
 }
 
+/*!
+ *	Allows user to return to previous view
+ *
+ *	@param sender Sender is user
+ */
 - (IBAction)cancel:(id)sender {
     [self.delegate addCommentViewControllerDidCancel:self];
 }
 
+/*!
+ *	Allows user to return to previous view
+ *
+ *	@param sender Sender is user
+ */
 - (IBAction)done:(id)sender {
     [self.delegate addCommentViewControllerDidSave:self];
 }
 
+/*!
+ *	Does a location lookup and returns reverse geotagged location
+ *
+ *	@param sender Sender is user
+ */
 - (IBAction)getLocat:(id)sender {
     manager.delegate = self;
     
@@ -60,6 +78,12 @@
     [manager startUpdatingLocation];
 }
 
+/*!
+ *	pulls proper variables and applys them to correct .php file and allows them to be posted
+ *  to the DB if successful
+ *
+ *	@param sender Sender is user
+ */
 - (void) submitData:(id)sender {
     //topicCat = [[User sharedUser] user.userID];
     
@@ -82,12 +106,23 @@
 }
 
 #pragma mark CLLocationManagerDelegate Methods
-
+/*!
+ *	allows to return error if fails
+ *
+ *	@param manager location manager object
+ *	@param error   error returned if issue
+ */
 - (void)LocationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"Error: %@", error);
     NSLog(@"Failed to get Location! :(");
 }
 
+/*!
+ *	updates map location is geocoordinates change.
+ *
+ *	@param manager   location manager object
+ *	@param locations location object
+ */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     NSLog(@"Location: %@", [locations lastObject]);
     CLLocation *curLocat = [locations lastObject];

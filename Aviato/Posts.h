@@ -13,49 +13,29 @@
  */
 @interface Posts : NSObject
 
-/*!
- *	<#Description#>
- */
+
 @property (strong, nonatomic) NSString *replyBy;
-
-/*!
- *	<#Description#>
- */
 @property (strong, nonatomic) NSString *rBy;
-
-/*!
- *	<#Description#>
- */
 @property (strong, nonatomic) NSString *replyContent;
-
-/*!
- *	<#Description#>
- */
 @property (strong, nonatomic) NSString *replyDate;
-
-/*!
- *	<#Description#>
- */
 @property (strong, nonatomic) NSString *replyID;
-
-/*!
- *	<#Description#>
- */
 @property (strong, nonatomic) NSString *replyTopic;
 @property (strong, nonatomic) NSString *replyUser;
+
 #pragma mark -
 #pragma mark Class Methods
 
 /*!
- *	<#Description#>
+ *	initalizes the reply data for use in the JSON parsing
  *
- *	@param rBy      <#rBy description#>
- *	@param rDate    <#rDate description#>
- *	@param rTopic   <#rTopic description#>
- *	@param rContent <#rContent description#>
- *	@param rID      <#rID description#>
+ *	@param rBy      replyBy data
+ *	@param rDate    replyDate data
+ *	@param rTopic   replyTopic data
+ *	@param rContent replyContent data
+ *	@param rID      replyID data
+ *  @param rUser    replyUser data
  *
- *	@return <#return value description#>
+ *	@return returns Reply object
  */
 - (id)initWidthReplyBy: (NSString *)rBy andreplyDate: (NSString *)rDate andreplyTopic: (NSString *)rTopic andreplyContent: (NSString *)rContent andreplyID: (NSString *)rID andreplyUser: (NSString *) rUser;
 

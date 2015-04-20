@@ -44,11 +44,27 @@
     aCVC.topicID = tID;
 }
 
+/*!
+ *	returns the number of rows to populate the UITableView
+ *
+ *	@param tableView UITableView to populate
+ *	@param section   response from .php sub querey
+ *
+ *	@return returns integer for number of rows
+ */
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return repoArray.count;
 }
 
+/*!
+ *	populates individual rows with the specific object from the parsed JSON data
+ *
+ *	@param myTableView specific tableview being populated
+ *	@param indexPath   specific row being populated
+ *
+ *	@return cell information being returned to uitableviewrow
+ */
 - (UITableViewCell *)tableView:(UITableView *)myTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"repoCell";
@@ -65,6 +81,12 @@
     return repoCell;
 }
 
+/*!
+ *	allows for the specific row to be selected for the proper segue
+ *
+ *	@param myTableView specific tableview being populated
+ *	@param indexPath   specific row being populated
+ */
 - (void)tableView:(UITableView *)myTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -75,6 +97,11 @@
     [super didReceiveMemoryWarning];
 }
 
+/*!
+ *	allows for pull-to-refresh to be implemented
+ *
+ *	@param rControl refreshcontrol variable
+ */
 - (void)updateTable:(UIRefreshControl *)rControl
 {
     [self retrieveData];
@@ -85,11 +112,21 @@
 
 #pragma mark - addPostViewController2Delegate
 
+/*!
+ *	allows the user to cancel back to the previous view
+ *
+ *	@param controller controller object
+ */
 - (void)addReplyViewControllerDidCancel:(AddReplyViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/*!
+ *	allows the user to cancel back to the previous view
+ *
+ *	@param controller controller object
+ */
 - (void)addReplyViewControllerDidSave:(AddReplyViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -97,6 +134,10 @@
 
 #pragma mark -
 #pragma mark Class Methods
+
+/*!
+ *	when called, it sub queries the proper .php file and popultes the JSON data into useful data
+ */
 - (void) retrieveData;
 {
     NSURL *url = [NSURL URLWithString:subURL2];
@@ -120,6 +161,12 @@
     [self.tableView reloadData];
 }
 
+/*!
+ *	sets variables based on which segue is being called
+ *
+ *	@param segue  depends on which segue is being called
+ *	@param sender Sender is User
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"topicToReply"]) {

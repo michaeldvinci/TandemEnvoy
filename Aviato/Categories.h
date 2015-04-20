@@ -18,6 +18,16 @@
 #pragma mark -
 #pragma mark Class Methods
 
+/*!
+ *	initializes category data for use in the JSON parsing
+ *
+ *	@param cDesc category Description data
+ *	@param cName Category Name data
+ *	@param cID   Category ID data
+ *	@param cUser Category User data
+ *
+ *	@return returns Category object
+ */
 - (id)initWidthCategoryDesc: (NSString *)cDesc andcategoryName: (NSString *)cName andcategoryID: (NSString *)cID andcategoryUser: (NSString *)cUser;
 
 @end

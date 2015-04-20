@@ -12,6 +12,18 @@
 
 @synthesize topicSubject, topicDate, topicBy, topicCat, topicID, topicUser;
 
+/*!
+ *	initializes topic data for use in JSON parsing
+ *
+ *	@param reID      topicID variable
+ *	@param reCat     topicCategory variable
+ *	@param reDate    topicDate variable
+ *	@param reBy      topicBy variable
+ *	@param reSubject topicSubject variable
+ *	@param reUser    topicUser variable
+ *
+ *	@return returns Topic object
+ */
 - (id)initWidthTopicID: (NSString *)reID andtopicCat: (NSString *)reCat andtopicDate: (NSString *)reDate andtopicBy: (NSString *)reBy andtopicSubject: (NSString *)reSubject andtopicUser: (NSString *) reUser;
 {
     self = [super init];

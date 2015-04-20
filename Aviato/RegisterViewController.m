@@ -32,14 +32,27 @@
     [super didReceiveMemoryWarning];
 }
 
+/*!
+ *	Allows user to return to previous view
+ *
+ *	@param sender Sender is user
+ */
 - (IBAction)cancel:(id)sender {
     [self.delegate registerViewControllerDidCancel:self];
 }
 
+/*!
+ *	Allows user to return to previous view
+ *
+ *	@param sender Sender is user
+ */
 - (IBAction)done:(id)sender {
     [self.delegate registerViewControllerDidSave:self];
 }
 
+/*!
+ *	Shows alert when Successful user added to DB
+ */
 - (void)showAlert1 {
     
     UIAlertView *alert = [[UIAlertView alloc]
@@ -53,6 +66,9 @@
     [alert show];
 }
 
+/*!
+ *	Shows alert when failure at adding new user
+ */
 - (void)showAlert2 {
     
     UIAlertView *alert = [[UIAlertView alloc]
@@ -66,6 +82,9 @@
     [alert show];
 }
 
+/*!
+ *	Shows alert if there is already a user with the same name in the DB
+ */
 - (void)showAlert3 {
     
     UIAlertView *alert = [[UIAlertView alloc]
@@ -79,6 +98,21 @@
     [alert show];
 }
 
+
+/*!
+ *
+ *
+ *	Takes 3 variables from TF and submits them to the .php file and attempts to add a new user to the DB
+ *
+ *  if successful, shows alert1, if not it shows alert2
+ *
+ *
+ *  Afterwards, closes view and returns to Login screen
+ *
+ *
+ *
+ *	@param sender Sender is user
+ */
 - (void) submitData:(id)sender {
     //topicCat = [[User sharedUser] user.userID];
     
@@ -114,7 +148,6 @@
         [self showAlert3];
     }
 
-    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
