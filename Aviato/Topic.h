@@ -32,6 +32,6 @@
  *
  *	@return returns Topic object
  */
-- (id)initWidthTopicID: (NSString *)reID andtopicCat: (NSString *)reCat andtopicDate: (NSString *)reDate andtopicBy: (NSString *)reBy andtopicSubject: (NSString *)reSubject andtopicUser: (NSString *)reUser;
+- (id)initWidthTopicID:(NSString *)reID andtopicCat:(NSString *)reCat andtopicDate:(NSString *)reDate andtopicBy:(NSString *)reBy andtopicSubject:(NSString *)reSubject andtopicUser:(NSString *)reUser;
 
 @end

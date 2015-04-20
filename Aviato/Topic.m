@@ -24,20 +24,19 @@
  *
  *	@return returns Topic object
  */
-- (id)initWidthTopicID: (NSString *)reID andtopicCat: (NSString *)reCat andtopicDate: (NSString *)reDate andtopicBy: (NSString *)reBy andtopicSubject: (NSString *)reSubject andtopicUser: (NSString *) reUser;
+- (id)initWidthTopicID:(NSString *)reID andtopicCat:(NSString *)reCat andtopicDate:(NSString *)reDate andtopicBy:(NSString *)reBy andtopicSubject:(NSString *)reSubject andtopicUser:(NSString *)reUser;
 {
-    self = [super init];
-    if (self)
-    {
-             topicID = reID;
-            topicCat = reCat;
-           topicDate = reDate;
-             topicBy = reBy;
-        topicSubject = reSubject;
-           topicUser = reUser;
-    }
-    
-    return self;
+	self = [super init];
+	if (self) {
+		topicID = reID;
+		topicCat = reCat;
+		topicDate = reDate;
+		topicBy = reBy;
+		topicSubject = reSubject;
+		topicUser = reUser;
+	}
+
+	return self;
 }
 
 @end

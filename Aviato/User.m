@@ -34,11 +34,11 @@ static User *getInstance = nil;
  *	@return 'User' Singleton
  */
 + (User *)getInstance {
-    if(getInstance == nil){
-        getInstance = [[User alloc] init];
-    }
-    
-    return getInstance;
+	if (getInstance == nil) {
+		getInstance = [[User alloc] init];
+	}
+
+	return getInstance;
 }
 
 /*!
@@ -46,12 +46,12 @@ static User *getInstance = nil;
  *
  *	@return 'User' singleton
  */
--(id)init {
-    if(self = [super init]) {
-        _userID = @"";
-    }
-    
-    return self;
+- (id)init {
+	if (self = [super init]) {
+		_userID = @"";
+	}
+
+	return self;
 }
 
 /*!
@@ -60,7 +60,7 @@ static User *getInstance = nil;
  *	@param ID 'userID' from DB
  */
 - (void)setID:(NSString *)ID {
-    _userID = ID;
+	_userID = ID;
 }
 
 /*!
@@ -69,7 +69,7 @@ static User *getInstance = nil;
  *	@return 'userID' when called upon
  */
 - (NSString *)ID {
-    return _userID;
+	return _userID;
 }
 
 /*!
@@ -78,7 +78,7 @@ static User *getInstance = nil;
  *	@param name 'userName' from DB
  */
 - (void)setName:(NSString *)name {
-    _userName = name;
+	_userName = name;
 }
 
 /*!
@@ -87,7 +87,7 @@ static User *getInstance = nil;
  *	@return 'userName' when called upon
  */
 - (NSString *)name {
-    return _userName;
+	return _userName;
 }
 
 @end

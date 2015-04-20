@@ -10,9 +10,8 @@
 #import "AddReplyViewController.h"
 
 @interface RepoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddReplyViewControllerDelegate> {
-    
-    IBOutlet UITableView *tableView;
-    NSMutableArray *repoArray;
+	IBOutlet UITableView *tableView;
+	NSMutableArray *repoArray;
 }
 
 @property (nonatomic, strong) User *user;
@@ -29,6 +28,6 @@
 
 #pragma mark -
 #pragma mark Class Methods
-- (void) retrieveData;
+- (void)retrieveData;
 
 @end

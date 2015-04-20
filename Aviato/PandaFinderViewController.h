@@ -12,6 +12,6 @@
 @interface PandaFinderViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapMap;
-@property (nonatomic, retain) CLLocation* initialLocation;
+@property (nonatomic, retain) CLLocation *initialLocation;
 
 @end

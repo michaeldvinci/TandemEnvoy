@@ -59,7 +59,7 @@
 @property (nonatomic) NSURLCredentialPersistence *permanent;
 
 /*!
- *	when activated, it will send data to .php file to check for proper credentials to let the user log in, if 
+ *	when activated, it will send data to .php file to check for proper credentials to let the user log in, if
  *  proper cred. are found, user will segue to the CatViewController
  *
  *	@param sender sender is the user data

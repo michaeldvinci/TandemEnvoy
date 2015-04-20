@@ -10,9 +10,8 @@
 #import "AddCommentViewController.h"
 
 @interface TopicViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddCommentViewControllerDelegate> {
-    
-    IBOutlet UITableView *tableView;
-    NSMutableArray *topicArray;
+	IBOutlet UITableView *tableView;
+	NSMutableArray *topicArray;
 }
 
 @property (nonatomic, strong) User *user;
@@ -30,6 +29,6 @@
 #pragma mark -
 #pragma mark Class Methods
 
-- (void) retrieveData;
+- (void)retrieveData;
 
 @end

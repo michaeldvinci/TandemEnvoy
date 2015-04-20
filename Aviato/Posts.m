@@ -24,20 +24,19 @@
  *
  *	@return returns Reply object
  */
-- (id)initWidthReplyBy: (NSString *)rBy andreplyDate: (NSString *)rDate andreplyTopic: (NSString *)rTopic andreplyContent: (NSString *)rContent andreplyID: (NSString *)rID andreplyUser: (NSString *) rUser;
+- (id)initWidthReplyBy:(NSString *)rBy andreplyDate:(NSString *)rDate andreplyTopic:(NSString *)rTopic andreplyContent:(NSString *)rContent andreplyID:(NSString *)rID andreplyUser:(NSString *)rUser;
 {
-    self = [super init];
-    if (self)
-    {
-             replyBy = rBy;
-           replyDate = rDate;
-          replyTopic = rTopic;
-        replyContent = rContent;
-             replyID = rID;
-           replyUser = rUser;
-    }
-    
-    return self;
+	self = [super init];
+	if (self) {
+		replyBy = rBy;
+		replyDate = rDate;
+		replyTopic = rTopic;
+		replyContent = rContent;
+		replyID = rID;
+		replyUser = rUser;
+	}
+
+	return self;
 }
 
 @end

@@ -29,7 +29,7 @@
 @property (strong, nonatomic) NSString *postString;
 
 
-@property(nonatomic, strong) id <AddReplyViewControllerDelegate> delegate;
+@property (nonatomic, strong) id <AddReplyViewControllerDelegate> delegate;
 
 /*!
  *	Returns user to previous view

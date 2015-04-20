@@ -22,15 +22,14 @@
  *
  *	@return JSON informatiom
  */
-- (id)initWidthSuccess: (NSString *)loginSuccess;
+- (id)initWidthSuccess:(NSString *)loginSuccess;
 {
-    self = [super init];
-    if (self)
-    {
-        success = loginSuccess;
-    }
-    
-    return self;
+	self = [super init];
+	if (self) {
+		success = loginSuccess;
+	}
+
+	return self;
 }
 
 @end

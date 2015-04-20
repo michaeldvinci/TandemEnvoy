@@ -16,13 +16,13 @@
 @implementation WebViewController {
 }
 
--(void)viewDidLoad{
-    [super viewDidLoad];
-    
-    NSString *strURL = @"http://www.webn.es";
-    NSURL *url = [NSURL URLWithString:strURL];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    [self.myWebView loadRequest:urlRequest];
+- (void)viewDidLoad {
+	[super viewDidLoad];
+
+	NSString *strURL = @"http://www.webn.es";
+	NSURL *url = [NSURL URLWithString:strURL];
+	NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+	[self.myWebView loadRequest:urlRequest];
 }
 
 @end

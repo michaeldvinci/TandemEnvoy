@@ -10,21 +10,20 @@
 #import "AddPostViewController2.h"
 
 @interface CatViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AddPostViewController2Delegate> {
-    
-    /*!
-     *	tableView which allows for the population of JSON data into tableviewcells
-     */
-    IBOutlet UITableView *tableView;
-    
-    /*!
-     *	Array which JSON data is populated into
-     */
-    NSMutableArray *categoryArray;
-    
-    /*!
-     *	Data variable for JSON response
-     */
-    NSMutableData *responseData;
+	/*!
+	 *	tableView which allows for the population of JSON data into tableviewcells
+	 */
+	IBOutlet UITableView *tableView;
+
+	/*!
+	 *	Array which JSON data is populated into
+	 */
+	NSMutableArray *categoryArray;
+
+	/*!
+	 *	Data variable for JSON response
+	 */
+	NSMutableData *responseData;
 }
 
 /*!
@@ -59,6 +58,6 @@
 
 #pragma mark -
 #pragma mark Class Methods
-- (void) retrieveData;
+- (void)retrieveData;
 
 @end

@@ -12,8 +12,8 @@
  *	Instantiates User singleton
  */
 @interface User : NSObject {
-    NSString *_userID;
-    NSString *_userName;
+	NSString *_userID;
+	NSString *_userName;
 }
 
 /*!

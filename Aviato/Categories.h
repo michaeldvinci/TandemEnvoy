@@ -10,10 +10,10 @@
 
 @interface Categories : NSObject
 
-@property (strong, nonatomic) NSString * categoryDesc;
-@property (strong, nonatomic) NSString * categoryID;
-@property (strong, nonatomic) NSString * categoryName;
-@property (strong, nonatomic) NSString * categoryUser;
+@property (strong, nonatomic) NSString *categoryDesc;
+@property (strong, nonatomic) NSString *categoryID;
+@property (strong, nonatomic) NSString *categoryName;
+@property (strong, nonatomic) NSString *categoryUser;
 
 #pragma mark -
 #pragma mark Class Methods
@@ -28,6 +28,6 @@
  *
  *	@return returns Category object
  */
-- (id)initWidthCategoryDesc: (NSString *)cDesc andcategoryName: (NSString *)cName andcategoryID: (NSString *)cID andcategoryUser: (NSString *)cUser;
+- (id)initWidthCategoryDesc:(NSString *)cDesc andcategoryName:(NSString *)cName andcategoryID:(NSString *)cID andcategoryUser:(NSString *)cUser;
 
 @end

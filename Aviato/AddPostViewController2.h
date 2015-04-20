@@ -18,7 +18,7 @@
 - (void)addPostViewController2DidSave:(AddPostViewController2 *)controller;
 - (void)addPostViewController2DidCancel:(AddPostViewController2 *)controller;
 
-@end 
+@end
 
 @interface AddPostViewController2 : UITableViewController
 
@@ -29,7 +29,7 @@
 @property (strong, nonatomic) NSString *postString;
 
 
-@property(nonatomic, strong) id <AddPostViewController2Delegate> delegate;
+@property (nonatomic, strong) id <AddPostViewController2Delegate> delegate;
 
 /*!
  *	Returns user to previous view

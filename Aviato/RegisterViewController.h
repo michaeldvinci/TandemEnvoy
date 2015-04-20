@@ -43,7 +43,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *userEmail;
 
 
-@property(nonatomic, strong) id <RegisterViewControllerDelegate> delegate;
+@property (nonatomic, strong) id <RegisterViewControllerDelegate> delegate;
 
 /*!
  *	Returns user to previous view

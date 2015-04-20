@@ -25,6 +25,6 @@
  *
  *	@return returned JSON parameter
  */
-- (id)initWidthSuccess:(NSString*) loginSuccess;
+- (id)initWidthSuccess:(NSString *)loginSuccess;
 
 @end

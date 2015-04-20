@@ -12,27 +12,22 @@
 
 @end
 
-@implementation PandaFinderViewController{
-    
+@implementation PandaFinderViewController {
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    }
-
-- (void)mapMap:(MKMapView *)mapMap didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    
-        self.initialLocation = userLocation.location;
-        
-        MKCoordinateRegion region;
-        region.center = mapMap.userLocation.coordinate;
-        region.span = MKCoordinateSpanMake(.1, .1);
-        
-        region = [mapMap regionThatFits:region];
-        [mapMap setRegion:region animated:YES];
-    
+	[super viewDidLoad];
 }
 
+- (void)mapMap:(MKMapView *)mapMap didUpdateUserLocation:(MKUserLocation *)userLocation {
+	self.initialLocation = userLocation.location;
+
+	MKCoordinateRegion region;
+	region.center = mapMap.userLocation.coordinate;
+	region.span = MKCoordinateSpanMake(.1, .1);
+
+	region = [mapMap regionThatFits:region];
+	[mapMap setRegion:region animated:YES];
+}
 
 @end

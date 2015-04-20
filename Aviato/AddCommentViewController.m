@@ -24,24 +24,24 @@
  *	Implements the Geolocation static variables
  */
 @implementation AddCommentViewController {
-    CLLocationManager *manager;
-    CLGeocoder *geocoder;
-    CLPlacemark *placemark;
+	CLLocationManager *manager;
+	CLGeocoder *geocoder;
+	CLPlacemark *placemark;
 }
 
 @synthesize user, commentView, postString, topicID;
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    manager = [[CLLocationManager alloc] init];
-    geocoder = [[CLGeocoder alloc] init];
-    
-    NSLog(@"Add Comment tID: %@", topicID);
+	[super viewDidLoad];
+
+	manager = [[CLLocationManager alloc] init];
+	geocoder = [[CLGeocoder alloc] init];
+
+	NSLog(@"Add Comment tID: %@", topicID);
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+	[super didReceiveMemoryWarning];
 }
 
 /*!
@@ -50,7 +50,7 @@
  *	@param sender Sender is user
  */
 - (IBAction)cancel:(id)sender {
-    [self.delegate addCommentViewControllerDidCancel:self];
+	[self.delegate addCommentViewControllerDidCancel:self];
 }
 
 /*!
@@ -59,7 +59,7 @@
  *	@param sender Sender is user
  */
 - (IBAction)done:(id)sender {
-    [self.delegate addCommentViewControllerDidSave:self];
+	[self.delegate addCommentViewControllerDidSave:self];
 }
 
 /*!
@@ -68,14 +68,14 @@
  *	@param sender Sender is user
  */
 - (IBAction)getLocat:(id)sender {
-    manager.delegate = self;
-    
-    manager.desiredAccuracy = kCLLocationAccuracyBest;
-    
-    if ([manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [manager requestWhenInUseAuthorization];
-    }
-    [manager startUpdatingLocation];
+	manager.delegate = self;
+
+	manager.desiredAccuracy = kCLLocationAccuracyBest;
+
+	if ([manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+		[manager requestWhenInUseAuthorization];
+	}
+	[manager startUpdatingLocation];
 }
 
 /*!
@@ -84,25 +84,25 @@
  *
  *	@param sender Sender is user
  */
-- (void) submitData:(id)sender {
-    //topicCat = [[User sharedUser] user.userID];
-    
-    User *user1 = [User getInstance];
-    
-    NSString *myRequestString = [NSString stringWithFormat:@"replyContent=%@&replyBy=%@&replyTopic=%@&replyUser=%@", commentView.text, user1.userID, topicID, [[User getInstance] userName]];
-    
-    NSLog(@"Link: %@", myRequestString);
-    
-    NSData *myRequestData = [NSData dataWithBytes: [myRequestString UTF8String] length: [myRequestString length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL: [NSURL URLWithString: @"http://tandemenvoy.michaeldvinci.com/forum/create_reply2.php"]];
-    [request setHTTPMethod: @"POST"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
-    [request setHTTPBody: myRequestData];
-    NSData *returnData = [NSURLConnection sendSynchronousRequest: request returningResponse: nil error: nil];
-    NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
-    NSLog(@"%@",response);
-    
-    [self.delegate addCommentViewControllerDidCancel:self];
+- (void)submitData:(id)sender {
+	//topicCat = [[User sharedUser] user.userID];
+
+	User *user1 = [User getInstance];
+
+	NSString *myRequestString = [NSString stringWithFormat:@"replyContent=%@&replyBy=%@&replyTopic=%@&replyUser=%@", commentView.text, user1.userID, topicID, [[User getInstance] userName]];
+
+	NSLog(@"Link: %@", myRequestString);
+
+	NSData *myRequestData = [NSData dataWithBytes:[myRequestString UTF8String] length:[myRequestString length]];
+	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://tandemenvoy.michaeldvinci.com/forum/create_reply2.php"]];
+	[request setHTTPMethod:@"POST"];
+	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+	[request setHTTPBody:myRequestData];
+	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
+	NSLog(@"%@", response);
+
+	[self.delegate addCommentViewControllerDidCancel:self];
 }
 
 #pragma mark CLLocationManagerDelegate Methods
@@ -113,8 +113,8 @@
  *	@param error   error returned if issue
  */
 - (void)LocationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"Error: %@", error);
-    NSLog(@"Failed to get Location! :(");
+	NSLog(@"Error: %@", error);
+	NSLog(@"Failed to get Location! :(");
 }
 
 /*!
@@ -124,23 +124,22 @@
  *	@param locations location object
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    NSLog(@"Location: %@", [locations lastObject]);
-    CLLocation *curLocat = [locations lastObject];
-    
-    [geocoder reverseGeocodeLocation:curLocat completionHandler: ^(NSArray *placemarks, NSError *error) {
-        if (error == nil && [placemarks count] > 0) {
-            placemark = [placemarks lastObject];
-            
-            self.address2.text = [NSString stringWithFormat:@"%@ %@\n%@, %@. %@\n%@",
-                                  placemark.subThoroughfare, placemark.thoroughfare,
-                                  placemark.locality, placemark.administrativeArea, placemark.postalCode,
-                                  placemark.country];
-        }
-        else {
-            NSLog(@"%@", error.debugDescription);
-        }
-    }];
+	NSLog(@"Location: %@", [locations lastObject]);
+	CLLocation *curLocat = [locations lastObject];
+
+	[geocoder reverseGeocodeLocation:curLocat completionHandler: ^(NSArray *placemarks, NSError *error) {
+	    if (error == nil && [placemarks count] > 0) {
+	        placemark = [placemarks lastObject];
+
+	        self.address2.text = [NSString stringWithFormat:@"%@ %@\n%@, %@. %@\n%@",
+	                              placemark.subThoroughfare, placemark.thoroughfare,
+	                              placemark.locality, placemark.administrativeArea, placemark.postalCode,
+	                              placemark.country];
+		}
+	    else {
+	        NSLog(@"%@", error.debugDescription);
+		}
+	}];
 }
 
 @end
-

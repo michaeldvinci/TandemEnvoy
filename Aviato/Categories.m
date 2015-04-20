@@ -22,18 +22,17 @@
  *
  *	@return returns Category object
  */
-- (id)initWidthCategoryDesc: (NSString *)cDesc andcategoryName: (NSString *)cName andcategoryID: (NSString *)cID andcategoryUser: (NSString *)cUser;
+- (id)initWidthCategoryDesc:(NSString *)cDesc andcategoryName:(NSString *)cName andcategoryID:(NSString *)cID andcategoryUser:(NSString *)cUser;
 {
-    self = [super init];
-    if (self)
-    {
-        categoryDesc = cDesc;
-        categoryName = cName;
-          categoryID = cID;
-        categoryUser = cUser;
-    }
-    
-    return self;
+	self = [super init];
+	if (self) {
+		categoryDesc = cDesc;
+		categoryName = cName;
+		categoryID = cID;
+		categoryUser = cUser;
+	}
+
+	return self;
 }
 
 @end

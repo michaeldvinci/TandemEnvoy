@@ -27,7 +27,7 @@
 @property (strong, nonatomic) NSString *postString;
 @property (strong, nonatomic) NSString *topicID;
 
-@property(nonatomic, strong) id <AddCommentViewControllerDelegate> delegate;
+@property (nonatomic, strong) id <AddCommentViewControllerDelegate> delegate;
 
 /*!
  *	Returns user to previous view
