@@ -20,7 +20,9 @@
 
 @end
 
-@interface RegisterViewController : UIViewController;
+@interface RegisterViewController : UIViewController <UIAlertViewDelegate> {
+    
+}
 
 /*!
  *	TF source for userPass variable
@@ -41,7 +43,7 @@
  *	TF source for userEmail variable
  */
 @property (strong, nonatomic) IBOutlet UITextField *userEmail;
-
+@property (strong, nonatomic) User *user;
 
 @property (nonatomic, strong) id <RegisterViewControllerDelegate> delegate;
 
