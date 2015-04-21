@@ -171,7 +171,7 @@
 
 		rVC.theData2  = [jsonArray2 objectAtIndex:[indexPath row]];
 		rVC.subURL2   = [@"http://tandemenvoy.michaeldvinci.com/forum/topicsJSON.php?tID=" stringByAppendingString:[rVC.theData2 objectForKey:@"categoryID"]];
-		rVC.descText2 = [NSString stringWithFormat:@"%@", [rVC.theData2 objectForKey:@"categoryDesc"]];
+		rVC.descText2 = [NSString stringWithFormat:@"\n%@", [rVC.theData2 objectForKey:@"categoryDesc"]];
 		rVC.tID = [rVC.theData2 objectForKey:@"categoryID"];
 
 		NSLog(@"output: %@", rVC.subURL2);

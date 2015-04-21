@@ -192,23 +192,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gW7-v0-7iE">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gW7-v0-7iE">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="JkV-fx-km5"/>
                                 </items>
                             </navigationBar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6LQ-e7-rJc">
-                                <rect key="frame" x="0.0" y="64" width="414" height="76"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="HkA-5B-ATx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hzg-uH-lRs">
-                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
+                                <rect key="frame" x="0.0" y="154" width="414" height="538"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repoCell" textLabel="M4z-O3-ykc" detailTextLabel="tZo-R2-XKk" rowHeight="53" style="IBUITableViewCellStyleSubtitle" id="jf6-Ia-yZ9">
@@ -250,8 +241,23 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6LQ-e7-rJc">
+                                <rect key="frame" x="0.0" y="93" width="414" height="79"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="HkA-5B-ATx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gW7-v0-7iE" firstAttribute="top" secondItem="3JK-Q3-pti" secondAttribute="bottom" constant="-20" id="Yuf-Yf-qTb"/>
+                            <constraint firstAttribute="centerX" secondItem="6LQ-e7-rJc" secondAttribute="centerX" id="gNA-zu-Ial"/>
+                            <constraint firstAttribute="centerY" secondItem="6LQ-e7-rJc" secondAttribute="centerY" constant="269" id="u6L-2D-1Dc"/>
+                            <constraint firstItem="6LQ-e7-rJc" firstAttribute="top" secondItem="3JK-Q3-pti" secondAttribute="bottom" constant="55" id="zud-6C-O4n"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="repoTF" destination="6LQ-e7-rJc" id="RZh-Gx-y9F"/>
