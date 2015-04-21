@@ -52,6 +52,10 @@
  */
 - (IBAction)cancel:(id)sender {
 	[self.delegate addReplyViewControllerDidCancel:self];
+    
+    RepoViewController *rVC;
+    
+    [rVC.tableView reloadData];
 }
 
 /*!
@@ -60,7 +64,11 @@
  *	@param sender Sender is user
  */
 - (IBAction)done:(id)sender {
-	[self.delegate addReplyViewControllerDidSave:self];
+    [self.delegate addReplyViewControllerDidSave:self];
+    
+    RepoViewController *rVC;
+    
+    [rVC.tableView reloadData];
 }
 
 /*!

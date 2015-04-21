@@ -24,8 +24,8 @@
 
 @property (nonatomic, strong) User *user;
 @property (strong, nonatomic) IBOutlet UITextField *categoryName;
+@property (strong, nonatomic) IBOutlet UITextField *endTime;
 @property (strong, nonatomic) IBOutlet UITextView *categoryDesc;
-@property (strong, nonatomic) IBOutlet UITextField *categorySubmitter;
 @property (strong, nonatomic) NSString *postString;
 
 

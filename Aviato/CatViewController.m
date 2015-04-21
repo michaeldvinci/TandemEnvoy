@@ -27,7 +27,9 @@
 
 	self.title = @"Recent Posts";
 	self.navigationItem.hidesBackButton = YES;
-	self.navigationController.navigationBar.hidden = NO;
+    self.navigationController.navigationBar.hidden = NO;
+    
+    [self updateDB];
 
 	user = [User getInstance];
 
@@ -39,6 +41,11 @@
 	self.refreshControl = [[UIRefreshControl alloc] init];
 	[self.refreshControl addTarget:self action:@selector(updateTable:) forControlEvents:UIControlEventValueChanged];
 	tvController.refreshControl = self.refreshControl;
+}
+
+- (void) viewDidAppear {
+    [self updateDB];
+    [tableView reloadData];
 }
 
 /*!
@@ -79,6 +86,20 @@
 	return catCell;
 }
 
+- (void)updateDB {
+    //[self updateDB];
+    
+    NSString *myRequestString = [NSString stringWithFormat:@""];
+    NSData *myRequestData = [NSData dataWithBytes:[myRequestString UTF8String] length:[myRequestString length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://tandemenvoy.michaeldvinci.com/forum/updateDB.php"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    [request setHTTPBody:myRequestData];
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
+    NSLog(@"%@", response);
+}
+
 /*!
  *	allows for the specific row to be selected for the proper segue
  *
@@ -99,7 +120,9 @@
  *	@param rControl refreshcontrol variable
  */
 - (void)updateTable:(UIRefreshControl *)rControl {
-	[self retrieveData];
+    [self updateDB];
+    
+    [self retrieveData];
 	[self.tableView reloadData];
 
 	[refreshControl endRefreshing];
@@ -113,6 +136,8 @@
  */
 - (void)retrieveData;
 {
+    [self updateDB];
+    
 	NSURL *url = [NSURL URLWithString:getDataURL];
 	NSMutableData *responseData1 = [NSMutableData dataWithContentsOfURL:url];
 

@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *invoiceDesc;
 @property (strong, nonatomic) IBOutlet UITextField *invoiceAmount;
 @property (strong, nonatomic) IBOutlet UITextField *invoiceEmail;
+@property (strong, nonatomic) NSString *catID;
 
 /*!
  *	opens PayPal Here app when called upon

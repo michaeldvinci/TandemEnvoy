@@ -43,6 +43,11 @@
 	aCVC.topicID = tID;
 }
 
+- (void) viewDidAppear {
+    [self updateDB];
+    [tableView reloadData];
+}
+
 /*!
  *	returns the number of rows to populate the UITableView
  *
@@ -98,6 +103,7 @@
  *	@param rControl refreshcontrol variable
  */
 - (void)updateTable:(UIRefreshControl *)rControl {
+    [self updateDB];
 	[self retrieveData];
 	[self.tableView reloadData];
 
@@ -132,6 +138,8 @@
  */
 - (void)retrieveData;
 {
+    [self updateDB];
+    
 	NSURL *url = [NSURL URLWithString:subURL2];
 	NSData *data = [NSData dataWithContentsOfURL:url];
 
@@ -152,6 +160,20 @@
 	[self.tableView reloadData];
 }
 
+- (void)updateDB {
+    //[self updateDB];
+    
+    NSString *myRequestString = [NSString stringWithFormat:@""];
+    NSData *myRequestData = [NSData dataWithBytes:[myRequestString UTF8String] length:[myRequestString length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://tandemenvoy.michaeldvinci.com/forum/updateDB.php"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    [request setHTTPBody:myRequestData];
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
+    NSLog(@"%@", response);
+}
+
 /*!
  *	sets variables based on which segue is being called
  *
@@ -164,12 +186,13 @@
 		NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 
 		tVC.theData = [repoJsonArray objectAtIndex:[indexPath row]];
-		tVC.subURL = [@"http://tandemenvoy.michaeldvinci.com/forum/repliesJSON.php?rTopic=" stringByAppendingString:[tVC.theData objectForKey:@"topicID"]];
+        tVC.subURL = [NSString stringWithFormat:@"http://tandemenvoy.michaeldvinci.com/forum/repliesJSON.php?rTopic=%@&rID=%@",[tVC.theData objectForKey:@"topicID"], [[User getInstance] userID]];
 		tVC.descText = [NSString stringWithFormat:@"%@", [tVC.theData objectForKey:@"categoryDesc"]];
 
 		NSLog(@"output: %@", tVC.subURL);
 
 		tVC.topID = [tVC.theData objectForKey:@"topicID"];
+        tVC.catID = tID;
 	}
 
 	if ([segue.identifier isEqualToString:@"makeOffer"]) {

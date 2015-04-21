@@ -29,7 +29,7 @@
 	CLPlacemark *placemark;
 }
 
-@synthesize user, categoryDesc, categoryName, categorySubmitter, postString;
+@synthesize user, categoryDesc, categoryName, endTime, postString;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -51,6 +51,10 @@
  */
 - (IBAction)cancel:(id)sender {
 	[self.delegate addPostViewController2DidCancel:self];
+    
+    CatViewController *cVC;
+    
+    [cVC.tableView reloadData];
 }
 
 /*!
@@ -60,6 +64,10 @@
  */
 - (IBAction)done:(id)sender {
 	[self.delegate addPostViewController2DidSave:self];
+    
+    CatViewController *cVC;
+    
+    [cVC.tableView reloadData];
 }
 
 /*!
@@ -85,7 +93,9 @@
  *	@param sender Sender is user
  */
 - (void)submitData:(id)sender {
-	NSString *myRequestString = [NSString stringWithFormat:@"categoryDesc=%@&categoryName=%@&categoryUser=%@", categoryDesc.text, categoryName.text, [[User getInstance] userName]];
+	NSString *myRequestString = [NSString stringWithFormat:@"categoryDesc=%@&categoryName=%@&categoryUser=%@&catEnd=%@", categoryDesc.text, categoryName.text, [[User getInstance] userName], endTime.text];
+    
+    NSLog(@"catEnd = %@", endTime.text);
 
 	NSData *myRequestData = [NSData dataWithBytes:[myRequestString UTF8String] length:[myRequestString length]];
 	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://tandemenvoy.michaeldvinci.com/forum/create_cat2.php"]];

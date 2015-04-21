@@ -18,8 +18,26 @@
 @implementation PaymentViewController {
 }
 
+@synthesize catID;
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    NSLog(@"catID = %@", catID);
+}
+
+- (void)deleteDB {
+    //[self updateDB];
+    
+    NSString *myRequestString = [NSString stringWithFormat:@"categoryID=%@", catID];
+    NSData *myRequestData = [NSData dataWithBytes:[myRequestString UTF8String] length:[myRequestString length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://tandemenvoy.michaeldvinci.com/forum/deleteDB.php"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    [request setHTTPBody:myRequestData];
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
+    NSLog(@"%@", response);
 }
 
 /*!
@@ -94,7 +112,10 @@
 		                                                    message:@"The PayPal Here App is not installed. It must be installed to take payment."
 		                                                   delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
 		[alertView show];
-	}
+    }
+    
+    [self deleteDB];
+    
 }
 
 @end

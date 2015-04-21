@@ -9,6 +9,7 @@
 #import "User.h"
 #import "RepoViewController.h"
 #import "AddCommentViewController.h"
+#import "TopicViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
 @interface AddCommentViewController () <AddCommentViewControllerDelegate, CLLocationManagerDelegate>
@@ -51,6 +52,10 @@
  */
 - (IBAction)cancel:(id)sender {
 	[self.delegate addCommentViewControllerDidCancel:self];
+    
+    TopicViewController *tVC;
+    
+    [tVC.tableView reloadData];
 }
 
 /*!
@@ -59,7 +64,11 @@
  *	@param sender Sender is user
  */
 - (IBAction)done:(id)sender {
-	[self.delegate addCommentViewControllerDidSave:self];
+    [self.delegate addCommentViewControllerDidSave:self];
+    
+    TopicViewController *tVC;
+    
+    [tVC.tableView reloadData];
 }
 
 /*!

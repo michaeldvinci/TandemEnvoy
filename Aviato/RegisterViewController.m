@@ -142,7 +142,8 @@
 	else {
 		[self showAlert3];
 	}
-
+    
+    
 	[self.navigationController popViewControllerAnimated:YES];
 }
 

@@ -25,4 +25,8 @@
 	[self.myWebView loadRequest:urlRequest];
 }
 
+- (IBAction)backButtonTapped:(id)sender {
+    [_myWebView goBack];
+}
+
 @end

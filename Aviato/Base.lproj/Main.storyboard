@@ -104,11 +104,6 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem systemItem="compose" id="gNG-Sz-5gp">
-                                    <connections>
-                                        <action selector="submitData:" destination="hsn-mh-60C" id="2GQ-HP-WKm"/>
-                                    </connections>
-                                </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="wW0-kb-0Zw"/>
                                 <barButtonItem systemItem="done" id="W63-Wk-tKE">
                                     <connections>
@@ -155,7 +150,20 @@
                             <outlet property="delegate" destination="hsn-mh-60C" id="wqZ-M8-gXO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Personal Conversation" id="vef-uL-Suj"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Personal Conversation" id="vef-uL-Suj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bNg-pD-6By">
+                            <connections>
+                                <action selector="cancel:" destination="hsn-mh-60C" id="ZXT-7I-YWx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="KJb-Ar-vnd">
+                            <connections>
+                                <action selector="submitData:" destination="hsn-mh-60C" id="Jw2-3C-X9g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="commentView" destination="WBc-hc-5rr" id="qUI-eI-IYt"/>
                     </connections>
@@ -536,7 +544,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2Gn-zr-dIB"/>
+                    <navigationItem key="navigationItem" id="2Gn-zr-dIB">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Gh9-1i-hrJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TVa-ag-OEx">
+                                <rect key="frame" x="25" y="81" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="&lt; Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="4ki-w6-TFI" eventType="touchUpInside" id="QqY-XF-FW1"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myWebView" destination="ftj-hk-Hmh" id="LN5-th-9eV"/>
                     </connections>
@@ -588,7 +609,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1h-i5-QMo" id="Ess-iB-zNS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OLC-2l-ZPv">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="time test" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="OLC-2l-ZPv">
                                                     <rect key="frame" x="8" y="9" width="398" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="yes"/>
@@ -605,7 +626,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Pp-yK-E4Q" id="g1m-UI-znH">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sho-ip-yVa">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="test" translatesAutoresizingMaskIntoConstraints="NO" id="Sho-ip-yVa">
                                                     <rect key="frame" x="8" y="9" width="584" height="116"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -616,17 +637,17 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Recipient Name" id="c3q-TO-zcf">
+                            <tableViewSection headerTitle="Time Limit [Minutes]" id="c3q-TO-zcf" userLabel="Time Limit [Minutes]">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Lq5-YS-MDC">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lq5-YS-MDC" id="WfN-td-aRC">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="E6J-5K-HBx">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="E6J-5K-HBx">
                                                     <rect key="frame" x="8" y="9" width="584" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -673,7 +694,7 @@
                         <outlet property="address" destination="KKc-a8-z0d" id="igv-5x-bPl"/>
                         <outlet property="categoryDesc" destination="Sho-ip-yVa" id="zqw-wH-IMQ"/>
                         <outlet property="categoryName" destination="OLC-2l-ZPv" id="HFi-AG-1lV"/>
-                        <outlet property="categorySubmitter" destination="E6J-5K-HBx" id="7Sz-rG-fg0"/>
+                        <outlet property="endTime" destination="E6J-5K-HBx" id="qer-eH-tQd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdM-3x-lKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -732,9 +753,15 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="wHi-E9-Na5"/>
+                                    <barButtonItem title="Accept Order" id="R9I-OL-Sqg">
+                                        <connections>
+                                            <action selector="acceptOrder:" destination="r0d-bG-3XF" id="fwj-YG-fsR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uCa-iD-wQ7"/>
                                     <barButtonItem title="PayPal Here" id="DC5-fB-KMk">
                                         <connections>
-                                            <segue destination="Gyt-ca-CAg" kind="show" id="Zdy-cH-3r1"/>
+                                            <segue destination="Gyt-ca-CAg" kind="show" identifier="payMe" id="Zdy-cH-3r1"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -878,11 +905,6 @@
                                     </connections>
                                 </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="q34-zC-ouS"/>
-                                <barButtonItem systemItem="compose" id="yfC-4g-od4">
-                                    <connections>
-                                        <action selector="submitData:" destination="Nnt-UX-7Bn" id="dLe-Ft-JXm"/>
-                                    </connections>
-                                </barButtonItem>
                             </items>
                         </toolbar>
                         <sections>
@@ -941,6 +963,11 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="wxh-Ze-EjM">
                             <connections>
                                 <action selector="cancel:" destination="Nnt-UX-7Bn" id="rkB-0T-P37"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="yfC-4g-od4">
+                            <connections>
+                                <action selector="submitData:" destination="Nnt-UX-7Bn" id="dLe-Ft-JXm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

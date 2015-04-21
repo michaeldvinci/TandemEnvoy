@@ -22,13 +22,16 @@
 @property (nonatomic, retain) NSDictionary *theData;
 @property (nonatomic, retain) NSString *subURL;
 @property (nonatomic, retain) NSString *topID;
+@property (nonatomic, retain) NSString *catID;
 @property (nonatomic, retain) NSString *descText;
 @property (nonatomic, strong) NSMutableArray *jsonArray3;
 @property (nonatomic, strong) NSMutableArray *topicArray;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *acceptOrder;
 #pragma mark -
 #pragma mark Class Methods
 
 - (void)retrieveData;
+- (IBAction)acceptOrder:(id)sender;
 
 @end
