@@ -93,20 +93,37 @@
  *	@param sender Sender is user
  */
 - (void)submitData:(id)sender {
-	NSString *myRequestString = [NSString stringWithFormat:@"categoryDesc=%@&categoryName=%@&categoryUser=%@&catEnd=%@", categoryDesc.text, categoryName.text, [[User getInstance] userName], endTime.text];
+    if(endTime.text > 0) {
+        NSString *myRequestString = [NSString stringWithFormat:@"categoryDesc=%@&categoryName=%@&categoryUser=%@&catEnd=%@", categoryDesc.text, categoryName.text, [[User getInstance] userName], endTime.text];
+        
+        NSLog(@"catEnd = %@", endTime.text);
+
+        NSData *myRequestData = [NSData dataWithBytes:[myRequestString UTF8String] length:[myRequestString length]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://tandemenvoy.michaeldvinci.com/forum/create_cat2.php"]];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+        [request setHTTPBody:myRequestData];
+        NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
+        NSLog(@"%@", response);
+
+        [self.delegate addPostViewController2DidSave:self];
+    }
+    else {
+        [self wrongValue];
+    }
+}
+
+- (void)wrongValue {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          
+                          initWithTitle:@"Wrong Value!"
+                          message:@"Post duration cannot be negative!"
+                          delegate:nil
+                          cancelButtonTitle:@"Dismiss"
+                          otherButtonTitles:nil];
     
-    NSLog(@"catEnd = %@", endTime.text);
-
-	NSData *myRequestData = [NSData dataWithBytes:[myRequestString UTF8String] length:[myRequestString length]];
-	NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://tandemenvoy.michaeldvinci.com/forum/create_cat2.php"]];
-	[request setHTTPMethod:@"POST"];
-	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
-	[request setHTTPBody:myRequestData];
-	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-	NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
-	NSLog(@"%@", response);
-
-	[self.delegate addPostViewController2DidSave:self];
+    [alert show];
 }
 
 #pragma mark CLLocationManagerDelegate Methods
