@@ -93,7 +93,9 @@
  *	@param sender Sender is user
  */
 - (void)submitData:(id)sender {
-    if(endTime.text > 0) {
+    if ((int)endTime.text >= 0){
+        
+        NSLog(@"endTime = %@", endTime.text);
         NSString *myRequestString = [NSString stringWithFormat:@"categoryDesc=%@&categoryName=%@&categoryUser=%@&catEnd=%@", categoryDesc.text, categoryName.text, [[User getInstance] userName], endTime.text];
         
         NSLog(@"catEnd = %@", endTime.text);
@@ -107,11 +109,37 @@
         NSString *response = [[NSString alloc] initWithBytes:[returnData bytes] length:[returnData length] encoding:1];
         NSLog(@"%@", response);
 
-        [self.delegate addPostViewController2DidSave:self];
+        [self postMade];
     }
     else {
         [self wrongValue];
     }
+}
+
+- (void)isEmpty {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          
+                          initWithTitle:@"Error!"
+                          message:@"Post Title cannot be empty!"
+                          delegate:self
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"Dismiss", nil];
+    
+    alert.tag = 100;
+    [alert show];
+}
+
+- (void)postMade {
+    UIAlertView *alert = [[UIAlertView alloc]
+                          
+                          initWithTitle:@"Success!"
+                          message:@"New Post created"
+                          delegate:self
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"Dismiss", nil];
+    
+    alert.tag = 200;
+    [alert show];
 }
 
 - (void)wrongValue {
@@ -119,11 +147,20 @@
                           
                           initWithTitle:@"Wrong Value!"
                           message:@"Post duration cannot be negative!"
-                          delegate:nil
-                          cancelButtonTitle:@"Dismiss"
-                          otherButtonTitles:nil];
-    
+                          delegate:self
+                          cancelButtonTitle:nil
+                          otherButtonTitles:@"Dismiss", nil];
+    alert.tag = 300;
     [alert show];
+}
+
+- (void) alertView: (UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (alertView.tag == 200) {
+        if (buttonIndex == 0) {
+            [self.delegate addPostViewController2DidSave:self];
+        }
+    }
 }
 
 #pragma mark CLLocationManagerDelegate Methods

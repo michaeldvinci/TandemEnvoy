@@ -20,7 +20,9 @@
 
 @end
 
-@interface AddPostViewController2 : UITableViewController
+@interface AddPostViewController2 : UITableViewController <UIAlertViewDelegate> {
+    
+}
 
 @property (nonatomic, strong) User *user;
 @property (strong, nonatomic) IBOutlet UITextField *categoryName;
