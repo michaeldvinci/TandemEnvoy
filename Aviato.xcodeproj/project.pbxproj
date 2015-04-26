@@ -21,8 +21,70 @@
 		F51BEE621AD379D800DCAD40 /* 123.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F51BEE611AD379D800DCAD40 /* 123.jpg */; };
 		F51BEE641AD37BC900DCAD40 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = F51BEE631AD37BC900DCAD40 /* red.png */; };
 		F5265EF11AE4120F0059E856 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5265EF01AE4120F0059E856 /* WebViewController.m */; };
+		F546137E1AECB5C000EC6665 /* acceptDB.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613601AECB5C000EC6665 /* acceptDB.php */; };
+		F546137F1AECB5C000EC6665 /* acceptDB.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613601AECB5C000EC6665 /* acceptDB.php */; };
+		F54613801AECB5C000EC6665 /* addAPost.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613611AECB5C000EC6665 /* addAPost.php */; };
+		F54613811AECB5C000EC6665 /* addAPost.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613611AECB5C000EC6665 /* addAPost.php */; };
+		F54613821AECB5C000EC6665 /* categoriesJSON.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613621AECB5C000EC6665 /* categoriesJSON.php */; };
+		F54613831AECB5C000EC6665 /* categoriesJSON.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613621AECB5C000EC6665 /* categoriesJSON.php */; };
+		F54613841AECB5C000EC6665 /* category.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613631AECB5C000EC6665 /* category.php */; };
+		F54613851AECB5C000EC6665 /* category.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613631AECB5C000EC6665 /* category.php */; };
+		F54613861AECB5C000EC6665 /* connect.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613641AECB5C000EC6665 /* connect.php */; };
+		F54613871AECB5C000EC6665 /* connect.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613641AECB5C000EC6665 /* connect.php */; };
+		F54613881AECB5C000EC6665 /* create_cat.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613651AECB5C000EC6665 /* create_cat.php */; };
+		F54613891AECB5C000EC6665 /* create_cat.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613651AECB5C000EC6665 /* create_cat.php */; };
+		F546138A1AECB5C000EC6665 /* create_cat2.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613661AECB5C000EC6665 /* create_cat2.php */; };
+		F546138B1AECB5C000EC6665 /* create_cat2.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613661AECB5C000EC6665 /* create_cat2.php */; };
+		F546138C1AECB5C000EC6665 /* create_reply2.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613671AECB5C000EC6665 /* create_reply2.php */; };
+		F546138D1AECB5C000EC6665 /* create_reply2.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613671AECB5C000EC6665 /* create_reply2.php */; };
+		F546138E1AECB5C000EC6665 /* create_topic.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613681AECB5C000EC6665 /* create_topic.php */; };
+		F546138F1AECB5C000EC6665 /* create_topic.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613681AECB5C000EC6665 /* create_topic.php */; };
+		F54613901AECB5C000EC6665 /* create_topic2.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613691AECB5C000EC6665 /* create_topic2.php */; };
+		F54613911AECB5C000EC6665 /* create_topic2.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613691AECB5C000EC6665 /* create_topic2.php */; };
+		F54613921AECB5C000EC6665 /* create_topic3.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136A1AECB5C000EC6665 /* create_topic3.php */; };
+		F54613931AECB5C000EC6665 /* create_topic3.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136A1AECB5C000EC6665 /* create_topic3.php */; };
+		F54613941AECB5C000EC6665 /* deleteDB.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136B1AECB5C000EC6665 /* deleteDB.php */; };
+		F54613951AECB5C000EC6665 /* deleteDB.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136B1AECB5C000EC6665 /* deleteDB.php */; };
+		F54613961AECB5C000EC6665 /* footer.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136C1AECB5C000EC6665 /* footer.php */; };
+		F54613971AECB5C000EC6665 /* footer.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136C1AECB5C000EC6665 /* footer.php */; };
+		F54613981AECB5C000EC6665 /* header.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136D1AECB5C000EC6665 /* header.php */; };
+		F54613991AECB5C000EC6665 /* header.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136D1AECB5C000EC6665 /* header.php */; };
+		F546139A1AECB5C000EC6665 /* index.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136E1AECB5C000EC6665 /* index.php */; };
+		F546139B1AECB5C000EC6665 /* index.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136E1AECB5C000EC6665 /* index.php */; };
+		F546139C1AECB5C000EC6665 /* iosSignup.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136F1AECB5C000EC6665 /* iosSignup.php */; };
+		F546139D1AECB5C000EC6665 /* iosSignup.php in Resources */ = {isa = PBXBuildFile; fileRef = F546136F1AECB5C000EC6665 /* iosSignup.php */; };
+		F546139E1AECB5C000EC6665 /* iosSignup2.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613701AECB5C000EC6665 /* iosSignup2.php */; };
+		F546139F1AECB5C000EC6665 /* iosSignup2.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613701AECB5C000EC6665 /* iosSignup2.php */; };
+		F54613A01AECB5C000EC6665 /* json.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613711AECB5C000EC6665 /* json.php */; };
+		F54613A11AECB5C000EC6665 /* json.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613711AECB5C000EC6665 /* json.php */; };
+		F54613A21AECB5C000EC6665 /* mobileSignin.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613721AECB5C000EC6665 /* mobileSignin.php */; };
+		F54613A31AECB5C000EC6665 /* mobileSignin.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613721AECB5C000EC6665 /* mobileSignin.php */; };
+		F54613A41AECB5C000EC6665 /* register.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613731AECB5C000EC6665 /* register.php */; };
+		F54613A51AECB5C000EC6665 /* register.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613731AECB5C000EC6665 /* register.php */; };
+		F54613A61AECB5C000EC6665 /* repliesJSON.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613741AECB5C000EC6665 /* repliesJSON.php */; };
+		F54613A71AECB5C000EC6665 /* repliesJSON.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613741AECB5C000EC6665 /* repliesJSON.php */; };
+		F54613A81AECB5C000EC6665 /* reply.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613751AECB5C000EC6665 /* reply.php */; };
+		F54613A91AECB5C000EC6665 /* reply.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613751AECB5C000EC6665 /* reply.php */; };
+		F54613AA1AECB5C000EC6665 /* signin.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613761AECB5C000EC6665 /* signin.php */; };
+		F54613AB1AECB5C000EC6665 /* signin.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613761AECB5C000EC6665 /* signin.php */; };
+		F54613AC1AECB5C000EC6665 /* signin2.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613771AECB5C000EC6665 /* signin2.php */; };
+		F54613AD1AECB5C000EC6665 /* signin2.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613771AECB5C000EC6665 /* signin2.php */; };
+		F54613AE1AECB5C000EC6665 /* signout.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613781AECB5C000EC6665 /* signout.php */; };
+		F54613AF1AECB5C000EC6665 /* signout.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613781AECB5C000EC6665 /* signout.php */; };
+		F54613B01AECB5C000EC6665 /* signup.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613791AECB5C000EC6665 /* signup.php */; };
+		F54613B11AECB5C000EC6665 /* signup.php in Resources */ = {isa = PBXBuildFile; fileRef = F54613791AECB5C000EC6665 /* signup.php */; };
+		F54613B21AECB5C000EC6665 /* topic.php in Resources */ = {isa = PBXBuildFile; fileRef = F546137A1AECB5C000EC6665 /* topic.php */; };
+		F54613B31AECB5C000EC6665 /* topic.php in Resources */ = {isa = PBXBuildFile; fileRef = F546137A1AECB5C000EC6665 /* topic.php */; };
+		F54613B41AECB5C000EC6665 /* topicsJSON.php in Resources */ = {isa = PBXBuildFile; fileRef = F546137B1AECB5C000EC6665 /* topicsJSON.php */; };
+		F54613B51AECB5C000EC6665 /* topicsJSON.php in Resources */ = {isa = PBXBuildFile; fileRef = F546137B1AECB5C000EC6665 /* topicsJSON.php */; };
+		F54613B61AECB5C000EC6665 /* updateDB.php in Resources */ = {isa = PBXBuildFile; fileRef = F546137C1AECB5C000EC6665 /* updateDB.php */; };
+		F54613B71AECB5C000EC6665 /* updateDB.php in Resources */ = {isa = PBXBuildFile; fileRef = F546137C1AECB5C000EC6665 /* updateDB.php */; };
+		F54613B81AECB5C000EC6665 /* userJSON.php in Resources */ = {isa = PBXBuildFile; fileRef = F546137D1AECB5C000EC6665 /* userJSON.php */; };
+		F54613B91AECB5C000EC6665 /* userJSON.php in Resources */ = {isa = PBXBuildFile; fileRef = F546137D1AECB5C000EC6665 /* userJSON.php */; };
 		F5513B401AD2D7DC0019E463 /* AddReplyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5513B3F1AD2D7DC0019E463 /* AddReplyViewController.m */; };
 		F56621491AD573DB00AE2D4C /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F56621481AD573DB00AE2D4C /* RegisterViewController.m */; };
+		F57535871AE82ACC003B754D /* DisclaimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57535861AE82ACC003B754D /* DisclaimerViewController.m */; };
+		F57535881AE82ACC003B754D /* DisclaimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57535861AE82ACC003B754D /* DisclaimerViewController.m */; };
 		F57FB95E1AB4C3CE0055A170 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F57FB95D1AB4C3CE0055A170 /* User.m */; };
 		F57FB9601AB4DA240055A170 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F57FB95F1AB4DA230055A170 /* Security.framework */; };
 		F57FB98C1AB4FF560055A170 /* RepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57FB98B1AB4FF560055A170 /* RepoViewController.m */; };
@@ -91,10 +153,42 @@
 		F51BEE631AD37BC900DCAD40 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		F5265EEF1AE411F70059E856 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		F5265EF01AE4120F0059E856 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		F54613601AECB5C000EC6665 /* acceptDB.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = acceptDB.php; path = "PHP Files/acceptDB.php"; sourceTree = SOURCE_ROOT; };
+		F54613611AECB5C000EC6665 /* addAPost.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = addAPost.php; path = "PHP Files/addAPost.php"; sourceTree = SOURCE_ROOT; };
+		F54613621AECB5C000EC6665 /* categoriesJSON.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = categoriesJSON.php; path = "PHP Files/categoriesJSON.php"; sourceTree = SOURCE_ROOT; };
+		F54613631AECB5C000EC6665 /* category.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = category.php; path = "PHP Files/category.php"; sourceTree = SOURCE_ROOT; };
+		F54613641AECB5C000EC6665 /* connect.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = connect.php; path = "PHP Files/connect.php"; sourceTree = SOURCE_ROOT; };
+		F54613651AECB5C000EC6665 /* create_cat.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = create_cat.php; path = "PHP Files/create_cat.php"; sourceTree = SOURCE_ROOT; };
+		F54613661AECB5C000EC6665 /* create_cat2.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = create_cat2.php; path = "PHP Files/create_cat2.php"; sourceTree = SOURCE_ROOT; };
+		F54613671AECB5C000EC6665 /* create_reply2.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = create_reply2.php; path = "PHP Files/create_reply2.php"; sourceTree = SOURCE_ROOT; };
+		F54613681AECB5C000EC6665 /* create_topic.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = create_topic.php; path = "PHP Files/create_topic.php"; sourceTree = SOURCE_ROOT; };
+		F54613691AECB5C000EC6665 /* create_topic2.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = create_topic2.php; path = "PHP Files/create_topic2.php"; sourceTree = SOURCE_ROOT; };
+		F546136A1AECB5C000EC6665 /* create_topic3.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = create_topic3.php; path = "PHP Files/create_topic3.php"; sourceTree = SOURCE_ROOT; };
+		F546136B1AECB5C000EC6665 /* deleteDB.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = deleteDB.php; path = "PHP Files/deleteDB.php"; sourceTree = SOURCE_ROOT; };
+		F546136C1AECB5C000EC6665 /* footer.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = footer.php; path = "PHP Files/footer.php"; sourceTree = SOURCE_ROOT; };
+		F546136D1AECB5C000EC6665 /* header.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = header.php; path = "PHP Files/header.php"; sourceTree = SOURCE_ROOT; };
+		F546136E1AECB5C000EC6665 /* index.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = index.php; path = "PHP Files/index.php"; sourceTree = SOURCE_ROOT; };
+		F546136F1AECB5C000EC6665 /* iosSignup.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = iosSignup.php; path = "PHP Files/iosSignup.php"; sourceTree = SOURCE_ROOT; };
+		F54613701AECB5C000EC6665 /* iosSignup2.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = iosSignup2.php; path = "PHP Files/iosSignup2.php"; sourceTree = SOURCE_ROOT; };
+		F54613711AECB5C000EC6665 /* json.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = json.php; path = "PHP Files/json.php"; sourceTree = SOURCE_ROOT; };
+		F54613721AECB5C000EC6665 /* mobileSignin.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = mobileSignin.php; path = "PHP Files/mobileSignin.php"; sourceTree = SOURCE_ROOT; };
+		F54613731AECB5C000EC6665 /* register.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = register.php; path = "PHP Files/register.php"; sourceTree = SOURCE_ROOT; };
+		F54613741AECB5C000EC6665 /* repliesJSON.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = repliesJSON.php; path = "PHP Files/repliesJSON.php"; sourceTree = SOURCE_ROOT; };
+		F54613751AECB5C000EC6665 /* reply.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = reply.php; path = "PHP Files/reply.php"; sourceTree = SOURCE_ROOT; };
+		F54613761AECB5C000EC6665 /* signin.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = signin.php; path = "PHP Files/signin.php"; sourceTree = SOURCE_ROOT; };
+		F54613771AECB5C000EC6665 /* signin2.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = signin2.php; path = "PHP Files/signin2.php"; sourceTree = SOURCE_ROOT; };
+		F54613781AECB5C000EC6665 /* signout.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = signout.php; path = "PHP Files/signout.php"; sourceTree = SOURCE_ROOT; };
+		F54613791AECB5C000EC6665 /* signup.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = signup.php; path = "PHP Files/signup.php"; sourceTree = SOURCE_ROOT; };
+		F546137A1AECB5C000EC6665 /* topic.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = topic.php; path = "PHP Files/topic.php"; sourceTree = SOURCE_ROOT; };
+		F546137B1AECB5C000EC6665 /* topicsJSON.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = topicsJSON.php; path = "PHP Files/topicsJSON.php"; sourceTree = SOURCE_ROOT; };
+		F546137C1AECB5C000EC6665 /* updateDB.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = updateDB.php; path = "PHP Files/updateDB.php"; sourceTree = SOURCE_ROOT; };
+		F546137D1AECB5C000EC6665 /* userJSON.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; name = userJSON.php; path = "PHP Files/userJSON.php"; sourceTree = SOURCE_ROOT; };
 		F5513B3E1AD2D74A0019E463 /* AddReplyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReplyViewController.h; sourceTree = "<group>"; };
 		F5513B3F1AD2D7DC0019E463 /* AddReplyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReplyViewController.m; sourceTree = "<group>"; };
 		F56621481AD573DB00AE2D4C /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		F566214A1AD5742A00AE2D4C /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		F57535851AE82A6C003B754D /* DisclaimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisclaimerViewController.h; sourceTree = "<group>"; };
+		F57535861AE82ACC003B754D /* DisclaimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DisclaimerViewController.m; path = Images.xcassets/DisclaimerViewController.m; sourceTree = "<group>"; };
 		F57FB95C1AB4C2660055A170 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		F57FB95D1AB4C3CE0055A170 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F57FB95F1AB4DA230055A170 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -171,6 +265,8 @@
 			children = (
 				F57FB95C1AB4C2660055A170 /* User.h */,
 				F57FB95D1AB4C3CE0055A170 /* User.m */,
+				F57535851AE82A6C003B754D /* DisclaimerViewController.h */,
+				F57535861AE82ACC003B754D /* DisclaimerViewController.m */,
 				F5E198261AAF96010075788E /* LoginViewController.h */,
 				F5E198271AAF96010075788E /* LoginViewController.m */,
 				F50FB4E61AB35CA100C98297 /* Login.h */,
@@ -214,6 +310,7 @@
 		F505E7EA1AAEADF900DAF80B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F546135F1AECB5A500EC6665 /* PHP Files */,
 				F505E7EB1AAEADF900DAF80B /* Info.plist */,
 				F505E7EC1AAEADF900DAF80B /* main.m */,
 			);
@@ -235,6 +332,43 @@
 				F505E8051AAEADF900DAF80B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F546135F1AECB5A500EC6665 /* PHP Files */ = {
+			isa = PBXGroup;
+			children = (
+				F54613601AECB5C000EC6665 /* acceptDB.php */,
+				F54613611AECB5C000EC6665 /* addAPost.php */,
+				F54613621AECB5C000EC6665 /* categoriesJSON.php */,
+				F54613631AECB5C000EC6665 /* category.php */,
+				F54613641AECB5C000EC6665 /* connect.php */,
+				F54613651AECB5C000EC6665 /* create_cat.php */,
+				F54613661AECB5C000EC6665 /* create_cat2.php */,
+				F54613671AECB5C000EC6665 /* create_reply2.php */,
+				F54613681AECB5C000EC6665 /* create_topic.php */,
+				F54613691AECB5C000EC6665 /* create_topic2.php */,
+				F546136A1AECB5C000EC6665 /* create_topic3.php */,
+				F546136B1AECB5C000EC6665 /* deleteDB.php */,
+				F546136C1AECB5C000EC6665 /* footer.php */,
+				F546136D1AECB5C000EC6665 /* header.php */,
+				F546136E1AECB5C000EC6665 /* index.php */,
+				F546136F1AECB5C000EC6665 /* iosSignup.php */,
+				F54613701AECB5C000EC6665 /* iosSignup2.php */,
+				F54613711AECB5C000EC6665 /* json.php */,
+				F54613721AECB5C000EC6665 /* mobileSignin.php */,
+				F54613731AECB5C000EC6665 /* register.php */,
+				F54613741AECB5C000EC6665 /* repliesJSON.php */,
+				F54613751AECB5C000EC6665 /* reply.php */,
+				F54613761AECB5C000EC6665 /* signin.php */,
+				F54613771AECB5C000EC6665 /* signin2.php */,
+				F54613781AECB5C000EC6665 /* signout.php */,
+				F54613791AECB5C000EC6665 /* signup.php */,
+				F546137A1AECB5C000EC6665 /* topic.php */,
+				F546137B1AECB5C000EC6665 /* topicsJSON.php */,
+				F546137C1AECB5C000EC6665 /* updateDB.php */,
+				F546137D1AECB5C000EC6665 /* userJSON.php */,
+			);
+			name = "PHP Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,13 +454,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F546138A1AECB5C000EC6665 /* create_cat2.php in Resources */,
+				F54613881AECB5C000EC6665 /* create_cat.php in Resources */,
+				F54613B01AECB5C000EC6665 /* signup.php in Resources */,
+				F546138C1AECB5C000EC6665 /* create_reply2.php in Resources */,
+				F54613981AECB5C000EC6665 /* header.php in Resources */,
+				F54613AA1AECB5C000EC6665 /* signin.php in Resources */,
+				F546137E1AECB5C000EC6665 /* acceptDB.php in Resources */,
 				F51BEE621AD379D800DCAD40 /* 123.jpg in Resources */,
+				F54613841AECB5C000EC6665 /* category.php in Resources */,
+				F546139E1AECB5C000EC6665 /* iosSignup2.php in Resources */,
+				F54613A21AECB5C000EC6665 /* mobileSignin.php in Resources */,
+				F54613B81AECB5C000EC6665 /* userJSON.php in Resources */,
+				F54613AE1AECB5C000EC6665 /* signout.php in Resources */,
+				F54613B21AECB5C000EC6665 /* topic.php in Resources */,
+				F546139A1AECB5C000EC6665 /* index.php in Resources */,
+				F54613AC1AECB5C000EC6665 /* signin2.php in Resources */,
+				F54613A41AECB5C000EC6665 /* register.php in Resources */,
 				F59DEA641AC9F4B400938BEC /* redBG.jpg in Resources */,
+				F54613A01AECB5C000EC6665 /* json.php in Resources */,
+				F546139C1AECB5C000EC6665 /* iosSignup.php in Resources */,
 				F505E7F61AAEADF900DAF80B /* Main.storyboard in Resources */,
+				F546138E1AECB5C000EC6665 /* create_topic.php in Resources */,
 				F51BEE601AD3790300DCAD40 /* test.jpg in Resources */,
 				F51BEE641AD37BC900DCAD40 /* red.png in Resources */,
+				F54613861AECB5C000EC6665 /* connect.php in Resources */,
+				F54613801AECB5C000EC6665 /* addAPost.php in Resources */,
 				F505E7FB1AAEADF900DAF80B /* LaunchScreen.xib in Resources */,
+				F54613A81AECB5C000EC6665 /* reply.php in Resources */,
+				F54613941AECB5C000EC6665 /* deleteDB.php in Resources */,
+				F54613921AECB5C000EC6665 /* create_topic3.php in Resources */,
+				F54613901AECB5C000EC6665 /* create_topic2.php in Resources */,
+				F54613821AECB5C000EC6665 /* categoriesJSON.php in Resources */,
+				F54613B61AECB5C000EC6665 /* updateDB.php in Resources */,
 				F505E7F81AAEADF900DAF80B /* Images.xcassets in Resources */,
+				F54613961AECB5C000EC6665 /* footer.php in Resources */,
+				F54613A61AECB5C000EC6665 /* repliesJSON.php in Resources */,
+				F54613B41AECB5C000EC6665 /* topicsJSON.php in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +498,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F54613B71AECB5C000EC6665 /* updateDB.php in Resources */,
+				F546138D1AECB5C000EC6665 /* create_reply2.php in Resources */,
+				F54613911AECB5C000EC6665 /* create_topic2.php in Resources */,
+				F54613B91AECB5C000EC6665 /* userJSON.php in Resources */,
+				F546139B1AECB5C000EC6665 /* index.php in Resources */,
+				F54613AD1AECB5C000EC6665 /* signin2.php in Resources */,
+				F546139F1AECB5C000EC6665 /* iosSignup2.php in Resources */,
+				F54613AF1AECB5C000EC6665 /* signout.php in Resources */,
+				F54613A31AECB5C000EC6665 /* mobileSignin.php in Resources */,
+				F546138B1AECB5C000EC6665 /* create_cat2.php in Resources */,
+				F54613B31AECB5C000EC6665 /* topic.php in Resources */,
+				F54613AB1AECB5C000EC6665 /* signin.php in Resources */,
+				F546139D1AECB5C000EC6665 /* iosSignup.php in Resources */,
+				F54613B11AECB5C000EC6665 /* signup.php in Resources */,
+				F54613991AECB5C000EC6665 /* header.php in Resources */,
+				F54613851AECB5C000EC6665 /* category.php in Resources */,
+				F54613811AECB5C000EC6665 /* addAPost.php in Resources */,
+				F54613831AECB5C000EC6665 /* categoriesJSON.php in Resources */,
+				F54613A51AECB5C000EC6665 /* register.php in Resources */,
+				F54613891AECB5C000EC6665 /* create_cat.php in Resources */,
+				F546137F1AECB5C000EC6665 /* acceptDB.php in Resources */,
+				F54613871AECB5C000EC6665 /* connect.php in Resources */,
+				F54613B51AECB5C000EC6665 /* topicsJSON.php in Resources */,
+				F54613931AECB5C000EC6665 /* create_topic3.php in Resources */,
+				F54613A11AECB5C000EC6665 /* json.php in Resources */,
+				F546138F1AECB5C000EC6665 /* create_topic.php in Resources */,
+				F54613971AECB5C000EC6665 /* footer.php in Resources */,
+				F54613A91AECB5C000EC6665 /* reply.php in Resources */,
+				F54613951AECB5C000EC6665 /* deleteDB.php in Resources */,
+				F54613A71AECB5C000EC6665 /* repliesJSON.php in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +547,7 @@
 				F505E7F01AAEADF900DAF80B /* AppDelegate.m in Sources */,
 				F505E7ED1AAEADF900DAF80B /* main.m in Sources */,
 				F5A2895B1AB0A51200D79A26 /* TopicViewController.m in Sources */,
+				F57535871AE82ACC003B754D /* DisclaimerViewController.m in Sources */,
 				F5A289581AB07EFE00D79A26 /* CatViewController.m in Sources */,
 				F56621491AD573DB00AE2D4C /* RegisterViewController.m in Sources */,
 				F5E198281AAF96010075788E /* LoginViewController.m in Sources */,
@@ -370,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F505E8071AAEADF900DAF80B /* AviatoTests.m in Sources */,
+				F57535881AE82ACC003B754D /* DisclaimerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
