@@ -20,7 +20,9 @@
 
 @end
 
-@interface AddCommentViewController : UITableViewController
+@interface AddCommentViewController : UITableViewController <UIAlertViewDelegate> {
+    
+}
 
 @property (nonatomic, strong) User *user;
 @property (strong, nonatomic) IBOutlet UITextView *commentView;
